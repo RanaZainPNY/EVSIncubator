@@ -1,4 +1,4 @@
-Website Front End Code
+Website Frontend Code
 Maria B Website 
 https://www.mariab.pk/
 Bootstrap 5 
@@ -7,7 +7,7 @@ React-Bootstrap
 
 Questions:
 Prevent-Default
-Categories CRUD { }
+Categories CRUD {}
 Fixed navbar position Issue
 
 Container-Fluid Vs Container Issue

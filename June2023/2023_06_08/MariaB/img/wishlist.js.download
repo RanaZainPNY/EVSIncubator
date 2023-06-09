@@ -1,0 +1,1592 @@
+//Define Global Variables
+var DomainWishlist = "https://squadkin.com/shopifyapps/Wishlist/";
+var ImagePath = "https://squadkin.com/shopifyapps/Wishlist/public/images";
+var shopData = JSON.parse(document.getElementById('shopify-features').innerHTML);
+var shopId = shopData['shopId'];
+var skWishlistBtnWrapper;
+var skWishlistData=null;
+
+class WishlistJs  {
+	constructor() {
+		this.init();
+	}
+
+	checkAvailability = () => {
+    // set customisation values in DOM
+    var customWishlistBtn = document.querySelector('.sk-wishlist-pdp-wrapper');
+    if (customWishlistBtn != null) {
+      skWishlistBtnWrapper = customWishlistBtn;
+    } else {
+      skWishlistBtnWrapper = document.querySelector('form[action="/cart/add"]');
+    }
+    this.setCustomisationValues();
+	}
+
+	// get customisation values
+	setCustomisationValues = () => {
+		var url = DomainWishlist + 'setCustValue/'+shopId;
+		this.sendAjaxAndGetResponseWithGET(url, "GET", this.setCustValues);
+	}
+
+	// set customisation value in DOM
+	setCustValues = (data) => {
+    skWishlistData = data;
+		document.querySelector('body').insertAdjacentHTML("beforeEnd", `<style>.sk-btn{color: ${data['wishlist_text_color']};border-color: ${data['wishlist_border_color']}; }.sk-btn:hover{border-color: ${data['wishlist_bg_color']};}.sk-popup-wrap{background:${data['wishlist_bg_color']};}.sk-btn:before{color: ${data['wishlist_text_color']}; background: ${data['wishlist_bg_color']}; border-color: ${data['wishlist_bg_color']};}${data['custom_css']}</style>`);
+		document.querySelector('body').insertAdjacentHTML("beforeEnd", `<div class="sk-popup-main-wrapper"></div>`);
+		if(data['app_enable'] === "1") {
+			// Add aditional links to head, body or any other data to body
+			this.addDataInBodyAndHead();
+			
+			// Check if product page so exucte product page function
+			if(__st.p === "product") {
+				this.setProductPageButtonLayout();
+			}
+	
+			// Set button layout for collection page or any product card slider
+			this.setCollectionPageButtonLayout();
+	
+			//check for wishlist listing page
+			this.checkIsWishlistPageOrNot();
+
+			if(data['wishlist_btn'] === "float") {
+				this.showFloatButtonWith(data['wishlist_btn_position']);
+			}
+		}
+	}
+
+	//show wishlist floating button
+	showFloatButtonWith = (classData) => {
+		var wishlistBtn = `<div class='wishlist-float-wrap ${classData}'>
+													<div class='wishlist-wrap'>
+														<a href="/pages/sk-wishlist"><i class="fa fa-heart-circle"></i></a>
+													</div>
+											 </div>`;
+		document.querySelector('body').insertAdjacentHTML('beforeend', wishlistBtn);
+	}
+
+	// Add aditional links to head, body or any other data to body
+	addDataInBodyAndHead = () => {
+		document.querySelector('head').insertAdjacentHTML("beforeEnd", '<link rel="stylesheet" type="text/css" href="https://squadkin.com/shopifyapps/Wishlist/public/css/frontend/front-end.css"></link>');
+    document.querySelector('head').insertAdjacentHTML("beforeEnd", '<link rel="stylesheet" type="text/css" href="https://squadkin.com/shopifyapps/Wishlist/public/css/frontend/icons.min.css"></link>');
+		let appendData = `<div class='sk-category-popup-wrapper'><div class='sk-category-popup' id='skCategoryWrapper'></div></div>`;
+		document.querySelector('body').insertAdjacentHTML("beforeEnd", appendData);
+  }
+
+	// Function for show add to wishlist button in product
+	setProductPageButtonLayout = () => {
+		const that = this;
+		var pageURL = window.location.href;
+		var Y = "/products/";
+		var productHandleName = pageURL.slice(pageURL.indexOf(Y) + Y.length);
+		if(productHandleName.includes("?")){
+			productHandleName = productHandleName.split('?')[0];
+		} else {
+			productHandleName = productHandleName;
+		}
+		var V = "?variant=";
+		if (pageURL.indexOf(V) >= 0){
+			var productVariantId = pageURL.slice(pageURL.indexOf(V) + V.length);
+		} else {
+			var productVariantId = "";
+		}
+		var url = DomainWishlist+"isProductAlreadyWishlist";
+		var method = "POST";
+		var body = {
+								"store_id": shopId,
+								"p_id": __st.rid,
+								"p_handle": productHandleName,
+								"cust_id": __st.cid,
+								"p_v_id": productVariantId
+							};
+		
+		// check if customer or not
+		if(__st.cid === undefined){
+			this.checkCookieWishlist(productHandleName);
+		} else {
+			this.sendAjaxAndGetResponse(url, method, body, this.isProductAlreadyWishlist);
+		}
+	}
+
+	//show view wishlist if already added otherwise show add to wishlist
+	isProductAlreadyWishlist = (body, data) => {
+		if(data == 1) {
+			let w_btn = skWishlistBtnWrapper.querySelector('.add-to-wishlist-btn.addToWishlistBtn');
+			if(w_btn) { w_btn.remove(); }
+			let view_bnt = skWishlistBtnWrapper.querySelector('.add-to-wishlist-btn.view-wishlist-btn');
+			if(view_bnt) { view_bnt.remove(); }
+			if(skWishlistData['wishlist_btn_style'] === "icon") {
+				var wishlistBtnLayout = `<div class="add-to-wishlist-btn view-wishlist-btn">
+														<a href="/pages/sk-wishlist" class="sk-btn sk-wishlist-btn"><i class="fa fa-heart"></i></a>
+													</div>`;
+			} else {
+				var wishlistBtnLayout = `<div class="add-to-wishlist-btn view-wishlist-btn">
+                                    <a href="/pages/sk-wishlist" class="sk-btn sk-wishlist-btn">${skWishlistData['view_wishlist']}</a>
+                                  </div>`;
+			}
+      skWishlistBtnWrapper.insertAdjacentHTML("beforeEnd", wishlistBtnLayout);
+		} else {
+			let w_btn = document.querySelector('.add-to-wishlist-btn.addToWishlistBtn');
+			if(w_btn) { w_btn.remove(); }
+			let view_bnt = document.querySelector('.add-to-wishlist-btn.view-wishlist-btn');
+			if(view_bnt) { view_bnt.remove(); }
+			if(skWishlistData['wishlist_btn_style'] === "icon") {
+				var wishlistBtnLayout = `<div class="add-to-wishlist-btn addToWishlistBtn">
+																		<button type="button" id="addProductToWishlist" p_handle="${body.p_handle}" class="sk-btn sk-wishlist-btn heartragular"><i class="fal fa-heart"></i></button>
+																	</div>`;
+			} else if (skWishlistData['wishlist_btn_style'] === "text") {
+				var wishlistBtnLayout = `<div class="add-to-wishlist-btn addToWishlistBtn">
+																		<button type="button" id="addProductToWishlist" p_handle="${body.p_handle}" class="sk-btn sk-wishlist-btn textheart"><span>${skWishlistData['add_to_wishlist']}</span></button>
+																	</div>`;
+			} else {
+				var wishlistBtnLayout = `<div class="add-to-wishlist-btn addToWishlistBtn">
+																		<button type="button" id="addProductToWishlist" p_handle="${body.p_handle}" class="sk-btn sk-wishlist-btn textheart"><i class="fal fa-heart"></i> <span>${skWishlistData['add_to_wishlist']}</span></a>
+																	</div>`;
+			}
+			
+      skWishlistBtnWrapper.insertAdjacentHTML("beforeEnd", wishlistBtnLayout);
+		}
+    this.addToWishlistToFunction();
+	}
+
+  // function to add to wishlist from collection or pdp
+  addToWishlistToFunction = () => {
+    var wlBtn = document.querySelectorAll('#addProductToWishlist');
+    const that = this;
+    if (wlBtn.length > 0) {
+      wlBtn.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          var p_handle = btn.getAttribute('p_handle');
+
+					// check if customer or not
+					if(__st.cid !== undefined){
+						if(skWishlistData['allow_multi_category'] === "1"){
+							that.showCategoryPopup();
+						} else {
+							that.addProductToWishlist(p_handle);
+						}
+					} else {
+						if(skWishlistData['guest_enable'] === "1"){
+							that.addProductWishlistToCookie(p_handle);
+						} else {
+							window.location.href = "/account/login";
+						}
+					}
+        })
+      })
+    }
+  }
+
+	//show popup for wishlist category
+	showCategoryPopup = () => {
+		let url = DomainWishlist+ "fetchCategories/"+shopId+'/'+__st.cid;
+		let method = "GET";
+		this.sendAjaxAndGetResponseWithGET(url, method, this.showAllCategoryListing);
+	}
+
+	//show All Wishlist Category List
+	showAllCategoryListing = (data) => {
+		const that = this;
+		var catWrapData = document.querySelector('.sk-category-wrapper');
+		if(catWrapData){ catWrapData.remove(); }
+		document.querySelector('body').classList.add('sk-popup-visible');
+		if(data.length > 0) {
+			var catData = "";
+			for(var i = 0; i < data.length; i++){
+				catData += `<div class="sk-form-group">
+												<span class="sk-wishlist-name">${data[i].cat_name}</span>
+												<button style="cursor:pointer" class="sk-btn sk-add-wishlist" cat-id='${data[i].id}' id='addToCatWishlist'>${skWishlistData['cat_popup_submit'] ? skWishlistData['cat_popup_submit'] : 'Add'}</button>
+										</div>`;
+			}
+		} else {
+			var catData = "";
+		}
+		let html = `<div id="sk-wishlist-popup" class="sk-wishlist-popup-wrapper">
+									<div class="sk-popup-modal">
+										<span id="sk-close-popup">&times;</span>
+										<div class="sk-popup-content">
+											<div class="sk-wishlist-form">
+												<div class="sk-form-title">
+														<h2>${skWishlistData['cat_popup_title'] ? skWishlistData['cat_popup_title'] : 'Add this item to a caregory'}</h2>
+												</div>
+												<div class='sk-cat-wrap' id='appendCategory'>
+													${catData}
+												</div>
+												<div class="sk-form-group">
+														<input type="text" name="wishlistname" placeholder="${skWishlistData['cat_popup_placeholder'] ? skWishlistData['cat_popup_placeholder'] : 'Create New Category'}" />
+														<button class="sk-btn sk-add-wishlist" id='createWishlistCategory'>${skWishlistData['cat_popup_add_new'] ? skWishlistData['cat_popup_add_new'] : 'Create Category'}</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>`;
+		document.querySelector('#skCategoryWrapper').insertAdjacentHTML('beforeend', html);
+
+		//To show and hide input of create category
+    var categoryWishlists = document.querySelectorAll('#createWishlistCategory');
+    if (categoryWishlists.length > 0) {
+      categoryWishlists.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          var inEl = item.previousElementSibling;
+          var inVal = inEl.value;
+          if(inVal) {
+            inEl.classList.remove('required');
+            let url = DomainWishlist+ "createCategory";
+            let method = "POST";
+            let body = {'c_name': inVal, 
+                        'cust_id': __st.cid,
+                        'store_id': shopId };
+            that.sendAjaxAndGetResponse(url, method, body, that.createAndShowCategory);
+          } else {
+            inEl.classList.add('required');
+          }
+        })
+      })
+    }
+
+		//To close multi category popup
+    var skClosePopup = document.querySelectorAll('#sk-close-popup');
+    if (skClosePopup.length > 0) {
+      skClosePopup.forEach(item => {
+        item.addEventListener('click', (e) => {
+          document.querySelector('body').classList.remove('sk-popup-visible');
+          var catWrapData = document.querySelector('#sk-wishlist-popup');
+          if(catWrapData){ catWrapData.remove(); }
+        })
+      })
+    }
+
+    this.multicategoryWishlistProductAdd();
+	} 
+
+  // add product to wishlist of multicategory
+  multicategoryWishlistProductAdd = () => {
+    const that = this;
+    var allWishlistBtns = document.querySelectorAll('#addToCatWishlist');
+    if (allWishlistBtns.length > 0) {
+      allWishlistBtns.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          e.preventDefault();
+          var cat_id = item.getAttribute('cat-id');
+          var	customer_id = __st.cid;
+          var bodyEl = document.querySelector('body');
+          if(bodyEl.classList.contains('wishlist-collection-page')) {
+            var p_id = bodyEl.getAttribute('data-product');
+            var p_handle = bodyEl.getAttribute('data-product-handle');
+            
+            var url = DomainWishlist+ "addToWishlist";
+            var method = "POST";
+            var body = {
+              'store_id': shopId,
+              'p_id': p_id,
+              'p_handle': p_handle,
+              'p_v_id': "",
+              'cat_id': cat_id,
+              'cust_id': customer_id
+            };
+            // that.sendAjaxAndGetResponse(url, method, body, that.afterCollectionWishlistAdded); // remain feature
+          } else {
+            var pageURL = window.location.href;
+            var Y = "?variant=";
+            if (pageURL.indexOf(Y) >= 0){
+              var productVariantId = pageURL.slice(pageURL.indexOf(Y) + Y.length);
+            } else {
+              var productVariantId = "";
+            }
+            
+            var H = "/products/";
+            var p_handle = pageURL.slice(pageURL.indexOf(H) + H.length);
+            if(p_handle.includes("?")){
+              p_handle = p_handle.split('?')[0];
+            } else {
+              p_handle = p_handle;
+            }
+            var p_id = __st.rid;
+            that.addToWishlistDb(p_id, p_handle, productVariantId, customer_id, cat_id);
+          }
+        })
+      })
+    }
+  }
+
+	//append category in form and save
+	createAndShowCategory = (body, data) => {
+		var catData = `<div class="sk-form-group">
+										<span class="sk-wishlist-name">${body['c_name']}</span>
+										<span class="sk-btn sk-add-wishlist" cat-id='${data}' id='addToCatWishlist'>${skWishlistData['cat_popup_submit'] ? skWishlistData['cat_popup_submit'] : 'Add'}</span>
+								</div>`;
+		document.querySelector('#sk-wishlist-popup #appendCategory').insertAdjacentHTML('beforeEnd', catData);
+		let catInput = document.querySelector('#sk-wishlist-popup input[name="wishlistname"]');
+		catInput.value = "";
+    this.multicategoryWishlistProductAdd();
+	}
+
+	//Add product to wishlist
+	addProductToWishlist = (p_handle) => {
+		var pageURL = window.location.href;
+		var Y = "?variant=";
+		if (pageURL.indexOf(Y) >= 0){
+			var productVariantId = pageURL.slice(pageURL.indexOf(Y) + Y.length);
+		} else {
+			var productVariantId = "";
+		}
+		var p_id = __st.rid;
+		var customer_id = "";
+		var cat_id = "";
+		if(__st.cid !== undefined) {
+			customer_id = __st.cid;
+		}
+		this.addToWishlistDb(p_id, p_handle, productVariantId, customer_id, cat_id);
+	}
+	
+	//Ajax Function for adding wishlist product to database
+	addToWishlistDb = (p_id, 
+										p_handle, 
+										productVariantId, 
+										customer_id, 
+										cat_id) => {
+    var url = DomainWishlist+"addProductToWishlist";
+    var method = "POST";
+    var body = {
+                "store_id": shopId,
+                "p_id": p_id,
+                "p_handle": p_handle,
+                "p_v_id": productVariantId,
+                "cust_id": customer_id,
+                "cat_id": cat_id
+              };
+    this.sendAjaxAndGetResponse(url, method, body, this.productAddedToWishlistDB);
+	}
+
+	productAddedToWishlistDB = (body, data) => {
+		if(data == 1){
+			document.querySelector('.add-to-wishlist-btn.addToWishlistBtn').remove();
+			if(skWishlistData['wishlist_btn_style'] === "icon") {
+				var wishlistBtnLayout = `<div class="add-to-wishlist-btn">
+																<a href="/pages/sk-wishlist" class="sk-btn sk-wishlist-btn added-to-wishlist"><i class="fa fa-heart"></i></a>
+															</div>`;
+			} else {
+				var wishlistBtnLayout = `<div class="add-to-wishlist-btn">
+																		<a href="/pages/sk-wishlist" class="sk-btn sk-wishlist-btn">${skWishlistData['view_wishlist']}</a>
+																	</div>`;
+			}
+			
+      skWishlistBtnWrapper.insertAdjacentHTML("beforeEnd", wishlistBtnLayout);
+			document.querySelector('body').classList.remove('sk-popup-visible');
+			var catWrapData = document.querySelector('#sk-wishlist-popup');
+			if(catWrapData){ catWrapData.remove(); }
+			this.showWishlistAlert(body['p_handle'], 'add');
+		}
+	}
+
+	//cookie wishlist functions
+	addProductWishlistToCookie = (p_handle) => {
+		let cookieObj = new CookieJs;
+		var skWishlistCookieData = cookieObj.getCookie('skWishlist');
+		var pageURL = window.location.href;
+		var V = "?variant=";
+		if (pageURL.indexOf(V) >= 0){
+			var p_v_id = pageURL.slice(pageURL.indexOf(V) + V.length);
+		} else {
+			var p_v_id = "";
+		}
+		if(skWishlistCookieData) {
+			skWishlistCookieData = JSON.parse(skWishlistCookieData);
+			skWishlistCookieData.push(
+				{"p_id": __st.rid, "p_handle": p_handle, "p_v_id": p_v_id}
+			);
+		} else {
+			skWishlistCookieData = [
+				{"p_id": __st.rid, "p_handle": p_handle, "p_v_id": p_v_id}	
+			];
+		}
+		cookieObj.setCookie('skWishlist', JSON.stringify(skWishlistCookieData), 365);
+		skWishlistBtnWrapper.querySelector('.add-to-wishlist-btn.addToWishlistBtn').remove();
+		if(skWishlistData['wishlist_btn_style'] === "icon") {
+			var wishlistBtnLayout = `<div class="add-to-wishlist-btn">
+																<a href="/pages/sk-wishlist" class="sk-btn sk-wishlist-btn"><i class="fa fa-heart"></i></a>
+															</div>`;
+		} else {
+			var wishlistBtnLayout = `<div class="add-to-wishlist-btn">
+																	<a href="/pages/sk-wishlist" class="sk-btn sk-wishlist-btn">${skWishlistData['view_wishlist']}</a>
+																</div>`;
+		}
+    skWishlistBtnWrapper.insertAdjacentHTML("beforeEnd", wishlistBtnLayout);
+		this.showWishlistAlert(p_handle, 'add');
+	}
+
+	//check product is already in cookie or not
+	checkCookieWishlist = (p_handle) => {
+		let cookieObj = new CookieJs;
+		var skWishlistCookieData = cookieObj.getCookie('skWishlist');
+		if(skWishlistCookieData) {
+			skWishlistCookieData = JSON.parse(skWishlistCookieData);
+			var status = false;
+			for(var i = 0; i < skWishlistCookieData.length; i++) {
+				if(skWishlistCookieData[i]['p_handle'] === p_handle) {
+					status = true;
+					break;
+				}
+			}
+			let w_btn = skWishlistBtnWrapper.querySelector('.add-to-wishlist-btn.addToWishlistBtn');
+			if(w_btn) { w_btn.remove(); }
+			let view_bnt = skWishlistBtnWrapper.querySelector('.add-to-wishlist-btn.view-wishlist-btn');
+			if(view_bnt) { view_bnt.remove(); }
+			if(status) {
+				if(skWishlistData['wishlist_btn_style'] === "icon") {
+					var wishlistBtnLayout = `<div class="add-to-wishlist-btn view-wishlist-btn">
+                                      <a href="/pages/sk-wishlist" class="sk-btn sk-wishlist-btn"><i class='fa fa-heart'></i></a>
+                                    </div>`;
+				} else{
+					var wishlistBtnLayout = `<div class="add-to-wishlist-btn view-wishlist-btn">
+																			<a href="/pages/sk-wishlist" class="sk-btn sk-wishlist-btn">${skWishlistData['view_wishlist']}</a>
+																		</div>`;
+				}      
+			} else {
+				if(skWishlistData['wishlist_btn_style'] === "icon") {
+					var wishlistBtnLayout = `<div class="add-to-wishlist-btn addToWishlistBtn">
+																			<button type="button" id="addProductToWishlist" p_handle="${p_handle}" class="sk-btn sk-wishlist-btn heartragular"><i class="fal fa-heart"></i></button>
+																		</div>`;
+				} else if (skWishlistData['wishlist_btn_style'] === "text") {
+					var wishlistBtnLayout = `<div class="add-to-wishlist-btn addToWishlistBtn">
+																			<button type="button" id="addProductToWishlist" p_handle="${p_handle}" class="sk-btn sk-wishlist-btn textheart"><span>${skWishlistData['add_to_wishlist']}</span></button>
+																		</div>`;
+				} else {
+					var wishlistBtnLayout = `<div class="add-to-wishlist-btn addToWishlistBtn">
+																			<button type="button" id="addProductToWishlist" p_handle="${p_handle}" class="sk-btn sk-wishlist-btn textheart"><i class="fal fa-heart"></i> <span>${skWishlistData['add_to_wishlist']}</span></button>
+																		</div>`;
+				}
+			}
+      skWishlistBtnWrapper.insertAdjacentHTML("beforeEnd", wishlistBtnLayout);
+		} else {
+			let w_btn = skWishlistBtnWrapper.querySelector('.add-to-wishlist-btn.addToWishlistBtn');
+			if(w_btn) { w_btn.remove(); }
+			let view_bnt = skWishlistBtnWrapper.querySelector('.add-to-wishlist-btn.view-wishlist-btn');
+			if(view_bnt) { view_bnt.remove(); }
+			
+			if(skWishlistData['wishlist_btn_style'] === "icon") {
+				var wishlistBtnLayout = `<div class="add-to-wishlist-btn addToWishlistBtn">
+																		<button type="button" id="addProductToWishlist" p_handle="${p_handle}" class="sk-btn sk-wishlist-btn heartragular"><i class="fal fa-heart"></i></button>
+																	</div>`;
+			} else if (skWishlistData['wishlist_btn_style'] === "text") {
+				var wishlistBtnLayout = `<div class="add-to-wishlist-btn addToWishlistBtn">
+																		<button type="button" id="addProductToWishlist" p_handle="${p_handle}" class="sk-btn sk-wishlist-btn textheart"><span>${skWishlistData['add_to_wishlist']}</span></button>
+																	</div>`;
+			} else {
+				var wishlistBtnLayout = `<div class="add-to-wishlist-btn addToWishlistBtn">
+																		<button type="button" id="addProductToWishlist" p_handle="${p_handle}" class="sk-btn sk-wishlist-btn textheart"><i class="fal fa-heart"></i> <span>${skWishlistData['add_to_wishlist']}</span></button>
+																	</div>`;
+			}
+      skWishlistBtnWrapper.insertAdjacentHTML("beforeEnd", wishlistBtnLayout);
+		}
+    this.addToWishlistToFunction();
+	}
+
+	//Send Ajax and get Response
+	sendAjaxAndGetResponse = (url, method, body, callbackFunction) => {
+		fetch(url, {
+			method: method,
+			body: JSON.stringify(body),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		}).then((response) => response.json())
+		.then((data) => {
+			if (typeof(callbackFunction) === "function"){
+				callbackFunction(body, data);
+			}
+		})
+	}
+
+	//Send Fetch and get Response With GET
+	sendAjaxAndGetResponseWithGET = (url, method, callbackFunction) => {
+		fetch(url, {
+			method: method,
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		}).then((response) => response.json())
+		.then((data) => {
+			if (typeof(callbackFunction) === "function"){
+				callbackFunction(data);
+			}
+		})
+	}
+
+	// show alert for add or remove product
+	showWishlistAlert = (p_handle, type) => {
+		const that = this;
+		if(skWishlistData['wishlist_alert'] === "1") {
+			fetch(`/products/${p_handle}.js`)
+			.then(response => response.json())
+			.then(product => { 
+				this.removeWishlsitAlertPopup();
+				document.querySelector('.sk-popup-main-wrapper').style.display = "block";
+				if(type === "add") {
+					var content = `${skWishlistData['wishlist_alert_add'].replace('[[product_name]]', product.title)}`;
+				} else {
+					var content = `${skWishlistData['wishlist_alert_remove'].replace('[[product_name]]', product.title)}`;
+				}
+				var popupHtml = `<div class="sk-popup-wrap">
+														<div class="sk-popup-wrapper">
+															<span id="removeWishlistPopup">&times;</span>
+															<span class="alert-content">${content}</span>
+														</div>
+												 </div>`;
+				document.querySelector('.sk-popup-main-wrapper').insertAdjacentHTML('beforeend', popupHtml);
+				var removePopupId = document.querySelector('#removeWishlistPopup');
+				if(removePopupId) {
+					removePopupId.addEventListener('click', () => {
+						that.removeWishlsitAlertPopup();
+					})
+				}
+				setTimeout(() => { this.removeWishlsitAlertPopup(); }, 4000);
+			});
+		}
+	}
+
+	//remove wihslist alert popup
+	removeWishlsitAlertPopup = () => {
+		document.querySelector('.sk-popup-main-wrapper').style.display = "none";	
+		var popupContent = document.querySelector('.sk-popup-main-wrapper .sk-popup-wrap');
+		if(popupContent) { popupContent.remove(); }
+	}
+	
+	// set collection page layout
+	setCollectionPageButtonLayout = () => {
+		// check if customer or not
+		if(__st.cid !== undefined){
+			var url = DomainWishlist + "getAllHandleOfWishlsitProduct/"+shopId+'/'+__st.cid;
+			this.sendAjaxAndGetResponseWithGET(url, "GET", this.setCollectionWishlsitProduct);
+		} else {
+			this.showWishlistProductCollectionPageWithCookie();
+		}
+	}
+
+	//show wishlist icon for product on collection page for guest customer
+	showWishlistProductCollectionPageWithCookie = () => {
+		var cookieObj = new CookieJs;
+		var wishlsitCookie = JSON.parse(cookieObj.getCookie('skWishlist'));
+		var wishlistProdArray = [];
+		if(wishlsitCookie) {
+			for(var i = 0; i < wishlsitCookie.length; i++) {
+				wishlistProdArray.push(wishlsitCookie[i]['p_handle']);
+			}
+		}
+
+		//show wishlist icon
+		const that = this;
+		var wishlistSelector = document.querySelectorAll('.sk-wishlist-data');
+		Array.from(wishlistSelector).map((pr, i) => {
+			if(pr) {
+				pr.classList.add('sk-col-wish-wrap');
+				var p_handle = pr.getAttribute('data-product-handle');
+				var p_id = pr.getAttribute('data-product-id');
+				if(wishlistProdArray.includes(p_handle) && skWishlistData['guest_enable'] === "1") {
+					var classData =  'filled';
+				} else {
+					var classData =  '';
+				}
+				pr.innerHTML = `<div class="sk-wish-icon">
+																		<button type="button" class="sk-wishlist-icon" title="Add To WishList">
+																			<span class="sk-heart sk-heart-icon ${classData}" data-product-handle="${p_handle}">
+																				<i class="fa fa-heart  ${classData}" id="addOrRemoveWishlistCookie" data-product="${p_id}" data-product-handle="${p_handle}">
+																				</i>
+																			</span>
+																		</button>
+																	</div>`;
+			}
+		})
+
+		//process for add wishlist to cookie
+		document.addEventListener('click', function(e){
+			e.stopImmediatePropagation();
+			var El = e.target;
+			if(El && El.id === "addOrRemoveWishlistCookie") {
+				if(skWishlistData['guest_enable'] === "1") {
+					var p_id = El.getAttribute('data-product');
+					var p_handle = El.getAttribute('data-product-handle');
+					var wishlsitCookie = JSON.parse(cookieObj.getCookie('skWishlist'));
+					if(El.classList.contains('filled')) {
+						for(var i = 0; i < wishlsitCookie.length; i++){
+							if (wishlsitCookie[i]['p_id'] === p_id) {
+								wishlsitCookie.splice(i, 1);
+								cookieObj.setCookie('skWishlist', JSON.stringify(wishlsitCookie), 365);
+							}
+						}
+						document.querySelectorAll('.sk-heart[data-product-handle="'+p_handle+'"]').forEach(item => item.classList.remove('filled'));
+						document.querySelectorAll('#addOrRemoveWishlistCookie[data-product-handle="'+p_handle+'"]').forEach(item => item.classList.remove('filled'));
+						that.showWishlistAlert(p_handle, 'remove');
+					} else {
+						if(wishlsitCookie) {
+							wishlsitCookie.push(
+								{"p_id": p_id, "p_handle": p_handle, "p_v_id": ""}
+							);
+						} else {
+							wishlsitCookie = [
+								{"p_id": p_id, "p_handle": p_handle, "p_v_id": ""}	
+							];
+						}
+						cookieObj.setCookie('skWishlist', JSON.stringify(wishlsitCookie), 365);
+						document.querySelectorAll('.sk-heart[data-product-handle="'+p_handle+'"]').forEach(item => item.classList.add('filled'));
+						document.querySelectorAll('#addOrRemoveWishlistCookie[data-product-handle="'+p_handle+'"]').forEach(item => item.classList.add('filled'));
+						that.showWishlistAlert(p_handle, 'add');
+					}
+				} else {
+					window.location.href = "/account/login";
+				}
+			}
+		});
+	}
+
+	// show wishlist icon on product of colleciton page for logged in customer
+	setCollectionWishlsitProduct = (response) => {
+		const that = this;
+		var wishlistSelector = document.querySelectorAll('.sk-wishlist-data');
+		Array.from(wishlistSelector).map((pr, i) => {
+			if(pr) {
+				pr.classList.add('sk-col-wish-wrap');
+				var p_handle = pr.getAttribute('data-product-handle');
+				var p_id = pr.getAttribute('data-product-id');
+				if(response.includes(p_handle)) {
+					var classData =  'filled';
+				} else {
+					var classData =  '';
+				}
+				pr.innerHTML = `<div class="sk-wish-icon">
+																		<button type="button" class="sk-wishlist-icon" title="Add To WishList">
+																			<span class="sk-heart sk-heart-icon ${classData}" data-product-handle="${p_handle}">
+																				<i class="fa fa-heart ${classData}" id="addOrRemoveWishlist" data-product="${p_id}" data-product-handle="${p_handle}"></i>
+																			</span>
+																		</button>
+																	</div>`;
+			}
+		})
+
+		//remove from wishlist
+		document.addEventListener('click', function(e){
+			var El = e.target;
+			if(El && El.id === "addOrRemoveWishlist") {
+				var p_id = El.getAttribute('data-product');
+				var p_handle = El.getAttribute('data-product-handle');
+				if(El.classList.contains('filled')) {
+					var url = DomainWishlist + "removeFromWishlist";
+					var method = "POST";
+					var body = {
+						'store_id': shopId,
+						'p_id': p_id,
+						'p_handle': p_handle,
+						'cust_id': __st.cid
+					};
+					that.sendAjaxAndGetResponse(url, method, body, that.afterCollectionWishlistDelete);
+				} else {
+					e.preventDefault();
+					e.stopPropagation();
+					e.stopImmediatePropagation();
+					if(skWishlistData["allow_multi_category"] === "1") {
+						var bodyEl = document.querySelector('body');
+						bodyEl.classList.add('wishlist-collection-page');
+						bodyEl.setAttribute('data-product', p_id);
+						bodyEl.setAttribute('data-product-handle', p_handle);
+						that.showCategoryPopup();
+					} else {
+						var url = DomainWishlist + "addToWishlist";
+						var method = "POST";
+						var body = {
+							'store_id': shopId,
+							'p_id': p_id,
+							'p_handle': p_handle,
+							'p_v_id': "",
+							'cat_id': "",
+							'cust_id': __st.cid
+						};
+						that.sendAjaxAndGetResponse(url, method, body, that.afterCollectionWishlistAdded);
+					}
+				}
+			}
+		})
+	}
+
+	//after collection page wishlist delete
+	afterCollectionWishlistDelete = (data, response) => {
+		if(response == 1) {
+			document.querySelector('.sk-heart[data-product-handle="'+data['p_handle']+'"]').classList.remove('filled');
+			document.querySelector('#addOrRemoveWishlist[data-product-handle="'+data['p_handle']+'"]').classList.remove('filled');
+			this.showWishlistAlert(data['p_handle'], 'remove');
+		}
+	}
+
+	//after collection page wishlist added with normal
+	afterCollectionWishlistAdded = (data, response) => {
+		if(response == 1) {
+			document.querySelector('.sk-heart[data-product-handle="'+data['p_handle']+'"]').classList.add('filled');
+			document.querySelector('#addOrRemoveWishlist[data-product-handle="'+data['p_handle']+'"]').classList.add('filled');
+			document.querySelector('body').classList.remove('sk-popup-visible');
+			var catWrapData = document.querySelector('#sk-wishlist-popup');
+			if(catWrapData){
+				catWrapData.remove();
+			}
+			this.showWishlistAlert(data['p_handle'], 'add');
+		}
+	}
+
+	//check for wishlist page or not
+	checkIsWishlistPageOrNot = () => {
+		var pageURL = window.location.href;
+		var Y = "pages/";
+		var wishlistPageUrl = pageURL.slice(pageURL.indexOf(Y) + Y.length);
+		if (wishlistPageUrl == "sk-wishlist") {
+			if(__st.cid !== undefined){
+				if(skWishlistData['allow_multi_category'] === "1"){
+					this.showAllWishlistProductCategory();
+				} else {
+					this.showAllWishlistProductNormal();
+				}
+			} else {
+				if(skWishlistData['guest_enable'] === "1"){
+					this.showAllWishlistProdudtsCookie();
+				} else {
+					window.location.href = "/account/login";
+				}
+			}
+		} else if (pageURL.includes('sk-wishlist-share?user=')) {
+			document.querySelector('title').textContent = "Shared Wishlist";
+			var Y = "/pages/sk-wishlist-share?user=";
+			var wishlistCusId = pageURL.slice(pageURL.indexOf(Y) + Y.length);
+			let url = DomainWishlist + "fetchUserWishlistData/"+shopId+'/'+wishlistCusId
+			let method = "GET";
+			this.sendAjaxAndGetResponseWithGET(url, method, this.setUserFetchedWishlistData);
+		}
+
+		//grid view to list view
+		document.addEventListener('click', function(e){
+			if(e.target && e.target.parentNode.id === "sk-list--toggle") {
+				e.target.parentNode.parentNode.classList.add('active');
+				document.querySelector('.sk-wishlist-page').classList.add('list-view');
+				document.querySelector('#sk-grid--toggle').parentNode.classList.remove('active');
+				document.querySelector('.sk-wishlist-page').classList.remove('grid-view');
+			}
+		})
+
+		//list view to grid view
+		document.addEventListener('click', function(e){
+			if(e.target && e.target.parentNode.id === "sk-grid--toggle") {
+				e.target.parentNode.parentNode.classList.add('active');
+				document.querySelector('.sk-wishlist-page').classList.add('grid-view');
+				document.querySelector('#sk-list--toggle').parentNode.classList.remove('active');
+				document.querySelector('.sk-wishlist-page').classList.remove('list-view');
+			}
+		})
+	}
+
+	//show all listing product on page
+	showAllWishlistProductCategory = () => {
+		let url = DomainWishlist + "showAllWishlistProductCategory/"+shopId+'/'+__st.cid
+		let method = "GET";
+		this.sendAjaxAndGetResponseWithGET(url, method, this.responseShowAllWishlistProductCategory);
+	}
+	
+	//show all fetched data on page
+	responseShowAllWishlistProductCategory = (response) => {
+		var titleArray = response['title'];
+		var catIdArray = response['catIdArray'];
+		var valueArray = response['value'];
+		var defaultArray = response['default'];
+		var that = this;
+		
+		var titleData = "";
+		var trashIcon = `<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none"><path d="M1871 5109 c-128 -25 -257 -125 -311 -241 -37 -79 -50 -146 -50 -259 l0 -89 -389 0 c-222 0 -411 -4 -442 -10 -187 -36 -330 -184 -361 -376 -30 -181 66 -371 231 -458 l69 -36 6 -58 c4 -31 65 -763 136 -1627 72 -863 134 -1587 139 -1608 36 -155 177 -295 335 -332 91 -22 2561 -22 2652 0 158 37 299 177 335 332 5 21 67 745 139 1608 71 864 132 1596 136 1627 l6 58 69 36 c165 87 261 277 231 458 -31 192 -174 340 -361 376 -31 6 -220 10 -442 10 l-389 0 0 89 c0 48 -5 112 -10 142 -34 180 -179 325 -359 359 -66 12 -1306 12 -1370 -1z m1359 -309 c60 -31 80 -78 80 -190 l0 -90 -750 0 -750 0 0 90 c0 110 20 159 78 189 36 19 60 20 670 21 615 0 634 -1 672 -20z m1200 -600 c45 -23 80 -80 80 -130 0 -50 -35 -107 -80 -130 -39 -20 -55 -20 -1870 -20 -1815 0 -1831 0 -1870 20 -45 23 -80 80 -80 130 0 48 35 107 78 129 36 20 65 20 1870 21 1818 0 1833 0 1872 -20z m-236 -622 c-2 -24 -63 -747 -134 -1606 -140 -1694 -129 -1598 -193 -1646 l-28 -21 -1279 0 -1279 0 -28 21 c-64 48 -53 -48 -193 1646 -71 859 -132 1582 -134 1606 l-6 42 1640 0 1640 0 -6 -42z"/><path d="M1587 3299 c-25 -13 -45 -34 -58 -62 l-21 -43 76 -1234 c85 -1381 76 -1299 155 -1340 51 -25 91 -25 142 0 27 14 46 34 60 63 l21 43 -76 1234 c-85 1381 -76 1299 -155 1340 -50 25 -95 25 -144 -1z"/><path d="M2488 3299 c-23 -12 -46 -35 -58 -59 -20 -39 -20 -57 -20 -1280 0 -1224 0 -1241 20 -1280 23 -45 80 -80 130 -80 50 0 107 35 130 80 20 39 20 56 20 1280 0 1224 0 1241 -20 1280 -37 73 -127 99 -202 59z"/><path d="M3387 3299 c-77 -41 -68 37 -153 -1339 l-76 -1234 21 -43 c14 -29 33 -49 60 -63 51 -25 91 -25 142 0 79 41 70 -41 155 1340 l76 1234 -21 43 c-37 75 -127 103 -204 62z"/></g></svg>`;
+		if(titleArray.length > 0) {
+			for(var i = 0; i < titleArray.length; i++) {
+				if(i == 0) { var classData = "active";} else { var classData = "";}
+				titleData += `<li class="${classData}" data-tab="tab${i+1}">
+												<button id='catName' class="sk-tab" data-tab="tab${i+1}">${titleArray[i]}</button>
+												<button type="button" title="Share Wishlist" class="sk-share-wishlist"><i cat_id="${catIdArray[i]}" id="removeWishlistCategory">${trashIcon}</i></button>
+											</li>`;
+			}
+		}
+
+		//for default data - which are without category;
+		if(defaultArray.length > 0) {
+			if(titleArray.length > 0) { var classData = "";} else { var classData = "active"; var i = 0;}
+			titleData += `<li class="${classData}" data-tab="tab${i+1}">
+											<button id='catName' class="sk-tab" data-tab="tab${i+1}">Default Category</button>
+										</li>`;
+		}
+
+		var valueData = "";
+		if(valueArray.length > 0) {
+			for(var j = 0; j < valueArray.length; j++) {
+				if(j == 0) { var classData = "active";} else { var classData = "";}
+				valueData += `<div class="sk-tab-content ${classData}" id="tab${j+1}">
+												<div class="sk-product-item-list">`;
+					if(valueArray[j].length > 0) {
+						for(var k = 0; k < valueArray[j].length; k++){
+							valueData += `<div class="sk-product-item-wrapper" data-product="${valueArray[j][k]['p_id']}" data-prod-handle='${valueArray[j][k]['p_handle']}'></div>`;
+						}
+					} else {
+            var valueData = `<div class="no-data"><img src="${DomainWishlist}/public/images/Nothing_Found.svg" /></div>`;
+					}
+					valueData += `</div><div class="sk_search_not_found" style="display: none;">沒有相關商品</div></div>`;
+			}
+		}
+
+		//for default data - which are without category;
+		if(defaultArray.length > 0) {
+			if(valueArray.length > 0) { var classData = "";} else { var classData = "active"; var j = 0;}
+			valueData += `<div class="sk-tab-content ${classData}" id="tab${j+1}">
+												<div class="sk-product-item-list">`;	
+			for(var k = 0; k < defaultArray.length; k++){
+				valueData += `<div class="sk-product-item-wrapper" data-product="${defaultArray[k]['p_id']}" data-prod-handle='${defaultArray[k]['p_handle']}'></div>`;
+			}
+			valueData += `</div><div class="sk_search_not_found" style="display: none;">沒有相關商品</div></div>`;
+		} 
+		
+		if((defaultArray.length == 0) && (valueArray.length == 0)) {
+      var valueData = `<div class="no-data"><img src="${DomainWishlist}/public/images/Nothing_Found.svg" /></div>`;
+		}
+
+		var html = `<div class="sk-wishlist-page grid-view sk-container">
+									<header class="sk-header">
+										<div class="sk-title-wrapper">
+											<h2>${(skWishlistData.wishlist_page_title) ? skWishlistData.wishlist_page_title : "My Wishlist"}</h2>
+										</div>
+										<div class="sk-header-actions">
+											<ul class="sk-menu-wrapper">
+												<li class="sk-header-link sk-share-wishlist">
+													<button type="button" id="skShareOptions" title="grid view"><svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512"><path d="m391 332c-24.15 0-46.107 9.564-62.288 25.1l-96.254-59.633c5.492-12.728 8.542-26.747 8.542-41.467s-3.05-28.739-8.543-41.466l96.254-59.633c16.182 15.535 38.139 25.099 62.289 25.099 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 14.651 3.521 28.495 9.758 40.732l-94.001 58.238c-19.276-23.184-48.321-37.97-80.757-37.97-57.897 0-105 47.103-105 105s47.103 105 105 105c32.436 0 61.481-14.786 80.757-37.97l94.001 58.238c-6.237 12.237-9.758 26.081-9.758 40.732 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90z"/></svg><span>Share</span></button>
+												</li>
+												<li class="sk-header-link active">
+													<button type="button" id="sk-grid--toggle" title="grid view">
+														<img src="${DomainWishlist}/public/images/grid.svg" alt="wishlist app" class="sk-header-link-icon" />
+													</button>
+												</li>
+												<li class="sk-header-link">
+													<button type="button" id="sk-list--toggle" title="list view">
+														<img src="${DomainWishlist}/public/images/list.svg" alt="wishlist app" class="sk-header-link-icon" />
+													</button>
+												</li>
+											</ul>
+										</div>
+									</header>
+									<div class="sk-wishlist-tabination">
+										<div class="sk-wishlist-tab-heading">
+											<ul>
+												${titleData}
+											</ul>
+										</div>
+										<div class="sk-wishlist-content-wrapper">
+											${valueData}
+										</div>
+									</div>
+								</div>`;
+		
+		document.querySelector('main').innerHTML = html;
+		
+		// This function is for set share functionality for logged in users
+		if(__st.cid != undefined) {
+			this.setShareWishlistFunctionality();
+		}
+		
+		if(valueArray.length > 0 || (defaultArray.length > 0)) {
+			this.setWishlistProductData();
+		}
+
+		//tab switching
+		var allCatName = document.querySelectorAll('#catName');
+		if (allCatName.length > 0) {
+			allCatName.forEach(item => {
+				item.addEventListener('click', (e) => {
+					var tabId = item.getAttribute('data-tab');
+					var wishData = document.querySelectorAll('.sk-wishlist-content-wrapper .sk-tab-content');
+					Array.from(wishData).map((el, i) => { el.classList.remove('active'); })
+					var wishTitle = document.querySelectorAll('.sk-wishlist-tab-heading ul li');
+					Array.from(wishTitle).map((el, i) => { el.classList.remove('active'); })
+					document.querySelector('.sk-wishlist-tab-heading ul li[data-tab="'+tabId+'"]').classList.add('active');
+					document.querySelector('.sk-wishlist-content-wrapper .sk-tab-content#'+tabId).classList.add('active');
+				})
+			})
+		}
+
+		var allRemoveWishlistCategory = document.querySelectorAll('#removeWishlistCategory');
+		if (allRemoveWishlistCategory.length > 0) {
+			const that = this;
+			allRemoveWishlistCategory.forEach(item => {
+				item.addEventListener('click', (e) => {
+					var catId = item.getAttribute('cat_id');
+					var url = DomainWishlist+"deleteCategory";
+					var method = "POST";
+					var body = {"catId": catId};
+					that.sendAjaxAndGetResponse(url, method, body, that.afterCategoryDeleteReidrectPage);
+				})
+			})
+		}
+	}
+
+	//after category delete, redirect page
+	afterCategoryDeleteReidrectPage = (body, data) => {
+		if(data == 1) {
+			window.location.href = '/pages/sk-wishlist';
+		}
+	}
+
+	// add wishlist share functionality popup for users
+	setShareWishlistFunctionality = () => {
+		let htmlPopup = `<div class="sk-share-wishlist-popup text-center">
+		<div class="popup-body">
+			<div class="popup-header">
+				<h3 class="sk-share-title">Share Wishlist</h3>
+				<span id="closeSharePopup">&times;</span>
+			</div>
+	
+			<div class="popup-content">
+				<div class="sk-social-share">
+					<div class="sk-fb-share sk-share-icon">
+						<a target="_blank"
+							href="https://www.facebook.com/sharer/sharer.php?u=${window.location.origin}/pages/sk-wishlist-share?user=${__st.cid}&quote=See my wishlist products">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 167.657 167.657" xml:space="preserve"> <g> <path  d="M83.829,0.349C37.532,0.349,0,37.881,0,84.178c0,41.523,30.222,75.911,69.848,82.57v-65.081H49.626 v-23.42h20.222V60.978c0-20.037,12.238-30.956,30.115-30.956c8.562,0,15.92,0.638,18.056,0.919v20.944l-12.399,0.006 c-9.72,0-11.594,4.618-11.594,11.397v14.947h23.193l-3.025,23.42H94.026v65.653c41.476-5.048,73.631-40.312,73.631-83.154 C167.657,37.881,130.125,0.349,83.829,0.349z"/> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+							<span>facebook</span>
+						</a>
+					</div>
+					<div class="sk-twitter-share sk-share-icon">
+						<a target="_blank"
+							href="https://twitter.com/intent/tweet?url=${window.location.origin}/pages/sk-wishlist-share?user=${__st.cid}&text=See my wishlist products">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"> <g> <g> <path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016 c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992 c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056 c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152 c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792 c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44 C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568 C480.224,136.96,497.728,118.496,512,97.248z"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+							<span>Twitter</span>
+						</a>
+					</div>
+					<div class="sk-wp-share sk-share-icon">
+						<a target="_blank"
+							href="https://web.whatsapp.com/send?text=See my wishlist products \n ${window.location.origin}/pages/sk-wishlist-share?user=${__st.cid}">
+							<svg xmlns="http://www.w3.org/2000/svg" height="682pt" viewBox="-23 -21 682 682.66669" width="682pt"><path d="m544.386719 93.007812c-59.875-59.945312-139.503907-92.9726558-224.335938-93.007812-174.804687 0-317.070312 142.261719-317.140625 317.113281-.023437 55.894531 14.578125 110.457031 42.332032 158.550781l-44.992188 164.335938 168.121094-44.101562c46.324218 25.269531 98.476562 38.585937 151.550781 38.601562h.132813c174.785156 0 317.066406-142.273438 317.132812-317.132812.035156-84.742188-32.921875-164.417969-92.800781-224.359376zm-224.335938 487.933594h-.109375c-47.296875-.019531-93.683594-12.730468-134.160156-36.742187l-9.621094-5.714844-99.765625 26.171875 26.628907-97.269531-6.269532-9.972657c-26.386718-41.96875-40.320312-90.476562-40.296875-140.28125.054688-145.332031 118.304688-263.570312 263.699219-263.570312 70.40625.023438 136.589844 27.476562 186.355469 77.300781s77.15625 116.050781 77.132812 186.484375c-.0625 145.34375-118.304687 263.59375-263.59375 263.59375zm144.585938-197.417968c-7.921875-3.96875-46.882813-23.132813-54.148438-25.78125-7.257812-2.644532-12.546875-3.960938-17.824219 3.96875-5.285156 7.929687-20.46875 25.78125-25.09375 31.066406-4.625 5.289062-9.242187 5.953125-17.167968 1.984375-7.925782-3.964844-33.457032-12.335938-63.726563-39.332031-23.554687-21.011719-39.457031-46.960938-44.082031-54.890626-4.617188-7.9375-.039062-11.8125 3.476562-16.171874 8.578126-10.652344 17.167969-21.820313 19.808594-27.105469 2.644532-5.289063 1.320313-9.917969-.664062-13.882813-1.976563-3.964844-17.824219-42.96875-24.425782-58.839844-6.4375-15.445312-12.964843-13.359374-17.832031-13.601562-4.617187-.230469-9.902343-.277344-15.1875-.277344-5.28125 0-13.867187 1.980469-21.132812 9.917969-7.261719 7.933594-27.730469 27.101563-27.730469 66.105469s28.394531 76.683594 32.355469 81.972656c3.960937 5.289062 55.878906 85.328125 135.367187 119.648438 18.90625 8.171874 33.664063 13.042968 45.175782 16.695312 18.984374 6.03125 36.253906 5.179688 49.910156 3.140625 15.226562-2.277344 46.878906-19.171875 53.488281-37.679687 6.601563-18.511719 6.601563-34.375 4.617187-37.683594-1.976562-3.304688-7.261718-5.285156-15.183593-9.253906zm0 0" fill-rule="evenodd"/></svg>
+							<span>Whatsapp</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="popup-footer">
+				<div class="sk-share-input-url">
+					<label for="skCopyShareUrlText">Share With URL</label>
+					<input type="text" id="skCopyShareUrlText" disabled class="sk-share-input" value="${window.location.origin}/pages/sk-wishlist-share?user=${__st.cid}" />
+					<button title="copy" class="skcopybtn" id="skCopyShare">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.867 477.867" style="enable-background:new 0 0 477.867 477.867;" xml:space="preserve"> <g> <g> <path d="M341.333,85.333H51.2c-28.277,0-51.2,22.923-51.2,51.2v290.133c0,28.277,22.923,51.2,51.2,51.2h290.133 c28.277,0,51.2-22.923,51.2-51.2V136.533C392.533,108.256,369.61,85.333,341.333,85.333z M358.4,426.667 c0,9.426-7.641,17.067-17.067,17.067H51.2c-9.426,0-17.067-7.641-17.067-17.067V136.533c0-9.426,7.641-17.067,17.067-17.067 h290.133c9.426,0,17.067,7.641,17.067,17.067V426.667z"/> </g> </g> <g> <g> <path d="M426.667,0h-307.2c-28.277,0-51.2,22.923-51.2,51.2c0,9.426,7.641,17.067,17.067,17.067S102.4,60.626,102.4,51.2 s7.641-17.067,17.067-17.067h307.2c9.426,0,17.067,7.641,17.067,17.067v307.2c0,9.426-7.641,17.067-17.067,17.067 s-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067c28.277,0,51.2-22.923,51.2-51.2V51.2 C477.867,22.923,454.944,0,426.667,0z"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+					</button>
+					<div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>`;
+		document.querySelector('body').insertAdjacentHTML("beforeEnd", htmlPopup);
+
+		document.addEventListener('click', (e) => {
+			if(e.target && e.target.id === "skShareOptions") {
+				if(e.target.classList.contains('sk-wishlist-open')) {
+					document.querySelector('body').classList.remove('sk-share-wishlist-open');
+					e.target.classList.remove('sk-wishlist-open');
+				} else {
+					e.target.classList.add('sk-wishlist-open');
+					document.querySelector('body').classList.add('sk-share-wishlist-open');
+				}
+			} else if(e.target && e.target.id === "skCopyShare") {
+				const el = document.createElement('textarea');
+				let inputData = document.querySelector('#skCopyShareUrlText').value;
+				el.value = inputData;
+				document.body.appendChild(el);
+  			el.select();
+				document.execCommand("copy");
+				document.body.removeChild(el);
+			} else if(e.target && e.target.id === "closeSharePopup") {
+				document.querySelector('body').classList.remove('sk-share-wishlist-open');
+				e.target.classList.remove('sk-wishlist-open');
+			}
+		})
+	}
+
+	//to set wishlist product on wishlist page
+	setWishlistProductData = () => {
+		const that = this;
+		var tabSelector = document.querySelectorAll('.sk-wishlist-content-wrapper .sk-tab-content');
+		Array.from(tabSelector).map((el, indexMain) => {
+			var prdSelector = el.querySelectorAll('.sk-product-item-list .sk-product-item-wrapper');
+			Array.from(prdSelector).map((pr, indexSub) => {
+				var p_handle = pr.getAttribute('data-prod-handle');
+				fetch(`/products/${p_handle}.js`)
+				.then(response => response.json())
+				.then(product => {
+          var varData = "";
+          product.variants.map((variant, index) => {
+            varData += `<option ${(variant.available) ? '' : 'disabled'} data-handle="${product.handle}" value='${variant.id}' data-price="${this.formatMoney(Math.abs(variant.price), skWishlistData.money_format)}">${variant.title}</option>`;
+          })
+          if(!product.available) {
+            varData += `<option selected>No Variant Available</option>`;
+					}
+					pr.setAttribute('data-product-title', product.title);
+					pr.innerHTML = `<a href="/products/${product.handle}" class="sk-product-link-wrapper">
+														<div class="sk-product-item-img">
+															<img src="${product.featured_image}" alt="wishlist app" />
+														</div>
+													</a>
+													<div class="sk-product-item-content">
+														<small class="sk-product-card-vender">${product.vendor}</small>
+														<a href="/products/${product.handle}" class="sk-product-title">${product.title}</a>
+														<span class="sk-product-price">${this.formatMoney(Math.abs(product.price), skWishlistData.money_format)}</span>
+                            <span class="sk-product-desc">${product.description.replace(/<[^>]*>?/gm, '').slice(0,70)}...</span>
+                            <select class='sk-var-selector' ${product.variants.length === 1 && 'style="display:none;'} name='varint_id' id="variantOption">
+                              ${varData}
+                            </select>
+													</div>
+													<div class="sk-product-item-action">
+														<button class="sk-remove-product" data-pro-handle="${product.handle}" data-product="${product.id}">&times;</button>
+                            <button type="button" class="sk-btn sk-add-to-cart" ${(product.available) && ` id="skAddToCart"`}  data-product="${product.id}">
+                              ${(product.available) ? `<span class='add-to-cart'>${(skWishlistData.add_to_cart_text) ? skWishlistData.add_to_cart_text : "Add To Cart"}</span>` : `<span class='sold-out'>${skWishlistData['soldout_text']}</span>`}
+                            </button>
+                          </div>`;
+				})
+			});
+		});
+		this.addToCartFunction();
+		this.removeFunction();
+	}
+
+	//add to cart functionality
+	addToCartFunction = () => {
+		const that = this;
+		const addToCartWishlsit = document.querySelector('main');
+		const addToCartWishlsitObs = new MutationObserver((mutations) => {
+			const wishlistItems = document.querySelectorAll('.sk-product-item-wrapper');
+			if (wishlistItems) {
+				const wishListAtcBtns = document.querySelectorAll('#skAddToCart');
+				wishListAtcBtns.forEach(btn => {
+					btn.addEventListener('click', (e) => {
+						var p_id = e.target.getAttribute('data-product');
+						var var_id = document.querySelector('.sk-product-item-wrapper[data-product="'+p_id+'"] select').value;
+						var prod_title = document.querySelector('.sk-product-item-wrapper[data-product="'+p_id+'"]').getAttribute('data-product-title');
+						fetch('/cart/add.js', {
+							method: "POST",
+							body: JSON.stringify({'id': var_id, "quantity": 1}),
+							headers: {
+									"Content-Type": "application/json",
+									"Accept": "application/json"
+							}
+						}).then(response => response.json())
+						.then(data => {
+							var pageURL = window.location.href;
+							if(!pageURL.includes('/pages/sk-wishlist-share?user=')) {
+								if(__st.cid !== undefined){
+									var url = DomainWishlist + "deleteProduct";
+									var method = "POST";
+									var body = {
+										"p_id": p_id,
+										"cust_id": __st.cid,
+										"store_id": shopId
+									};
+									that.sendAjaxAndGetResponse(url, method, body, that.afterDeleteProductRedirectToCartPage);
+								} else {
+									if(skWishlistData['guest_enable'] === "1"){
+										that.removeWishlistProductCookie(p_id, prod_title);
+									} else {
+										window.location.href = "/account/login";
+									}
+								}
+							} else {
+								window.location.href = "/cart";
+							}
+						})
+					})
+				})				
+			}
+		});
+		addToCartWishlsitObs.observe(addToCartWishlsit, {childList:true,subtree:true});
+
+
+    // document.addEventListener('click', function(e){
+    //   if(e.target && e.target.id === "skAddToCart") {
+    //     var p_id = e.target.getAttribute('data-product');
+    //     var var_id = document.querySelector('.sk-product-item-wrapper[data-product="'+p_id+'"] select').value;
+    //     var prod_title = document.querySelector('.sk-product-item-wrapper[data-product="'+p_id+'"]').getAttribute('data-product-title');
+    //     fetch('/cart/add.js', {
+    //       method: "POST",
+    //       body: JSON.stringify({'id': var_id, "quantity": 1}),
+    //       headers: {
+    //           "Content-Type": "application/json",
+    //           "Accept": "application/json"
+    //       }
+		// 		}).then(response => response.json())
+		// 		.then(data => {
+		// 			var pageURL = window.location.href;
+		// 			if(!pageURL.includes('/pages/sk-wishlist-share?user=')) {
+		// 				if(__st.cid !== undefined){
+		// 					var url = DomainWishlist + "deleteProduct";
+		// 					var method = "POST";
+		// 					var body = {
+		// 						"p_id": p_id,
+		// 						"cust_id": __st.cid,
+		// 						"store_id": shopId
+		// 					};
+    //           that.sendAjaxAndGetResponse(url, method, body, that.afterDeleteProductRedirectToCartPage);
+		// 				} else {
+		// 					if(skWishlistData['guest_enable'] === "1"){
+		// 						that.removeWishlistProductCookie(p_id, prod_title);
+		// 					} else {
+		// 						window.location.href = "/account/login";
+		// 					}
+		// 				}
+		// 			} else {
+		// 				window.location.href = "/cart";
+		// 			}
+		// 		})
+    //   }
+    // })
+	}
+
+	//remove product from wishlist
+	removeFunction = () => {
+		const that = this;
+		const removeWishlistBtns = document.querySelector('main');
+		const removeWishlistObs = new MutationObserver((mutations) => {
+			const wishlistItems = document.querySelectorAll('.sk-product-item-wrapper');
+			if (wishlistItems) {
+				const wishListRemoveBtns = document.querySelectorAll('.sk-product-item-wrapper .sk-remove-product');
+				wishListRemoveBtns.forEach(btn => {
+					btn.addEventListener('click', (e) => {
+						var p_id = e.currentTarget.getAttribute('data-product');
+						var p_handle = e.currentTarget.getAttribute('data-pro-handle');
+						if(__st.cid !== undefined) {
+							var url = DomainWishlist + "deleteProduct";
+							var method = "POST";
+							var body = {
+								"p_id": p_id,
+								"p_handle": p_handle,
+								"cust_id": __st.cid,
+								"store_id": shopId
+							};
+							that.sendAjaxAndGetResponse(url, method, body, that.removeProductFromWishlistDb);
+						} else {
+							var cookieObj = new CookieJs;
+							var wishlistCookieData = JSON.parse(cookieObj.getCookie('skWishlist'));
+							for(var i = 0; i < wishlistCookieData.length; i++){
+								if (parseInt(wishlistCookieData[i]['p_id']) == parseInt(p_id)) {
+									wishlistCookieData.splice(i, 1);
+									cookieObj.setCookie('skWishlist', JSON.stringify(wishlistCookieData), 365);
+									var elToRemove = document.querySelector('.sk-product-item-wrapper[data-product="'+p_id+'"]');
+									var elToAppendNullHTML = elToRemove.closest('.sk-product-item-list');
+									elToRemove.remove();
+									wishlistCookieData = JSON.parse(cookieObj.getCookie('skWishlist'));
+									if (wishlistCookieData.length == 0) {
+										var html = `<div class="no-data"><img src="${DomainWishlist}/public/images/Nothing_Found.svg" /></div>`;
+										if (document.querySelector('.sk-product-item-list') != null) {
+											elToAppendNullHTML.innerHTML = html;
+										} else {
+											elToAppendNullHTML.innerHTML = html;
+										}
+									} else {
+										that.showWishlistAlert(wishlistCookieData[i]['p_handle'], 'remove');
+									}
+								}
+							}
+						}
+					})
+				})						
+			}
+		});
+		removeWishlistObs.observe(removeWishlistBtns, {childList:true,subtree:true});
+	}
+
+	//remove product from page after deleting from db
+	removeProductFromWishlistDb = (body, response) => {
+		if(response == 1) {
+			document.querySelector('.sk-product-item-wrapper[data-product="'+body['p_id']+'"]').remove();
+			this.showWishlistAlert(body['p_handle'], 'remove');
+		}
+	}
+
+	//show all listing of prouduct for normal wishlist 
+	showAllWishlistProductNormal = () => {
+		let url = DomainWishlist + "showAllWishlistProductNormal/"+shopId+'/'+__st.cid
+		let method = "GET";
+		this.sendAjaxAndGetResponseWithGET(url, method, this.responseShowAllWishlistProductNormal);
+	}
+
+	//show all product with normal layout
+	responseShowAllWishlistProductNormal = (response) => {
+		var valueArray = response['default'];		
+		if(valueArray.length > 0) {
+			var valueData = "";
+			valueData += `<div class="sk-tab-content active" id="tab1">
+											<div class="sk-product-item-list">`;
+			for(var j = 0; j < valueArray.length; j++) {
+					valueData += `<div class="sk-product-item-wrapper" data-product="${valueArray[j]['p_id']}" data-prod-handle='${valueArray[j]['p_handle']}'></div>`;
+			}
+			valueData += `</div><div class="sk_search_not_found" style="display: none;">沒有相關商品</div></div>`;
+		} else {
+			var valueData = `<div class="no-data"><img src="${DomainWishlist}/public/images/Nothing_Found.svg" /></div>`;
+		}
+
+		var html = `<div class="sk-wishlist-page grid-view sk-container">
+									<header class="sk-header">
+										<div class="sk-title-wrapper">
+											<h2>${(skWishlistData.wishlist_page_title) ? skWishlistData.wishlist_page_title : "My Wishlist"}</h2>
+										</div>
+										<div class="sk-header-actions">
+											<ul class="sk-menu-wrapper">
+												<li class="sk-header-link sk-share-wishlist">
+													<button type="button" id="skShareOptions" title="Share Wishlist"><svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512"><path d="m391 332c-24.15 0-46.107 9.564-62.288 25.1l-96.254-59.633c5.492-12.728 8.542-26.747 8.542-41.467s-3.05-28.739-8.543-41.466l96.254-59.633c16.182 15.535 38.139 25.099 62.289 25.099 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 14.651 3.521 28.495 9.758 40.732l-94.001 58.238c-19.276-23.184-48.321-37.97-80.757-37.97-57.897 0-105 47.103-105 105s47.103 105 105 105c32.436 0 61.481-14.786 80.757-37.97l94.001 58.238c-6.237 12.237-9.758 26.081-9.758 40.732 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90z"/></svg><span>Share</span></button>
+												</li>
+												<li class="sk-header-link active">
+													<button type="button" id="sk-grid--toggle" title="grid view">
+														<img src="${DomainWishlist}/public/images/grid.svg" alt="wishlist app" class="sk-header-link-icon" />
+													</button>
+												</li>
+												<li class="sk-header-link">
+													<button type="button" id="sk-list--toggle" title="list view">
+														<img src="${DomainWishlist}/public/images/list.svg" alt="wishlist app" class="sk-header-link-icon" />
+													</button>
+												</li>
+											</ul>
+										</div>
+									</header>
+									<div class="sk-wishlist-tabination">
+										<div class="sk-wishlist-content-wrapper">
+											${valueData}
+										</div>
+									</div>
+								</div>`;
+		document.querySelector('main').innerHTML = html;
+		if(valueArray.length > 0) {
+			this.setWishlistProductNormalData();
+		}
+
+		// This function is for set share functionality for logged in users
+		if(__st.cid != undefined) {
+			this.setShareWishlistFunctionality();
+		}
+	}
+
+	setWishlistProductNormalData = () => {
+		const that = this;
+		var prdSelector = document.querySelectorAll('.sk-product-item-list .sk-product-item-wrapper');
+		Array.from(prdSelector).map((pr, indexSub) => {
+			var p_handle = pr.getAttribute('data-prod-handle');
+			fetch(`/products/${p_handle}.js`)
+			.then(response => response.json())
+			.then(product => {
+				var varData = "";
+				product.variants.map((variant, index) => {
+					varData += `<option ${(variant.available) ? '' : 'disabled'} data-handle="${product.handle}" value='${variant.id}' data-price="${this.formatMoney(Math.abs(variant.price), skWishlistData.money_format)}">${variant.title}</option>`;
+				})
+				if(!product.available) {
+					varData += `<option selected>No Variant Available</option>`;
+				}
+				pr.setAttribute('data-product-title', product.title);
+				pr.innerHTML = `<a href="/products/${product.handle}" class="sk-product-link-wrapper">
+													<div class="sk-product-item-img">
+														<img src="${product.featured_image}" alt="wishlist app" />
+													</div>
+												</a>
+												<div class="sk-product-item-content">
+													<small class="sk-product-card-vender">${product.vendor}</small>
+													<a href="/products/${product.handle}" class="sk-product-title">${product.title}</a>
+													<span class="sk-product-price">${this.formatMoney(Math.abs(product.price), skWishlistData.money_format)}</span>
+													<span class="sk-product-desc">${product.description.replace(/<[^>]*>?/gm, '').slice(0,70)}...</span>
+													<select class='sk-var-selector' ${product.variants.length === 1 && 'style="display:none;'} name='varint_id' id="variantOption">
+														${varData}
+													</select>
+												</div>
+												<div class="sk-product-item-action">
+													<button class="sk-remove-product" data-pro-handle="${product.handle}" data-product="${product.id}">&times;</button>
+													<button type="button" class="sk-btn sk-add-to-cart" ${(product.available) && ` id="skAddToCart"`}  data-product="${product.id}">
+														${(product.available) ? `<span class='add-to-cart'>${(skWishlistData.add_to_cart_text) ? skWishlistData.add_to_cart_text : "Add To Cart"}</span>` : `<span class='sold-out'>${skWishlistData['soldout_text']}</span>`}
+													</button>
+												</div>`;
+			})
+		});
+		this.addToCartFunction();
+		this.removeFunction();
+	}
+
+	//remove wishlist product from cookie
+	removeWishlistProductCookie = (p_id, prod_title) => {
+		var cookieObj = new CookieJs;
+		var wishlistData = JSON.parse(cookieObj.getCookie('skWishlist'));
+		for(var i = 0; i < wishlistData.length; i++){
+			if (wishlistData[i]['p_id'] == parseInt(p_id)) {
+					wishlistData.splice(i, 1);
+					cookieObj.setCookie('skWishlist', JSON.stringify(wishlistData), 365);
+					window.location.href = "/cart";
+			}
+		}
+	}
+	
+	afterDeleteProductRedirectToCartPage = (body, data) => {
+		if(data === 1) {
+			window.location.href = "/cart";
+		}
+	}
+	
+	//fetch all wishlist products and data
+	showAllWishlistProdudtsCookie = () => {
+		var cookieObj = new CookieJs;
+		var allWishlistProducts = cookieObj.getCookie('skWishlist');
+		allWishlistProducts = JSON.parse(allWishlistProducts);
+		if(allWishlistProducts && allWishlistProducts.length > 0) {
+			var valueData = "";
+			valueData += `<div class="sk-tab-content active" id="tab1">
+											<div class="sk-product-item-list">`;
+			for(var j = 0; j < allWishlistProducts.length; j++) {
+				valueData += `<div class="sk-product-item-wrapper" data-product="${allWishlistProducts[j]['p_id']}" data-prod-handle='${allWishlistProducts[j]['p_handle']}'></div>`;
+			}
+			valueData += `</div><div class="sk_search_not_found" style="display: none;">沒有相關商品</div></div>`;
+		} else {
+			var valueData = `<div class="no-data"><img src="${DomainWishlist}/public/images/Nothing_Found.svg" /></div>`;
+		}
+		var html = `<div class="sk-wishlist-page grid-view sk-container">
+									<header class="sk-header">
+										<div class="sk-title-wrapper">
+											<h2>${(skWishlistData.wishlist_page_title) ? skWishlistData.wishlist_page_title : "My Wishlist"}</h2>
+										</div>
+										<div class="sk-header-actions">
+											<ul class="sk-menu-wrapper">
+												<li class="sk-header-link active">
+													<button type="button" id="sk-grid--toggle" title="grid view">
+														<img src="${DomainWishlist}/public/images/grid.svg" alt="wishlist app" class="sk-header-link-icon" />
+													</button>
+												</li>
+												<li class="sk-header-link">
+													<button type="button" id="sk-list--toggle" title="list view">
+														<img src="${DomainWishlist}/public/images/list.svg" alt="wishlist app" class="sk-header-link-icon" />
+													</button>
+												</li>
+											</ul>
+										</div>
+									</header>
+									<div class="sk-wishlist-tabination">
+										<div class="sk-wishlist-content-wrapper">
+											${valueData}
+										</div>
+									</div>
+								</div>`;
+        
+    document.querySelector('main').innerHTML = html;
+			
+		if(allWishlistProducts) {
+			this.setWishlistCookieProductData();
+		}
+	}
+
+	//set product for wishlist product data
+	setWishlistCookieProductData = () => {
+		const that = this;
+		var prdSelector = document.querySelectorAll('.sk-product-item-list .sk-product-item-wrapper');
+		Array.from(prdSelector).map((pr, indexSub) => {
+			var p_handle = pr.getAttribute('data-prod-handle');
+			fetch(`/products/${p_handle}.js`)
+			.then(response => response.json())
+			.then(product => {
+				var varData = "";
+				product.variants.map((variant, index) => {
+					varData += `<option ${(variant.available) ? '' : 'disabled'} data-handle="${product.handle}" value='${variant.id}' data-price="${this.formatMoney(Math.abs(variant.price), skWishlistData.money_format)}">${variant.title}</option>`;
+				})
+				if(!product.available) {
+					varData += `<option selected>No Variant Available</option>`;
+				}
+				pr.setAttribute('data-product-title', product.title);
+				pr.innerHTML = `<a href="/products/${product.handle}" class="sk-product-link-wrapper">
+													<div class="sk-product-item-img">
+														<img src="${product.featured_image}" alt="wishlist app" />
+													</div>
+												</a>
+												<div class="sk-product-item-content">
+													<small class="sk-product-card-vender">${product.vendor}</small>
+													<a href="/products/${product.handle}" class="sk-product-title">${product.title}</a>
+													<span class="sk-product-price">${this.formatMoney(Math.abs(product.price), skWishlistData.money_format)}</span>
+													<span class="sk-product-desc">${product.description.replace(/<[^>]*>?/gm, '').slice(0,70)}...</span>
+													<select class='sk-var-selector' ${product.variants.length === 1 && 'style="display:none;'} name='varint_id' id="variantOption">
+														${varData}
+													</select>
+												</div>
+												<div class="sk-product-item-action">
+													<button class="sk-remove-product" data-pro-handle="${product.handle}" data-product="${product.id}">&times;</button>
+													<button type="button" class="sk-btn sk-add-to-cart" ${(product.available) && ` id="skAddToCart"`} data-product="${product.id}">
+														${(product.available) ? `<span class='add-to-cart'>${(skWishlistData.add_to_cart_text) ? skWishlistData.add_to_cart_text : "Add To Cart"}</span>` : `<span class='sold-out'>${skWishlistData['soldout_text']}</span>`}
+													</button>
+												</div>`;
+			})
+			.catch((error) => {
+				pr.style.display = "none";
+				var p_id = pr.getAttribute('data-product');
+
+				var cookieObj = new CookieJs;
+				var wishlistData = JSON.parse(cookieObj.getCookie('skWishlist'));
+				for(var i = 0; i < wishlistData.length; i++){
+					if (wishlistData[i]['p_id'] == p_id) {
+						wishlistData.splice(i, 1);
+						cookieObj.setCookie('skWishlist', JSON.stringify(wishlistData), 365);
+					}
+				}
+			});
+		});
+		this.addToCartFunction();
+		this.removeFunction();
+	}
+
+	// set user Fetched Wishlist Data for share functionality
+	setUserFetchedWishlistData = (data) => {
+		var valueArray = data;
+		if(valueArray.length > 0) {
+			var valueData = "";
+			valueData += `<div class="sk-tab-content active" id="tab1">
+											<div class="sk-product-item-list">`;
+			for(var j = 0; j < valueArray.length; j++) {
+					valueData += `<div class="sk-product-item-wrapper grid__item" data-product="${valueArray[j]['p_id']}" data-prod-handle='${valueArray[j]['p_handle']}'></div>`;
+			}
+			valueData += `</div><div class="sk_search_not_found" style="display: none;">沒有相關商品</div></div>`;
+		} else {
+			var valueData = `<div class="no-data"><img src="${DomainWishlist}/public/images/Nothing_Found.svg" /></div>`;
+		}
+
+		var html = `<div class="sk-wishlist-page grid-view sk-container">
+									<header class="sk-header">
+										<div class="sk-title-wrapper">
+											<h2>${(skWishlistData.wishlist_page_title) ? skWishlistData.wishlist_page_title : "Shared Wishlist"}</h2>
+										</div>
+										<div class="sk-header-actions">
+											<ul class="sk-menu-wrapper">
+												<li class="sk-header-link active">
+													<button type="button" id="sk-grid--toggle" title="grid view">
+														<img src="${DomainWishlist}/public/images/grid.svg" alt="wishlist app" class="sk-header-link-icon" />
+													</button>
+												</li>
+												<li class="sk-header-link">
+													<button type="button" id="sk-list--toggle" title="list view">
+														<img src="${DomainWishlist}/public/images/list.svg" alt="wishlist app" class="sk-header-link-icon" />
+													</button>
+												</li>
+											</ul>
+										</div>
+									</header>
+									<div class="sk-wishlist-tabination">
+										<div class="sk-wishlist-content-wrapper">
+											${valueData}
+										</div>
+									</div>
+								</div>`;
+		document.querySelector('main').innerHTML = html;
+		if(valueArray.length > 0) {
+			this.setWishlistProductSharedWishlistData();
+		}
+	}
+
+	setWishlistProductSharedWishlistData = () => {
+		const that = this;
+		var prdSelector = document.querySelectorAll('.sk-product-item-list .sk-product-item-wrapper');
+		const rowLen = prdSelector.length;
+		let fetchCount = 1;
+		Array.from(prdSelector).map((pr, indexSub) => {
+			var p_handle = pr.getAttribute('data-prod-handle');
+			fetch(`/products/${p_handle}.js`)
+			.then(response => response.json())
+			.then(product => {
+				var varData = "";
+				product.variants.map((variant, index) => {
+					varData += `<option ${(variant.available) ? '' : 'disabled'} data-handle="${product.handle}" value='${variant.id}' data-price="${this.formatMoney(Math.abs(variant.price), skWishlistData.money_format)}">${variant.title}</option>`;
+				})
+				if(!product.available) {
+					varData += `<option selected>No Variant Available</option>`;
+				}
+				pr.setAttribute('data-product-title', product.title);
+				pr.innerHTML = `<a href="/products/${product.handle}" class="sk-product-link-wrapper">
+													<div class="sk-product-item-img">
+														<img src="${product.featured_image}" alt="wishlist app" />
+													</div>
+												</a>
+												<div class="sk-product-item-content">
+													<small class="sk-product-card-vender">${product.vendor}</small>
+													<a href="/products/${product.handle}" class="sk-product-title">${product.title}</a>
+													<span class="sk-product-price">${this.formatMoney(Math.abs(product.price), skWishlistData.money_format)}</span>
+													<span class="sk-product-desc">${product.description.replace(/<[^>]*>?/gm, '').slice(0,70)}...</span>
+													<select class='sk-var-selector' ${product.variants.length === 1 && 'style="display:none;'} name='varint_id' id="variantOption">
+														${varData}
+													</select>
+												</div>
+												<div class="sk-product-item-action">
+													<div class="sk-wishlist-data" data-product-id="${product.id}" data-product-handle="${product.handle}" ></div>
+													<button type="button" class="sk-btn sk-add-to-cart" ${(product.available) && ` id="skAddToCart"`}  data-product="${product.id}">
+														${(product.available) ? `<span class='add-to-cart'>${(skWishlistData.add_to_cart_text) ? skWishlistData.add_to_cart_text : "Add To Cart"}</span>` : `<span class='sold-out'>${skWishlistData['soldout_text']}</span>`}
+													</button>
+												</div>`;
+				fetchCount += 1;
+				if (rowLen === fetchCount) {
+					that.setCollectionPageButtonLayout();
+				} 
+			})
+		});
+		this.addToCartFunction();
+	}
+  
+	//format money function
+  formatMoney = (cents, format) => {
+    if (typeof cents == 'string') {
+      cents = cents.replace('.', '');
+    }
+    var value = '';
+    var placeholderRegex = /\{\{\s*(\w+)\s*\}\}/;
+    var formatString = format || '${{amount}}';
+    function defaultOption(opt, def) {
+      return (typeof opt == 'undefined' ? def : opt);
+    }
+    function formatWithDelimiters(number, precision, thousands, decimal) {
+      precision = defaultOption(precision, 2);
+      thousands = defaultOption(thousands, ',');
+      decimal = defaultOption(decimal, '.');
+      if (isNaN(number) || number == null) {
+        return 0;
+      }
+      number = (number / 100.0).toFixed(precision);
+      var parts = number.split('.'),
+            dollars = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + thousands),
+            cents = parts[1] ? (decimal + parts[1]) : '';
+      return dollars + cents;
+    }
+    switch (formatString.match(placeholderRegex)[1]) {
+      case 'amount':
+        value = formatWithDelimiters(cents, 2);
+        break;
+      case 'amount_no_decimals':
+        value = formatWithDelimiters(cents, 0);
+        break;
+      case 'amount_with_comma_separator':
+        value = formatWithDelimiters(cents, 2, '.', ',');
+        break;
+      case 'amount_no_decimals_with_comma_separator':
+        value = formatWithDelimiters(cents, 0, '.', ',');
+        break;
+			case 'amount_no_decimals_with_space_separator':
+				value = formatWithDelimiters(cents, 0, ' ');
+				break;
+    }
+    return formatString.replace(placeholderRegex, value);
+	};
+
+	init = () => {
+		this.checkAvailability();
+	}
+}
+
+class CookieJs {
+  getCookie = (name) => {
+    var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return v ? v[2] : null;
+  }
+  setCookie = (name, value, days) => {
+    var d = new Date;
+    d.setTime(d.getTime() + 24*60*60*1000*days);
+    document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+  }
+  deleteCookie = (name) => { this.setCookie(name, '', -1); }
+}
+new CookieJs;
+new WishlistJs;

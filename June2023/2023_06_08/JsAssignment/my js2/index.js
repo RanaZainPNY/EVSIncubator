@@ -43,7 +43,7 @@ class Datahandler {
         let counter = 0
         this._Record = [
             new Records(++counter, "Iphone", new Date(), "This is Iphone is very expensive", this._Categories[0]),
-            new Records(++counter, "Tablets", new Date(), "This is Tablets is very expensive", this._Categories[2]),
+            new Records(++counter, "Tablets", new Date(), "This is Tablets is very expensive", this._Categories[2]),            
             new Records(++counter, "Hand-Free", new Date(), "This is Hand-free is very expensive", this._Categories[1]),
         ]
     }
@@ -82,9 +82,13 @@ class Datahandler {
         // newTasks.detail =  found.Detail;
         // found.Category = newTasks.category;
     }
-    findbycategory(categoryid) {debugger
-        // const sepcategory  = this._Record.find(z=>z.Id===categoryid);
-        const sepcategory = this._Record.filter(z => z._Id === categoryid);
+
+    findbycategory(categoryid) {
+        if( typeof categoryid == 'string') {
+            categoryid = parseInt(categoryid);        
+        }                        
+        const sepcategory = this._Record.filter(z => z.Id === categoryid);        
+        debugger;
         return sepcategory;
     }
 

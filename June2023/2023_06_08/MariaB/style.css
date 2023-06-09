@@ -1,0 +1,28 @@
+/* General CSS */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins'; 
+}
+
+
+
+/* Heading Top CSS */
+.heading-top{
+    background-color: #8D691D;
+    color: white;
+    font-size: 14px;
+}
+
+/* Carousel CSS */
+.carousel-item.top {    
+    height: auto;
+}
+
+.carouselWrapper {
+    width: 96%;
+}
+
+
+

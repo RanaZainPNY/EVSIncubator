@@ -1,0 +1,15 @@
+.nav-item:hover{
+    background-color: hsl(60, 74%, 44%);
+}
+.dropdown-item:hover{
+    color:white;
+    /* font-weight: bold; */
+    font-size: larger;
+    border-radius: 1px;
+    
+    background-color:hsl(60, 74%, 44%);
+}
+#txtlg:hover{
+    color: hsl(60, 74%, 44%);
+    font-weight: bolder;
+}

@@ -1,8 +1,7 @@
 const handler = new Datahandler();
 let category = handler.GetCategories();
 
-addEventListener("load", function () {
-    
+addEventListener("load", function () {    
     let record = handler.GetRecord()
     display(record);
 })

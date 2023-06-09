@@ -1,0 +1,1298 @@
+var kaktuscbaseUrl="https://cd.kaktusapp.com/";var kaktuscApiUrl="https://cd.kaktusapp.com/";var kaktuscShop="mariab-pak.myshopify.com";var kaktuscTriggerEvents={};var kaktuscPageIds=[];var kaktuscCertainBtns=[];var kaktuscCurrencyCode="PKR";var kaktuscCurrencySymbol="PKR {{amount_no_decimals}}";var kaktuscVersion="33";var kaktusCartWidget={"id":1080,"title":"Cart template","data":{"widget_name":"Cart template","widget_active_img":"https:\/\/cd.kaktusapp.com\/assets\/images\/widgets\/preview\/cart\/style_1.png","widget_type":4,"popup_type":"1","widget_themes":"style_1","design_type":{"position":"sidebar_right","animation":"animate__slideInRight","layout":"grid","layout_col":"grid-item-2","widget_width":"container","cart_icon":"cart_right_center"},"top":{"top_show":true,"background_top":"#fff","close_show":true,"close_bg_color":"#F8F5F5","close_bg_color_hover":"#F8F5F5CC","close_color":"#191919","close_border_radius":"10","alert_text_show":null,"alert_prod_show":null},"custom_css":null,"main":{"background_main":"transparent","background_heading":"transparent","timer_show":false,"upsell_show":false,"cart_icon_show":false,"cart_icon_color":"#ffffff","cart_icon_bg":"#191919","cart_icon_number_c":"#000000","cart_icon_number_bg":"#F7F3F3","timer_min":11,"timer_sec":45,"timer_bg":"#191919","timer_border_radius":"25","timer_font_size":"18","timer_color":"#fff","timer_font_weight":"400","timer_font_style":"normal","timer_line_height":"19","wallpaper":"wallpaper_0","title_show":true,"title_font_size":"20","title_color":"#191919","title_font_weight":"700","title_font_style":"normal","title_line_height":"22","description_show":null},"bottom":{"background_bottom":"#F7F3F3","reject_btn_show":true,"reject_btn_bg":"transparent","reject_btn_bg_hover":"transparent","reject_btn_font_color":"#5C5B5B","reject_btn_font_color_hover":"#5C5B5B","reject_btn_border_radius":"0","reject_btn_font_size":"18","reject_btn_font_weight":"700","reject_btn_font_style":"normal","reject_btn_line_height":"19","reject_btn_padding_t_b":"0","reject_btn_padding_l_r":"0","checkout_btn_show":true,"checkout_btn_bg":"#191919","checkout_btn_bg_hover":"#191919cc","checkout_btn_font_color":"#fff","checkout_btn_font_color_hover":"#fff","checkout_btn_border_radius":"5","checkout_btn_font_size":"20","checkout_btn_font_weight":"700","checkout_btn_font_style":"normal","checkout_btn_line_height":"22","checkout_btn_padding_t_b":"15","checkout_btn_padding_l_r":"20","total_show":true,"total_color":"#191919","total_font_size":"24","total_font_weight":"500","total_font_style":"normal","total_line_height":"26","total_price_color":"#000000","total_price_font_size":"24","total_price_font_weight":"700","total_price_font_style":"normal","total_price_line_height":"28","discounts_show":false,"discounts_color":"#191919","discounts_font_size":"18","discounts_font_weight":"500","discounts_font_style":"normal","discounts_line_height":"20","discounts_price_color":"#777777","discounts_price_font_size":"18","discounts_price_font_weight":"700","discounts_price_font_style":"normal","discounts_price_line_height":"21"},"product":{"background_img":"#fff","background":"#fff","cart_btn_bg":"#191919","cart_btn_bg_hover":"#191919cc","cart_btn_font_color":"#fff","cart_btn_font_color_hover":"#fff","cart_btn_border_radius":"5","cart_btn_font_size":"18","cart_btn_font_weight":"700","cart_btn_font_style":"normal","cart_btn_line_height":"19","delete_btn_font_color":"#999999","delete_btn_font_color_hover":"#999999aa","prod_border_width":"1","prod_border_color":"#E6E6E6","prod_border_radius":"0","prod_title_show":true,"prod_title_color":"#28313a","prod_title_font_size":"18","prod_title_font_weight":"700","prod_title_font_style":"normal","prod_title_line_height":"21","prod_desc_show":true,"prod_desc_show_full":false,"prod_desc_color":"#444F65","prod_desc_font_size":"16","prod_desc_font_weight":"400","prod_desc_font_style":"normal","prod_desc_line_height":"18","price_show":true,"price_color":"#000000","price_font_size":"20","price_font_weight":"700","price_font_style":"normal","price_line_height":"22","compare_price_show":true,"compare_price_color":"#777777","compare_price_font_size":"18","compare_price_font_weight":"700","compare_price_font_style":"normal","compare_price_line_height":"20","save_show":true,"save_bg":"#000000","save_border_radius":"3","save_color":"#fff","save_font_size":"12","save_font_weight":"700","save_font_style":"normal","save_line_height":"13","save_padding":"5","qty_show":null,"qty_background":"transparent","qty_font_color":"#999999","qty_btn_bg":"#999999","qty_btn_bg_hover":"#999999","qty_btn_color":"#000000","qty_border_radius":"5","variations_show":false,"variations_background":"#fff","variations_font_color":"#444F65","variations_border_width":"1","variations_border_color":"#EEEEEE","variations_border_radius":"0"},"offer_product":{"background_o":"#fff","background_img_o":"#fff","prod_border_width_o":"1","prod_border_color_o":"#E6E6E6","prod_border_radius_o":"0","offer_title_show":true,"offer_font_size":"20","offer_color":"#000000","offer_font_weight":"700","offer_font_style":"normal","offer_line_height":"22","prod_title_show_o":true,"prod_title_color_o":"#28313a","prod_title_font_size_o":"18","prod_title_font_weight_o":"700","prod_title_font_style_o":"normal","prod_title_line_height_o":"21","prod_desc_show_o":true,"prod_desc_show_full_o":false,"prod_desc_color_o":"#444F65","prod_desc_font_size_o":"16","prod_desc_font_weight_o":"400","prod_desc_font_style_o":"normal","prod_desc_line_height_o":"18","price_show":true,"price_color_o":"#000000","price_font_size_o":"20","price_font_weight_o":"700","price_font_style_o":"normal","price_line_height_o":"22","compare_price_show_o":false,"compare_price_color_o":"#777777","compare_price_font_size_o":"18","compare_price_font_weight_o":"700","compare_price_font_style_o":"normal","compare_price_line_height_o":"20","qty_show_o":null},"discount_code":{"discount_code_show":false,"code_background":"#fcfafa","code_background_input":"#fff","code_border_in_width":"1","code_border_in_color":"#EEEEE","code_in_color":"#191919","code_border_in_radius":"5","code_border_width":"2","code_border_color":"#EEEEE","code_text_font_size":"18","code_text_font_style":"normal","code_text_font_weight":"700","code_text_line_height":"20","code_text_color":"#191919","code_btn_font_size":"18","code_btn_font_weight":"700","code_btn_font_style":"normal","code_btn_line_height":"20","code_btn_bg":"#191919","code_btn_bg_h":null,"code_btn_color":"#fff","code_btn_color_h":null},"rewards":{"rewards_show":false,"rewards_background":"#fcfafa","rewards_background_pro":"#E9E9E9","rewards_background_pro_f":"#191919","rewards_border_width":"2","rewards_border_color":"#EEEEE","rewards_text_font_size":"18","rewards_text_font_style":"normal","rewards_text_font_weight":"700","rewards_text_line_height":"20","rewards_text_color":"#191919","rewards_cart_total_show":true,"rewards_item_count_show":false,"rewards_cart_total":"70","rewards_item_count":"5"},"translation":{"title":"Your Cart","add_to_cart_btn":"add","reject_btn":"Or continue shopping","checkout_btn":"Checkout","save_text":"Save","timer_msg":"Your cart will expire in {{time}} minutes","total_btn":"Total:","discounts_btn":"Discounts","discount_code":"Discount Code","discount_apply_btn":"Apply","discount_not_exist":"No Such Discount Code","rewards_preunlock":"Spend {{amount}} more and receive *10% off*","rewards_postunlock":"10% off applied","empty_cart":"Your cart is currently empty"}},"widget_active_img":"https:\/\/cd.kaktusapp.com\/assets\/images\/widgets\/preview\/cart\/style_1.png","widget_type":4,"popup_type":1,"sort_position":0,"store_id":1080};var kaktusWishlistWidget={"id":4569,"title":"Default Widget","data":{"widget_name":"Default Widget","widget_active_img":"https:\/\/cd.kaktusapp.com\/assets\/images\/widgets\/preview\/wishlist\/style_1.png","widget_type":"3","popup_type":3,"widget_themes":"style_1","design_type":{"position":"center","animation":"animate__fadeIn","layout":"grid","layout_col":"grid-item-2","widget_width":"full"},"top":{"top_show":false,"close_show":true,"close_bg_color":"#000","close_bg_color_hover":"#000","close_color":"#fff","close_color_hover":"#fff","close_border_radius":"0"},"custom_css":".kaktusb-title {text-align: center;} .kaktusb-popup__buttons {border-top: 1px solid #e4e4e4;} .kaktusb-popup__heading, .kaktusb-popup__total--price {border-bottom: 1px solid #e4e4e4;}","main":{"background_main":"#fff","background_heading":"transparent","wallpaper":"wallpaper_0","title_show":true,"title_font_size":"23","title_color":"#444f65","title_font_weight":"400","title_font_style":"normal","title_line_height":"23","description_show":false,"description_font_size":"14","description_color":"#444f65","description_font_weight":"400","description_font_style":"normal","description_line_height":"20","border_width":"1","border_color":"#e4e4e4","border_radius":"10"},"bottom":{"background_bottom":null},"product":{"background_img":"#fff","background":"#fff","cart_btn_bg":"#000","cart_btn_bg_hover":"#000","cart_btn_font_color":"#fff","cart_btn_font_color_hover":"#fff","cart_btn_border_radius":"3","cart_btn_font_size":"15","cart_btn_font_weight":"400","cart_btn_font_style":"normal","cart_btn_line_height":"15","cart_btn_padding_t_b":"10","cart_btn_padding_l_r":"16","remove_btn_bg":"#D32C2B","remove_btn_bg_hover":"#a72323","remove_btn_font_color":"#fff","remove_btn_font_color_hover":"#fff","remove_btn_border_radius":"3","remove_btn_font_size":"15","remove_btn_font_weight":"700","remove_btn_font_style":"normal","remove_btn_line_height":"15","remove_btn_padding_t_b":"10","remove_btn_padding_l_r":"16","prod_border_width":"1","prod_border_color":"#0000001a","prod_border_radius":"10","prod_title_show":true,"prod_title_color":"#2d2929","prod_title_font_size":"16","prod_title_font_weight":"400","prod_title_font_style":"normal","prod_title_line_height":"19","prod_desc_show":false,"prod_desc_show_full":false,"prod_desc_color":"#2d2929","prod_desc_font_size":"14","prod_desc_font_weight":"400","prod_desc_font_style":"normal","prod_desc_line_height":"16","price_show":null,"price_color":"#52c41a","price_font_size":"18","price_font_weight":"700","price_font_style":"normal","price_line_height":"20","compare_price_show":false,"compare_price_color":"#ccc","compare_price_font_size":"18","compare_price_font_weight":"700","compare_price_font_style":"normal","compare_price_line_height":"20","save_show":false,"save_bg":"#000","save_border_radius":"3","save_color":"#fff","save_font_size":"11","save_font_weight":"500","save_font_style":"normal","save_line_height":"11","save_padding":"3","qty_show":true,"qty_background":"#fff","qty_font_color":"#4f4f4f","qty_btn_bg":"#c9d5df","qty_btn_bg_hover":"#b0bcc5","qty_btn_color":"#e4e4e4","qty_btn_color_hover":"#fff","qty_border_radius":"6","variations_show":true,"variations_background":"#fff","variations_font_color":"#4f4f4f","variations_border_width":"1","variations_border_color":"#e4e4e4","variations_border_radius":"3"},"translation":{"title":"My Wishlist","description":"You have such awesome products in your wishlist:","add_to_cart_btn":"Add","remove_btn":"Remove","save_text":"Save","login_text":"Your wishlist will be saved on this browser. Please log in or sign up to save your wishlist across devices","login_btn_text":"Log In","signup_btn_text":"Sign Up"},"float_btn":{"show":false,"type":"icon_text","position":"bottom_right","text_orientation":"normal","background":"#000","background_hover":"#000","color":"#fff","color_hover":"#fff","border_radius":"50","font_size":"15","font_weight":"500","font_style":"normal","line_height":"18","padding_t_b":"10","padding_l_r":"20","text":"My Wishlist","custom_css":""},"header_btn":{"show":false,"type":"icon","background":"transparent","background_hover":"transparent","color":"#000","color_hover":"#000","border_radius":"0","font_size":"15","font_weight":"500","font_style":"normal","line_height":"18","padding_t_b":"10","padding_l_r":"20","text":"My Wishlist","custom_css":""},"login":{"login_show":true,"background":"#e5e5e5","title_color":"#000","title_font_size":"16","title_font_weight":"400","title_font_style":"normal","title_line_height":"19","login_bg_color":"#000","login_bg_color_hover":"#000","login_color":"#fff","login_color_hover":"#fff","login_btn_border_radius":"3","login_btn_font_size":"15","login_btn_font_weight":"400","login_btn_font_style":"normal","login_btn_line_height":"15","login_btn_padding_t_b":"10","login_btn_padding_l_r":"16","signup_bg_color":"#000","signup_bg_color_hover":"#000","signup_color":"#fff","signup_color_hover":"#fff","signup_btn_border_radius":"3","signup_btn_font_size":"15","signup_btn_font_weight":"400","signup_btn_font_style":"normal","signup_btn_line_height":"15","signup_btn_padding_t_b":"10","signup_btn_padding_l_r":"16"},"add_wishlist_btn":{"type":"icon_text","background":"#000","background_hover":"#000","background_completed":"#000","color":"#fff","color_hover":"#fff","color_completed":"#fff","border_radius":"50","font_size":"15","font_weight":"500","font_style":"normal","line_height":"18","padding_t_b":"10","padding_l_r":"20","text":"Add to Wishlist","text_completed":"Product Added","custom_css":""}},"widget_active_img":"https:\/\/cd.kaktusapp.com\/assets\/images\/widgets\/preview\/wishlist\/style_1.png","widget_type":3,"popup_type":3,"sort_position":0,"store_id":1080};var kaktusActiveApp=0;var kaktusCartSubtotal="";var kaktusCartSubtotalContainer="";var wishlistHeaderSelector="";var wishlistProductListSelector="";var wishlistProductPageSelector="";var wishlistWidgetType="";var wishlistPageId="93388865702";var wishlistPageHandle="wishlist";var wishlistWidgetActivate=1;if(!kaktuscApp){var kaktuscApp=function(){kaktuscCurrencySymbol=decodeHTML(kaktuscCurrencySymbol.replace(/(<([^>]+)>)/ig,""));const currentCurrencyCode=Shopify.currency.active;let currentCurrencySymbol=kaktuscCurrencySymbol;let currencyRate=1;if(kaktuscCurrencyCode!==currentCurrencyCode){const country=Shopify.country;currencyRate=Shopify.currency.rate;const regexStr=`[${getMainCurrencySymbol()}]`;const regex=new RegExp(regexStr,'g')
+currentCurrencySymbol=kaktuscCurrencySymbol.replace(regex,getCurrencySymbol(country,currentCurrencyCode));}
+let purchaseData=[];function decodeHTML(html){const txt=document.createElement('textarea');txt.innerHTML=html;return txt.value;};function removeHtmlTagsFromStr(str){return str.replace(/(<([^>]+)>)/gi,"");}
+function getCurrencySymbol(locale,currency){return(0).toLocaleString(locale.toLowerCase(),{style:'currency',currency:currency,minimumFractionDigits:0,maximumFractionDigits:0}).replace(/\d/g,'').trim()}
+function getMainCurrencySymbol(){if(kaktuscCurrencySymbol.includes('{{')){return kaktuscCurrencySymbol.replace(/{{(.*?)}}/ig,'').trim();}else{return kaktuscCurrencySymbol.trim();}}
+function getPriceByRate(price){return(parseFloat(price)*currencyRate).toFixed(2);}
+function getStorePriceByRate(price){return(parseFloat(price)/currencyRate).toFixed(2);}
+function currencyFormat(num){if(currentCurrencySymbol.includes('{{')){return currentCurrencySymbol.replace(/{{(.*?)}}/ig,formatNumber(num));}else{return currentCurrencySymbol+formatNumber(num);}}
+function formatNumber(num){num=parseFloat(num/100).toFixed(2);return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g,"$1,");}
+function buildIframe(rootId){const appId=rootId?rootId:'kaktusc-app';const iframeId=rootId?'kaktus-wishlist-widget':'kaktusc-widget';const iframeRoot=rootId?rootId:'kaktusc-root';const html=`<iframe id="${iframeId}" style="width: 100% !important; height: 100% !important" frameborder="0" srcdoc='<!DOCTYPE html><html><head><link type="text/css" rel="stylesheet" href="${kaktuscbaseUrl}css/honey-upsell-cross-sell.css?v=${kaktuscVersion}"></head><body><div id="${iframeRoot}"></div></body></html>'></iframe>`;const element=document.createElement("div");element.setAttribute("id",appId);element.innerHTML=html;element.style.height='100%';element.style.width='100%';element.style.position='fixed';element.style.top='0';element.style.left='0';element.style.zIndex='99999999999999999';if(!rootId){element.style.display="none";}
+document.querySelector('body').append(element);}
+function makeId(length){let result='';const characters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';const charactersLength=characters.length;for(let i=0;i<length;i++){result+=characters.charAt(Math.floor(Math.random()*charactersLength));}
+return result;}
+async function fetchCartJson(){const options={method:'GET',headers:{"Content-Type":"application/json","Accept":"application/json"}};const resp=await fetch("/cart.json",options);return await resp.json();}
+async function getProductObjects(cartJson){const options={method:'GET',headers:{"Content-Type":"application/json","Accept":"application/json"}};let productsUrls=[];cartJson.items.forEach((product)=>productsUrls.push(`/products/${product.handle}.json`));let response=await Promise.all(productsUrls.map((url)=>fetch(url,options)));return Promise.all(response.map((res)=>res.json()));}
+async function changeQuantity(variantId,quantity,line){let body=JSON.stringify({id:variantId,quantity:quantity,});if(line){body=JSON.stringify({line:+line,quantity:quantity,});}
+const options={method:'POST',headers:{"Content-Type":"application/json","Accept":"application/json"},body:body};const url="/cart/change.js";const resp=await fetch(url,options);return await resp.json();}
+async function addProductToCart(variantId,quantity,properties={}){const options={method:'POST',headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({id:variantId,quantity:quantity,properties:properties})};const url="/cart/add.json";const resp=await fetch(url,options);return await resp.json();}
+async function removeItem(data){const options={method:'POST',headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({...data,quantity:0})};const url="/cart/change.js";const resp=await fetch(url,options);return await resp.json();}
+function removeItemById(id){return removeItem({id:`${id}`});}
+function removeItemByLine(oneBasedLineIndex){return removeItem({line:oneBasedLineIndex});}
+async function fetchProduct(handle){const options={method:'GET',headers:{"Content-Type":"application/json","Accept":"application/json"}};const resp=await fetch(`/products/${handle}.json`,options);return resp.json();}
+async function fetchPage(url){const options={method:'GET',headers:{"Content-Type":"application/json","Accept":"application/json"}};const resp=await fetch(`${url}.json`,options);return await resp.json();}
+async function offerFetch(offerParams){const options={headers:{'Content-Type':'application/json',"Accept":"application/json"}};const domain=kaktuscShop;const product_id=offerParams.productId?`&product_id=${offerParams.productId}`:'';const variants_id=offerParams.variantsId?`&variants_id=${offerParams.variantsId}`:'';const display_on_device=window.innerWidth>991?'3':'2';const cart_value=offerParams.cartValue?offerParams.cartValue:0;const logged_user=ShopifyAnalytics.meta.page.customerId?'1':'0';const cart=offerParams.cart?offerParams.cart:0;const customer_id=offerParams.customer_id?`&customer_id=${offerParams.customer_id}`:'';let url=kaktuscApiUrl+`api/front/offers?domain=${domain}${product_id}${variants_id}&cart=${cart}&display_on_device=${display_on_device}&cart_value=${cart_value}&logged_user=${logged_user}${customer_id}`;const resp=await fetch(url,options);if(!resp.ok){throw new Error(`HTTP error, status = ${resp.status}`);}
+return await resp.json();}
+async function createStatisticFetch(main_offer_id,offer_id,addedToCart,funnelViews){const options={method:'POST',headers:{'Content-Type':'application/json',"Accept":"application/json"},body:JSON.stringify(createStatisticRequest(main_offer_id,offer_id,addedToCart,funnelViews))};let url=kaktuscApiUrl+`api/front/statistic`;const resp=await fetch(url,options);if(!resp.ok){throw new Error(`HTTP error, status = ${resp.status}`);}
+return await resp.text();}
+function createStatisticRequest(main_offer_id,offer_id,addedToCart,views){const domain=kaktuscShop;const action=addedToCart?'accept':'decline';return{domain:domain,main_offer_id:main_offer_id,offer_id:offer_id,action:action,views:views}}
+async function createPurchaseFetch(data){const options={method:'POST',headers:{'Content-Type':'application/json',"Accept":"application/json"},body:JSON.stringify(createPurchaseRequest(data))};let url=kaktuscApiUrl+`api/front/purchase`;const resp=await fetch(url,options);if(!resp.ok){throw new Error(`HTTP error, status = ${resp.status}`);}
+return await resp.text();}
+function createPurchaseRequest(data){const domain=kaktuscShop;const main_offer_id=data.main_offer_id;const amount=[];data.offer_amount.forEach(item=>{amount.push({offer_id:item.offer_id,amount:item.amount})});return{domain:domain,main_offer_id:main_offer_id,offer_amount:amount}}
+function createPurchaseData(mainOfferId,variantId,propertyId,storePrice,currentOffer){const localOfferData=localStorage.getItem('kaktuscPurchaseData');purchaseData=localOfferData?JSON.parse(localOfferData):purchaseData;let offerData={'main_offer_id':mainOfferId,'offer':[]}
+if(purchaseData.length){const checkMainOfferId=purchaseData.find(item=>item.main_offer_id===mainOfferId);if(checkMainOfferId){setOfferData(checkMainOfferId);}else{purchaseData.push(offerData);setOfferData(offerData);}}else{purchaseData.push(offerData)
+setOfferData(offerData);}
+function setOfferData(data){data.offer.push({offer_id:currentOffer.id,product_id:variantId,propertyId:propertyId,product_store_price:storePrice})}
+localStorage.setItem('kaktuscPurchaseData',JSON.stringify(purchaseData));}
+if("/thank_you"===location.href.slice(-10)||Shopify.checkout){const orderItems=Shopify.checkout.line_items;const offerData=JSON.parse(localStorage.getItem('kaktuscPurchaseData'));localStorage.removeItem('kaktuscDiscountManualApplied');localStorage.removeItem('kaktuscDiscountManual');localStorage.removeItem('kaktuscDiscountCodeObj');sendPurchaseAPI(offerData,orderItems);localStorage.removeItem('kaktusDataOrder');}
+function sendPurchaseAPI(offerData,orderItems){if(!offerData){return}
+offerData.forEach(mainOfferItem=>{const offerDataItem={'main_offer_id':mainOfferItem.main_offer_id,'offer_amount':[]}
+mainOfferItem.offer.forEach(offerItem=>{const lineItemProperty=orderItems.find(item=>offerItem.propertyId===item.properties.offer)
+if(lineItemProperty){let discount;let qty=+lineItemProperty.quantity!==0?+lineItemProperty.quantity:1;if(lineItemProperty.applied_discounts.length>0&&lineItemProperty.applied_discounts[0].amount){discount=lineItemProperty.applied_discounts[0].amount;}
+if(offerDataItem.offer_amount.length){const checkOfferId=offerDataItem.offer_amount.find(item=>item.offer_id===offerItem.offer_id);if(checkOfferId){checkOfferId.amount=(+checkOfferId.amount+(discount?(+offerItem.product_store_price*qty)-discount:+offerItem.product_store_price*qty)).toFixed(2);}else{offerDataItem.offer_amount.push({offer_id:offerItem.offer_id,amount:discount?((+offerItem.product_store_price*qty)-discount).toFixed(2):(+offerItem.product_store_price*qty).toFixed(2)});}}else{offerDataItem.offer_amount.push({offer_id:offerItem.offer_id,amount:discount?((+offerItem.product_store_price*qty)-discount).toFixed(2):(+offerItem.product_store_price*qty).toFixed(2)});}}});if(offerDataItem.offer_amount.length){createPurchaseFetch(offerDataItem);}})
+localStorage.removeItem('kaktuscPurchaseData');}
+const CartDrawerInit=function(){const params=new URLSearchParams(window.location.search)
+if(params.get('kaktus_ic_preview')){sessionStorage.setItem('kaktuscPreviewMode',true);}
+if(!(kaktusActiveApp||sessionStorage.getItem('kaktuscPreviewMode')))return;if(sessionStorage.getItem('kaktuscPreviewMode')){showPreviewMessage()};function showPreviewMessage(){let html=`<div style="width: 100%;
+                                    padding: 15px 30px;
+                                    text-align:center;
+                                    border-bottom: 1px solid #dddddd;"
+                        >
+                            Preview Mode
+                        </div>`;document.body.insertAdjacentHTML('afterbegin',html)}
+const noImage=kaktuscbaseUrl+'assets/images/no-image.jpg';let cartJsonObj={};let iframe;let cartBuilded=false;let cartIsOpen=false;let orderData=[];let cartIconEl;let draftOrderWillApplied=false;let globalDiscountCodeObj=localStorage.getItem('kaktuscDiscountCodeObj')?JSON.parse(localStorage.getItem('kaktuscDiscountCodeObj')):'';let cartToAnimate=null;let productsWrapper=null;let currentOffer;let currentDataOffer;let statisticArr=[];let mainOfferId;let deletingProduct=false;let manualDisountApplied=localStorage.getItem('kaktuscDiscountManualApplied');let automaticDiscountApplied=false;let automaticCode='';let manualDiscountCode=localStorage.getItem('kaktuscDiscountManual')?JSON.parse(localStorage.getItem('kaktuscDiscountManual')):'';let kaktusCartWidgetObj=typeof kaktusCartWidget!=='undefined'?kaktusCartWidget.data:{};let cartIcons=document.querySelectorAll('a[href="/cart"');cartIcons=cartIcons?cartIcons:document.querySelectorAll('a[href$=/cart');if(!cartIcons)return;buildIframe();const cartWrapper=document.getElementById("kaktusc-app");document.getElementById('kaktusc-widget').onload=function(){iframe=document.getElementById('kaktusc-widget');buildIconCart();buildCart();addStyling();const timerWrap=getAppSelector('.kaktusc-cart__timer');if(kaktusCartWidgetObj.main&&kaktusCartWidgetObj.translation.timer_msg.includes("{{time}}")){buildTimer(kaktusCartWidgetObj.main.timer_min,kaktusCartWidgetObj.main.timer_sec,timerWrap);startTimer(kaktusCartWidgetObj.main.timer_show,kaktusCartWidgetObj.main.timer_min,kaktusCartWidgetObj.main.timer_sec,timerWrap);}
+if(!cartBuilded)return;cartToAnimate=getAppSelector('.kaktusc-cart__body');productsWrapper=getAppSelector('.kaktusc-cart__products');setOpenCartEvent();setCloseCartEvent();initCartEvents();}
+function showEmptyCartNotif(cartJson){let productsWrap=cartToAnimate.querySelector('.kaktusc-cart__products');let html=`<div class="kaktusc-cart__empty-cart">${kaktusCartWidgetObj.translation.empty_cart?kaktusCartWidgetObj.translation.empty_cart:'Your cart currently is empty'}</div>`;if(cartJson.item_count){let emptyCartEl=productsWrap.querySelector('.kaktusc-cart__empty-cart');if(emptyCartEl){emptyCartEl.remove();}}else{productsWrap.insertAdjacentHTML('afterbegin',html);}}
+function setCompareAtPrice(result,cartJson){result.forEach((prod)=>{cartJson.items.forEach((item)=>{let oneVariant;let oneItem;prod.product["variants"].find((variant)=>{if(variant.compare_at_price!=null&&variant.id==item.variant_id){oneVariant=variant;oneItem=item;return true;}});if(oneVariant&&oneItem){oneItem["compare_at_price"]=oneVariant.compare_at_price;}else if(oneItem){oneItem["compare_at_price"]=0;}});});}
+function openCart(){if(!cartWrapper)return;cartWrapper.style.display="block";cartToAnimate.classList.add('spinner');cartToAnimate.setAttribute('class','kaktusc-cart__body');cartToAnimate.classList.add('animate__animated',`${kaktusCartWidgetObj.design_type?kaktusCartWidgetObj.design_type.animation:'slideInRight'}`);cartIsOpen=true;fetchCartJson().then((cartJson)=>{getProductObjects(cartJson).then((result)=>{setCompareAtPrice(result,cartJson);cartJsonObj=cartJson;fillCartProducts(cartJson.items);cartToAnimate.classList.remove('spinner');cartIconEl.innerHTML=cartJson.item_count;if(kaktusCartWidgetObj.main.upsell_show){getOfferProducts(cartJson);}
+automaticDiscountApplied=!!cartJson.cart_level_discount_applications.find((el,i)=>{return el["type"]=="automatic"});draftOrderWillApplied=checkDraftOrder(cartJson);let handledDiscountCode=handleDiscountCode(globalDiscountCodeObj,cartJsonObj);if(handledDiscountCode){manualDisountApplied=true;localStorage.setItem('kaktuscDiscountManualApplied',true);}else{manualDisountApplied=false;localStorage.setItem('kaktuscDiscountManualApplied','');}
+if(!draftOrderWillApplied&&manualDisountApplied&&!automaticDiscountApplied){changeTotalPriceManualCode(cartJson,handledDiscountCode);}else{const changedTotal=changeTotalPrice(cartJson);changeTotalDiscounts(cartJson,changedTotal);}
+showEmptyCartNotif(cartJson);fillRewardsProgress(cartJson.original_total_price,cartJson.item_count);}).catch((error)=>{console.error('cart error',error);cartToAnimate.classList.remove('spinner');});}).catch((error)=>{console.error('cart error',error);cartToAnimate.classList.remove('spinner');});}
+function setOpenCartEvent(){for(let i=0;i<cartIcons.length;i++){cartIcons[i].addEventListener('click',function(e){if(this.classList.contains('btn')&&this.classList.contains('addcart_btn')&&this.classList.contains('product_btn')&&!this.classList.contains('added')){return;}
+e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();if(!cartIsOpen){openCart();}});}
+document.getElementById('kaktusc-cart-icon').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();if(!cartIsOpen){openCart();}});if(typeof kaktusCartSubtotal!=='undefined'&&kaktusCartSubtotal){let selectors=kaktusCartSubtotal.split(',');try{selectors.forEach((selector)=>{let selec=selector.trim();document.querySelectorAll(selec).forEach((el)=>{el.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();if(!cartIsOpen){openCart();}});});});}catch(error){console.error(error);}}
+let defaultSelectors=['cart-drawer.drawer','cart-drawer','cart-notification','.cart-notification-wrapper'];if(typeof kaktusCartSubtotalContainer!=='undefined'&&kaktusCartSubtotalContainer){let selectors=kaktusCartSubtotalContainer.split(',');defaultSelectors=defaultSelectors.concat(selectors);}
+try{defaultSelectors.forEach((selector)=>{let selec=selector.trim();document.querySelectorAll(selec).forEach((el)=>{el.style.display='none';});});}catch(error){console.error(error);}}
+function setCloseCartEvent(){const cartInWrapper=getAppSelector('.kaktusc-cart__wrap');cartInWrapper.addEventListener('click',function(e){if(!e.target.closest('.kaktusc-cart__body')||e.target.closest('.kaktusc-cart__close')||e.target.closest('.kaktusc-cart__continue')){if(cartIsOpen&&!e.target.classList.contains('spinner')){closeCart();}}})}
+function closeCart(){cartToAnimate.setAttribute('class','kaktusc-cart__body');let animationClass=kaktusCartWidgetObj.design_type?kaktusCartWidgetObj.design_type.animation:'animate__slideOutRight';switch(animationClass){case'animate__slideInLeft':cartToAnimate.classList.add('animate__animated','animate__slideOutLeft');break;case'animate__slideInRight':cartToAnimate.classList.add('animate__animated','animate__slideOutRight');break;case'animate__fadeIn':cartToAnimate.classList.add('animate__animated','animate__fadeOut');break;case'animate__slideInUp':cartToAnimate.classList.add('animate__animated','animate__slideOutDown');break;case'animate__slideInDown':cartToAnimate.classList.add('animate__animated','animate__slideOutUp');break;case'animate__zoomIn':cartToAnimate.classList.add('animate__animated','animate__zoomOut');break;case'animate__fadeInTopLeft':cartToAnimate.classList.add('animate__animated','animate__fadeOutTopLeft');break;case'animate__fadeInTopRight':cartToAnimate.classList.add('animate__animated','animate__fadeOutTopRight');break;default:break;}
+cartIsOpen=false;setTimeout(()=>{cartWrapper.style.display="none";const OfferProducts=getAppSelector('.kaktusc-cart__offer-products-wrap');if(OfferProducts){if(OfferProducts.querySelector('.kaktusc-cart__offer-products')){OfferProducts.querySelector('.kaktusc-cart__offer-products').remove();}
+if(OfferProducts.querySelector('h2')){OfferProducts.querySelector('h2').remove();}}},1000)}
+function getOfferProducts(dataCart){let variantsId='0',cart='0';if(dataCart.items.length){const targetProducts=dataCart.items.filter(item=>!!!item.properties||(item.properties&&!item.properties.offer));if(targetProducts.length){variantsId=targetProducts.map(item=>item.id);variantsId=variantsId.join();}
+cart=dataCart.items.map(item=>item.product_id);cart=cart.join();}
+const offerParams={triggerType:'2',variantsId,cart,cartValue:dataCart.total_price}
+offerFetch(offerParams).then(function(dataOffer){mainOfferId=dataOffer.main_offer_id;currentDataOffer=dataOffer;fillOfferProducts(dataOffer);}).catch((err)=>{console.error('err',err);});}
+function changeOfferVariant(selectEl){const variantId=selectEl.target.options[selectEl.target.selectedIndex].getAttribute('data-id');const thisProduct=selectEl.target.closest('.kaktusc-cart__offer-product');thisProduct.dataset.id=variantId;const variantObj=getVariantObj(thisProduct);if(!variantObj)return;thisProduct.querySelector('.kaktusc-cart__offer-product-variant').innerHTML=variantObj.title;thisProduct.querySelector('.kaktusc-cart__offer-product-img img').src=variantObj.image;changeOfferPriceInOffer(thisProduct,variantObj);}
+function fillOfferProducts(dataOffer,offer){if(Array.isArray(dataOffer))return;let offerWrap=cartToAnimate.querySelector('.kaktusc-cart__offer-products-wrap');if(offerWrap)offerWrap.innerHTML='';const offerData=offer?offer:Object.values(dataOffer.offers)[0];currentOffer=offerData;const offerProductsId=offerData.products;let productsHtml='';for(let i=0;i<offerProductsId.length;i++){for(let j=0;j<offerProductsId[i].length;j++){const offerProduct=dataOffer.products[`${offerProductsId[i][j]}`];const discountObj=dataOffer.discount[`${offerData.id}`][i];const discountValue=discountObj.discount?Math.round(+discountObj.discount*100)/100:undefined;let badgeHtml='';let realPrice=+offerProduct.variants[0].variantPrice*100;let discountedPrice=realPrice;if(discountValue){let badgeValue='';if((discountObj.discount_type==='%')){badgeValue=`${discountValue}%`;discountedPrice=(discountedPrice-discountedPrice*discountValue/100).toFixed(2);}else{badgeValue=`${currencyFormat(discountValue*100)}`;discountedPrice=(discountedPrice-(discountValue*100)).toFixed(2);}
+badgeHtml=`
+                                <span class="kaktusc-cart__offer-product-badge" style="display: none;">
+                                    <span class="kaktusc-cart__offer-product-save cart-save-badge">${kaktusCartWidgetObj.translation.save_text}</span>
+                                    <span class="kaktusc-cart__offer-product-discount">
+                                        <span class="cart-save-badge">${badgeValue}</span>
+                                    </span>
+                                </span>`;}
+let offerQntHtml='';if(offerData.allow_set_quantities&&offerData.max_quantity){offerQntHtml=`
+                                <div class="kaktusc-cart__offer-product-qnt-wrap">
+                                    <span class="kaktusc-cart__offer-product-qnt--minus cart-prod-qnt-o">
+                                        <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="cart-prod-qnt-s-o" d="M14.0625 0H0.9375C0.68886 0 0.450403 0.105357 0.274588 0.292893C0.0987722 0.48043 0 0.734784 0 1C0 1.26522 0.0987722 1.51957 0.274588 1.70711C0.450403 1.89464 0.68886 2 0.9375 2H14.0625C14.3111 2 14.5496 1.89464 14.7254 1.70711C14.9012 1.51957 15 1.26522 15 1C15 0.734784 14.9012 0.48043 14.7254 0.292893C14.5496 0.105357 14.3111 0 14.0625 0Z" fill="#999999"/>
+                                        </svg>
+                                    </span>
+                                    <span class="kaktusc-cart__offer-product-qnt">1</span>
+                                    <span class="kaktusc-cart__offer-product-qnt--plus cart-prod-qnt-o plus">
+                                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="cart-prod-qnt-s-o" d="M14.0625 6.5625H8.4375V0.9375C8.4375 0.68886 8.33873 0.450403 8.16291 0.274588C7.9871 0.0987722 7.74864 0 7.5 0C7.25136 0 7.0129 0.0987722 6.83709 0.274588C6.66127 0.450403 6.5625 0.68886 6.5625 0.9375V6.5625H0.9375C0.68886 6.5625 0.450403 6.66127 0.274588 6.83709C0.0987722 7.0129 0 7.25136 0 7.5C0 7.74864 0.0987722 7.9871 0.274588 8.16291C0.450403 8.33873 0.68886 8.4375 0.9375 8.4375H6.5625V14.0625C6.5625 14.3111 6.66127 14.5496 6.83709 14.7254C7.0129 14.9012 7.25136 15 7.5 15C7.74864 15 7.9871 14.9012 8.16291 14.7254C8.33873 14.5496 8.4375 14.3111 8.4375 14.0625V8.4375H14.0625C14.3111 8.4375 14.5496 8.33873 14.7254 8.16291C14.9012 7.9871 15 7.74864 15 7.5C15 7.25136 14.9012 7.0129 14.7254 6.83709C14.5496 6.66127 14.3111 6.5625 14.0625 6.5625Z" fill="#999999"/>
+                                        </svg>
+                                    </span>
+                                </div>`}
+let variationHtml='';if(offerProduct.variants.length>1){offerProduct.variants.forEach((el)=>{variationHtml+=`<option value="${el.title}" data-id="${el.productId}">${el.title}</option>`});variationHtml=`
+                                <div class="kaktusc-cart__offer-product-var">
+                                    <span class="kaktusc-cart__offer-polygon"></span>
+                                    <select class="kaktusc-cart__offer-variant">
+                                        ${variationHtml}
+                                    </select>
+                                </div>`}
+productsHtml+=`
+                                    <div class="kaktusc-cart__offer-product" data-id="${offerProduct.variants[0].productId}"
+                                                                             data-main-product-id="${offerProduct.productId}"
+                                                                             data-qnt="1"
+                                    >
+                                        <div class="kaktusc-cart__offer-product-img">
+                                            <img src="${offerProduct.variants[0].image}" alt="Product">
+                                            ${badgeHtml}
+                                        </div>
+
+                                        <div class="kaktusc-cart__offer-product-content">
+                                            <h4 class="kaktusc-cart__offer-product-title">
+                                                ${offerProduct.title}
+                                            </h4>
+                                            <span class="kaktusc-cart__offer-product-variant">
+                                                ${offerProduct.variants[0].title}
+                                            </span>
+                                            ${offerQntHtml}
+                                            ${variationHtml}
+                                        </div>
+
+                                        <div class="kaktusc-cart__offer-product-price-section">
+                                            <div class="kaktusc-cart__offer-product-price-wrap">
+                                                <span class="kaktusc-cart__of-price-discounted">${currencyFormat(+discountedPrice)}</span>
+                                                <div class="kaktusc-cart__of-price-real" ${realPrice==discountedPrice?'style="display:none"':'style="display:none"'}>${currencyFormat(realPrice)}</div>
+                                            </div>
+                                            <div class="kaktusc-cart__offer-product-add">
+                                                <span class="kaktusc-cart__offer-product-plus">
+                                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M14.0625 6.5625H8.4375V0.9375C8.4375 0.68886 8.33873 0.450403 8.16291 0.274588C7.9871 0.0987722 7.74864 0 7.5 0C7.25136 0 7.0129 0.0987722 6.83709 0.274588C6.66127 0.450403 6.5625 0.68886 6.5625 0.9375V6.5625H0.9375C0.68886 6.5625 0.450403 6.66127 0.274588 6.83709C0.0987722 7.0129 0 7.25136 0 7.5C0 7.74864 0.0987722 7.9871 0.274588 8.16291C0.450403 8.33873 0.68886 8.4375 0.9375 8.4375H6.5625V14.0625C6.5625 14.3111 6.66127 14.5496 6.83709 14.7254C7.0129 14.9012 7.25136 15 7.5 15C7.74864 15 7.9871 14.9012 8.16291 14.7254C8.33873 14.5496 8.4375 14.3111 8.4375 14.0625V8.4375H14.0625C14.3111 8.4375 14.5496 8.33873 14.7254 8.16291C14.9012 7.9871 15 7.74864 15 7.5C15 7.25136 14.9012 7.0129 14.7254 6.83709C14.5496 6.66127 14.3111 6.5625 14.0625 6.5625Z" fill="#999999"/>
+                                                    </svg>
+                                                </span>
+                                                <button class="kaktusc-cart__offer-product-btn">
+                                                    ${kaktusCartWidgetObj.translation.add_to_cart_btn}
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>`}}
+const htmlWrap=`
+                    <h2>${offerData.title}</h2>
+                    <div class="kaktusc-cart__offer-products">
+                        ${productsHtml}
+                    </div>
+                `;const wrapper=getAppSelector('.kaktusc-cart__offer-products-wrap');wrapper.insertAdjacentHTML('beforeend',htmlWrap);wrapper.querySelectorAll('.kaktusc-cart__offer-variant').forEach((el)=>{el.addEventListener('change',function(self){changeOfferVariant(self);})});sendStatistic(offerData.id);}
+function changeTotalPrice(cartJson){const orderDataSt=JSON.parse(localStorage.getItem('kaktusDataOrder'));let newTotal=0;let getTotalFormCart=true;cartJson.items.forEach((product)=>{if(orderDataSt&&orderDataSt.length&&product.properties&&product.properties["offer"]){const orderDataProduct=orderDataSt.find((el)=>el.propertyId===product.properties["offer"]);if(orderDataProduct&&+orderDataProduct.discountValue){draftOrderWillApplied=true;if(orderDataProduct.discountType==="%"){newTotal+=+product.final_line_price-(+product.final_price*+orderDataProduct.qty*+orderDataProduct.discountValue/100);}else{newTotal+=(+product.final_line_price-(+orderDataProduct.discountValue*100*+orderDataProduct.qty));}
+if(+orderDataProduct.discountValue){getTotalFormCart=false;}}else{newTotal+=+product.final_line_price;}}else{newTotal+=+product.final_line_price;}});const totalPriceEl=cartToAnimate.querySelector('.kaktusc-cart__total-price');if(getTotalFormCart){totalPriceEl.innerHTML=currencyFormat(cartJson.total_price);return cartJson.total_price;}else{totalPriceEl.innerHTML=currencyFormat(newTotal);return newTotal;}}
+function changeTotalDiscounts(cartJson,changedTotal,estimatedPrice){const totalPriceEl=cartToAnimate.querySelector('.kaktusc-cart__discounts-price');const discountPriceWrap=cartToAnimate.querySelector('.kaktusc-cart__discounts');let checkAutomaticDis=cartJson.cart_level_discount_applications.find((el,i)=>{return el["type"]=="automatic"});if(checkAutomaticDis){automaticDiscountApplied=true;}
+if(automaticDiscountApplied&&(+cartJson.total_price==+changedTotal)&&!draftOrderWillApplied){let tagHtml=`<span class="kaktusc-cart__dis-tag">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="14px" height="16px" style="
+                                    width: 22px;
+                                "><path d="M17.78 3.09C17.45 2.443 16.778 2 16 2h-5.165c-.535 0-1.046.214-1.422.593l-6.82 6.89c0 .002 0 .003-.002.003-.245.253-.413.554-.5.874L.738 8.055c-.56-.953-.24-2.178.712-2.737L9.823.425C10.284.155 10.834.08 11.35.22l4.99 1.337c.755.203 1.293.814 1.44 1.533z" fill-opacity=".55" fill="currentColor"></path><path fill="currentColor" d="M10.835 2H16c1.105 0 2 .895 2 2v5.172c0 .53-.21 1.04-.586 1.414l-6.818 6.818c-.777.778-2.036.782-2.82.01l-5.166-5.1c-.786-.775-.794-2.04-.02-2.828.002 0 .003 0 .003-.002l6.82-6.89C9.79 2.214 10.3 2 10.835 2zM13.5 8c.828 0 1.5-.672 1.5-1.5S14.328 5 13.5 5 12 5.672 12 6.5 12.672 8 13.5 8z"></path></svg>
+                                <span class="kaktusc-cart__dis-tag-txt">${checkAutomaticDis.title}</span>
+                            </span>
+                    `;discountPriceWrap.querySelector('h4').innerHTML=`${kaktusCartWidgetObj.translation.discounts_btn}${tagHtml}`;totalPriceEl.innerHTML=`-${currencyFormat(+cartJson.total_discount)}`;discountPriceWrap.style.display='flex';return;}else if(manualDisountApplied&&(+cartJson.total_price==+changedTotal)&&!draftOrderWillApplied&&cartJson.original_total_price){let tagHtml=`<span class="kaktusc-cart__dis-tag">
+                                <span class="kaktusc-cart__dis-del">&#215;</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="14px" height="16px" style="
+                                    width: 22px;
+                                "><path d="M17.78 3.09C17.45 2.443 16.778 2 16 2h-5.165c-.535 0-1.046.214-1.422.593l-6.82 6.89c0 .002 0 .003-.002.003-.245.253-.413.554-.5.874L.738 8.055c-.56-.953-.24-2.178.712-2.737L9.823.425C10.284.155 10.834.08 11.35.22l4.99 1.337c.755.203 1.293.814 1.44 1.533z" fill-opacity=".55" fill="currentColor"></path><path fill="currentColor" d="M10.835 2H16c1.105 0 2 .895 2 2v5.172c0 .53-.21 1.04-.586 1.414l-6.818 6.818c-.777.778-2.036.782-2.82.01l-5.166-5.1c-.786-.775-.794-2.04-.02-2.828.002 0 .003 0 .003-.002l6.82-6.89C9.79 2.214 10.3 2 10.835 2zM13.5 8c.828 0 1.5-.672 1.5-1.5S14.328 5 13.5 5 12 5.672 12 6.5 12.672 8 13.5 8z"></path></svg>
+                                <span class="kaktusc-cart__dis-tag-txt">${manualDiscountCode.code}</span>
+                            </span>
+                            `;discountPriceWrap.querySelector('h4').innerHTML=`${kaktusCartWidgetObj.translation.discounts_btn}${tagHtml}`;totalPriceEl.innerHTML=`-${currencyFormat(+cartJson.total_price-+estimatedPrice)}`;discountPriceWrap.style.display='flex';fillRewardsProgress(+changedTotal,cartJson.item_count);return;}
+if(+cartJson.total_price==+changedTotal){discountPriceWrap.style.display='none';totalPriceEl.innerHTML=`-${currencyFormat(+cartJson.total_discount)}`;}else if(draftOrderWillApplied){discountPriceWrap.querySelector('h4').innerHTML=`${kaktusCartWidgetObj.translation.discounts_btn}`;discountPriceWrap.style.display='flex';totalPriceEl.innerHTML=`-${currencyFormat(Math.abs(+cartJson.original_total_price-+changedTotal))}`;}else{discountPriceWrap.querySelector('h4').innerHTML=`${kaktusCartWidgetObj.translation.discounts_btn}`;discountPriceWrap.style.display='flex';totalPriceEl.innerHTML=`-${currencyFormat(Math.abs(+cartJson.total_price-+changedTotal))}`;}}
+function changeProductLine(){const productEl=productsWrapper.querySelectorAll('.kaktusc-cart__product');for(let i=0;i<productEl.length;i++){productEl[i].dataset.line=i+1;}}
+const s_ajaxListener=new Object();s_ajaxListener.tempOpen=XMLHttpRequest.prototype.open;s_ajaxListener.tempSend=XMLHttpRequest.prototype.send;s_ajaxListener.callback=function(){let thisUrl=this.url.replace(/\?(.+)/ig,"");if(thisUrl.includes('/cart/add')){setTimeout(()=>{if(!cartIsOpen){openCart();}},1100);}}
+XMLHttpRequest.prototype.open=function(a,b){if(!a)var a='';if(!b)var b='';s_ajaxListener.tempOpen.apply(this,arguments);s_ajaxListener.method=a;s_ajaxListener.url=b;if(a.toLowerCase()=='get'){s_ajaxListener.data=b.split('?');s_ajaxListener.data=s_ajaxListener.data[1];}}
+XMLHttpRequest.prototype.send=function(a,b){if(!a)var a='';if(!b)var b='';s_ajaxListener.tempSend.apply(this,arguments);if(s_ajaxListener.method.toLowerCase()=='post')s_ajaxListener.data=a;s_ajaxListener.callback();}
+const nativeFetch=window.fetch;window.fetch=async function(...args){let thisUrl=args[0].replace(/\?(.+)/ig,"");if(thisUrl.includes('/cart/add')){if(typeof args[1].body==='string'&&(args[1].body.includes('offer'))){return nativeFetch.apply(window,args);}
+let response=await nativeFetch.apply(window,args);if(response.status===200){setTimeout(()=>{if(!cartIsOpen){openCart();}},1100)}
+return response}else{return nativeFetch.apply(window,args);}}
+function getAppSelector(element){return iframe?iframe.contentWindow.document.querySelector(element):document.querySelector(element);}
+function getAppSelectorAll(element){return iframe?iframe.contentWindow.document.querySelectorAll(element):document.querySelectorAll(element);}
+function addStyling(){let head=getAppSelector('head');let kaktusCartEl=getAppSelector('.kaktusc-cart');kaktusCartEl.classList.add(`kaktusc-popup__position--${kaktusCartWidgetObj.design_type?kaktusCartWidgetObj.design_type.position:'sidebar_right'}`);if(!kaktusCartWidgetObj.offer_product)return;let style=`
+                <style>
+                    .kaktusc-cart__top {
+                        background: ${kaktusCartWidgetObj.top.background_top};
+                        ${kaktusCartWidgetObj.top.top_show?'':'display: none'};
+                    }
+                    .kaktusc-cart__close {
+                        background: ${kaktusCartWidgetObj.top.close_bg_color};
+                        border-radius: ${kaktusCartWidgetObj.top.close_border_radius}px;
+                        ${kaktusCartWidgetObj.top.close_show?'':'display: none;'};
+                    }
+                    .kaktusc-cart__close rect {
+                        fill: ${kaktusCartWidgetObj.top.close_color}
+                    }
+                    .kaktusc-cart__close:hover {
+                        background: ${kaktusCartWidgetObj.top.close_bg_color_hover};
+                    }
+                    .kaktusc-cart__close:hover rect {
+                        background: ${kaktusCartWidgetObj.top.close_color_hover};
+                    }
+
+                    .kaktusc-cart__summary {
+                        background: ${kaktusCartWidgetObj.bottom.background_bottom};
+                    }
+
+                    .kaktusc-cart__continue {
+                        ${kaktusCartWidgetObj.bottom.reject_btn_show?'':'display: none'};
+                        border-radius: ${kaktusCartWidgetObj.bottom.reject_btn_border_radius}px;
+                        background: ${kaktusCartWidgetObj.bottom.reject_btn_bg};
+                        color: ${kaktusCartWidgetObj.bottom.reject_btn_font_color};
+                        font-size: ${kaktusCartWidgetObj.bottom.reject_btn_font_size}px;
+                        font-weight: ${kaktusCartWidgetObj.bottom.reject_btn_font_weight};
+                        font-style: ${kaktusCartWidgetObj.bottom.reject_btn_font_style};
+                        line-height: ${kaktusCartWidgetObj.bottom.reject_btn_line_height}px;
+                        padding: ${kaktusCartWidgetObj.bottom.reject_btn_padding_t_b}px ${kaktusCartWidgetObj.bottom.reject_btn_padding_l_r}px;
+                    }
+                    .kaktusc-cart__continue:hover {
+                        background: ${kaktusCartWidgetObj.bottom.reject_btn_bg_hover};
+                        color: ${kaktusCartWidgetObj.bottom.reject_btn_font_color_hover};
+                    }
+
+                    .kaktusc-cart__checkout {
+                        ${kaktusCartWidgetObj.bottom.checkout_btn_show?'':'display: none'};
+                        border-radius: ${kaktusCartWidgetObj.bottom.checkout_btn_border_radius}px;
+                        background: ${kaktusCartWidgetObj.bottom.checkout_btn_bg};
+                        color: ${kaktusCartWidgetObj.bottom.checkout_btn_font_color};
+                        font-size: ${kaktusCartWidgetObj.bottom.checkout_btn_font_size}px;
+                        font-weight: ${kaktusCartWidgetObj.bottom.checkout_btn_font_weight};
+                        font-style: ${kaktusCartWidgetObj.bottom.checkout_btn_font_style};
+                        line-height: ${kaktusCartWidgetObj.bottom.checkout_btn_line_height}px;
+                        padding: ${kaktusCartWidgetObj.bottom.checkout_btn_padding_t_b}px ${kaktusCartWidgetObj.bottom.checkout_btn_padding_l_r}px;
+                    }
+                    .kaktusc-cart__checkout:hover {
+                        background: ${kaktusCartWidgetObj.bottom.checkout_btn_bg_hover};
+                        color: ${kaktusCartWidgetObj.bottom.checkout_btn_font_color_hover};
+                    }
+                    .kaktusc-cart__discounts {
+                        display: none;
+                    }
+                    .kaktusc-cart__dis-del {
+                        color: #191919;
+                    }
+                    .kaktusc-cart__discounts-left h4 {
+                        color: ${kaktusCartWidgetObj.bottom.discounts_color};
+                        font-size: ${kaktusCartWidgetObj.bottom.discounts_font_size}px;
+                        font-weight: ${kaktusCartWidgetObj.bottom.discounts_font_weight};
+                        font-style: ${kaktusCartWidgetObj.bottom.discounts_font_style};
+                        line-height: ${kaktusCartWidgetObj.bottom.discounts_line_height}px;
+                    }
+
+                    .kaktusc-cart__dis-tag svg path {
+                        fill: #191919;
+                    }
+                    .kaktusc-cart__discounts-price {
+                        color: ${kaktusCartWidgetObj.bottom.discounts_price_color};
+                        font-size: ${kaktusCartWidgetObj.bottom.discounts_price_font_size}px;
+                        font-weight: ${kaktusCartWidgetObj.bottom.discounts_price_font_weight};
+                        font-style: ${kaktusCartWidgetObj.bottom.discounts_price_font_style};
+                        line-height: ${kaktusCartWidgetObj.bottom.discounts_price_line_height}px;
+                    }
+
+                    .kaktusc-cart__checkout:hover {
+                        background: ${kaktusCartWidgetObj.bottom.checkout_btn_bg_hover};
+                        color: ${kaktusCartWidgetObj.bottom.checkout_btn_font_color_hover};
+                    }
+                    .kaktusc-cart__total {
+                        ${kaktusCartWidgetObj.bottom.total_show?'':''};
+                    }
+                    .kaktusc-cart__total-left h4 {
+                        color: ${kaktusCartWidgetObj.bottom.total_color};
+                        font-size: ${kaktusCartWidgetObj.bottom.total_font_size}px;
+                        font-weight: ${kaktusCartWidgetObj.bottom.total_font_weight};
+                        font-style: ${kaktusCartWidgetObj.bottom.total_font_style};
+                        line-height: ${kaktusCartWidgetObj.bottom.total_line_height}px;
+                    }
+                    .kaktusc-cart__total-price {
+                        color: ${kaktusCartWidgetObj.bottom.total_price_color};
+                        font-size: ${kaktusCartWidgetObj.bottom.total_price_font_size}px;
+                        font-weight: ${kaktusCartWidgetObj.bottom.total_price_font_weight};
+                        font-style: ${kaktusCartWidgetObj.bottom.total_price_font_style};
+                        line-height: ${kaktusCartWidgetObj.bottom.total_price_line_height}px;
+                    }
+                    .kaktusc-cart__products {
+                        background: ${kaktusCartWidgetObj.main.background_main};
+                    }
+
+                    .kaktusc-cart__empty-cart {
+                        padding: 20px 10px;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        font-size: ${kaktusCartWidgetObj.product.price_font_size}px;
+                        color: ${kaktusCartWidgetObj.product.price_color};
+                        font-weight: ${kaktusCartWidgetObj.product.price_font_weight};
+                        font-style: ${kaktusCartWidgetObj.product.price_font_style};
+                        line-height: ${kaktusCartWidgetObj.product.price_line_height}px;
+                    }
+
+                    .kaktusc-cart__offer-products-wrap {
+                        background: ${kaktusCartWidgetObj.main.background_heading};
+                    }
+
+                    .kaktusc-cart__timer-wrap {
+                        ${kaktusCartWidgetObj.main.timer_show?'':'display: none'};
+                        background: ${kaktusCartWidgetObj.main.timer_bg};
+                    }
+                    .kaktusc-cart__timer-top {
+                        color: ${kaktusCartWidgetObj.main.timer_color};
+                        font-size: ${kaktusCartWidgetObj.main.timer_font_size}px;
+                        font-weight: ${kaktusCartWidgetObj.main.timer_font_weight};
+                        font-style: ${kaktusCartWidgetObj.main.timer_font_style};
+                        line-height: ${kaktusCartWidgetObj.main.timer_line_height}px;
+                    }
+
+                    .kaktusc-cart__top h2 {
+                        ${kaktusCartWidgetObj.main.title_show?'':'display: none'};
+                        color: ${kaktusCartWidgetObj.main.title_color};
+                        font-size: ${kaktusCartWidgetObj.main.title_font_size}px;
+                        font-weight: ${kaktusCartWidgetObj.main.title_font_weight};
+                        font-style: ${kaktusCartWidgetObj.main.title_font_style};
+                        line-height: ${kaktusCartWidgetObj.main.title_line_height}px;
+                    }
+                    .kaktusc-cart__offer-products-wrap > h2 {
+                        ${kaktusCartWidgetObj.offer_product.offer_title_show?'':'display: none'};
+                        color: ${kaktusCartWidgetObj.offer_product.offer_color};
+                        font-size: ${kaktusCartWidgetObj.offer_product.offer_font_size}px;
+                        font-weight: ${kaktusCartWidgetObj.offer_product.offer_font_weight};
+                        font-style: ${kaktusCartWidgetObj.offer_product.offer_font_style};
+                        line-height: ${kaktusCartWidgetObj.offer_product.offer_line_height}px;
+                    }
+
+                    .kaktusc-cart__offer-products-wrap {
+                        ${kaktusCartWidgetObj.main.upsell_show?'':'display: none'};
+                    }
+                    .kaktusc-wallpaper {
+                        ${kaktusCartWidgetObj.main.wallpaper!='wallpaper_0'?`background:url("${kaktuscbaseUrl}assets/images/widgets/wallpapers/${kaktusCartWidgetObj.main.wallpaper}.png");`:''
+}
+                    }
+
+                    .kaktusc-cart__product {
+                        background: ${kaktusCartWidgetObj.product.background};
+                        border-width: ${kaktusCartWidgetObj.product.prod_border_width}px;
+                        border-color: ${kaktusCartWidgetObj.product.prod_border_color};
+                        border-radius: ${kaktusCartWidgetObj.product.prod_border_radius}px;
+                    }
+                    .kaktusc-cart__product-img {
+                        background: ${kaktusCartWidgetObj.product.background_img};
+                    }
+                    .kaktusc-cart__product-price-discounted {
+                        ${kaktusCartWidgetObj.product.price_show?'':'display: none'};
+                        font-size: ${kaktusCartWidgetObj.product.price_font_size}px;
+                        color: ${kaktusCartWidgetObj.product.price_color};
+                        font-weight: ${kaktusCartWidgetObj.product.price_font_weight};
+                        font-style: ${kaktusCartWidgetObj.product.price_font_style};
+                        line-height: ${kaktusCartWidgetObj.product.price_line_height}px;
+                    }
+                    .kaktusc-cart__product-price-real {
+                        ${kaktusCartWidgetObj.product.compare_price_show?'':'display: none'};
+                        font-size: ${kaktusCartWidgetObj.product.compare_price_font_size}px;
+                        color: ${kaktusCartWidgetObj.product.compare_price_color};
+                        font-weight: ${kaktusCartWidgetObj.product.compare_price_font_weight};
+                        font-style: ${kaktusCartWidgetObj.product.compare_price_font_style};
+                        line-height: ${kaktusCartWidgetObj.product.compare_price_line_height}px;
+                    }
+                    .kaktusc-cart__product-delete svg path {
+                        stroke: ${kaktusCartWidgetObj.product.delete_btn_font_color};
+                    }
+                    .kaktusc-cart__product-delete:hover svg path {
+                        stroke: ${kaktusCartWidgetObj.product.delete_btn_font_color_hover};
+                    }
+                    .kaktusc-prod--title {
+                        ${kaktusCartWidgetObj.product.prod_title_show?'':'display: none'};
+                        font-size: ${kaktusCartWidgetObj.product.prod_title_font_size}px;
+                        color: ${kaktusCartWidgetObj.product.prod_title_color};
+                        font-weight: ${kaktusCartWidgetObj.product.prod_title_font_weight};
+                        font-style: ${kaktusCartWidgetObj.product.prod_title_font_style};
+                        line-height: ${kaktusCartWidgetObj.product.prod_title_line_height}px;
+                    }
+                    .kaktusc-cart__product-variant {
+                        ${kaktusCartWidgetObj.product.prod_desc_show?'':'display: none'};
+                        font-size: ${kaktusCartWidgetObj.product.prod_desc_font_size}px;
+                        color: ${kaktusCartWidgetObj.product.prod_desc_color};
+                        font-weight: ${kaktusCartWidgetObj.product.rod_desc_font_weight};
+                        font-style: ${kaktusCartWidgetObj.product.prod_desc_font_style};
+                        line-height: ${kaktusCartWidgetObj.product.prod_desc_line_height}px;
+                    }
+                    .kaktusc-cart__offer-product-variant {
+                        ${kaktusCartWidgetObj.offer_product.prod_desc_show_o?'':'display: none'};
+                        font-size: ${kaktusCartWidgetObj.offer_product.prod_desc_font_size_o}px;
+                        color: ${kaktusCartWidgetObj.offer_product.prod_desc_color_o};
+                        font-weight: ${kaktusCartWidgetObj.offer_product.rod_desc_font_weight_o};
+                        font-style: ${kaktusCartWidgetObj.offer_product.prod_desc_font_style_o};
+                        line-height: ${kaktusCartWidgetObj.offer_product.prod_desc_line_height_o}px;
+                    }
+                    .cart-prod-qnt {
+                        background: ${kaktusCartWidgetObj.product.qty_background};
+                        border-width: 1px;
+                        border-color: ${kaktusCartWidgetObj.product.qty_btn_bg};
+                        border-radius: ${kaktusCartWidgetObj.product.qty_border_radius}px;
+                    }
+                    .cart-prod-qnt:hover {
+                        border-color: ${kaktusCartWidgetObj.product.qty_btn_bg_hover};
+                    }
+                    .cart-prod-qnt svg path {
+                        fill: ${kaktusCartWidgetObj.product.qty_font_color};
+                    }
+                    .cart-prod-qnt:hover svg path {
+                        fill: ${kaktusCartWidgetObj.product.qty_btn_color_hover};
+                    }
+                    .kaktusc-cart__product-qnt,
+                    .kaktusc-cart__offer-product-qnt {
+                        color: ${kaktusCartWidgetObj.product.qty_btn_color};
+                    }
+
+                    .kaktusc-cart__offer-product .kaktusc-cart__offer-product-btn {
+                        background: ${kaktusCartWidgetObj.product.cart_btn_bg};
+                        border-radius: ${kaktusCartWidgetObj.product.cart_btn_border_radius}px;
+                        font-size: ${kaktusCartWidgetObj.product.cart_btn_font_size}px;
+                        color: ${kaktusCartWidgetObj.product.cart_btn_font_color};
+                        font-weight: ${kaktusCartWidgetObj.product.cart_btn_font_weight};
+                        font-style: ${kaktusCartWidgetObj.product.cart_btn_font_style};
+                        line-height: ${kaktusCartWidgetObj.product.cart_btn_line_height}px;
+                    }
+                    .kaktusc-cart__offer-product .kaktusc-cart__offer-product-add:hover .kaktusc-cart__offer-product-btn {
+                        background: ${kaktusCartWidgetObj.product.cart_btn_bg_hover};
+                        color: ${kaktusCartWidgetObj.product.cart_btn_font_color_hover};
+                    }
+                    .kaktusc-cart__offer-product .kaktusc-cart__offer-product-add:hover .kaktusc-cart__offer-product-plus path {
+                        fill: ${kaktusCartWidgetObj.product.cart_btn_font_color_hover};
+                    }
+                    .kaktusc-cart__offer-product-badge {
+                        background: ${kaktusCartWidgetObj.product.save_bg};
+                        border-radius: ${kaktusCartWidgetObj.product.save_border_radius}px;
+                        color: ${kaktusCartWidgetObj.product.save_color};
+                    }
+                    .kaktusc-cart__offer-product-badge span {
+                        font-size: ${kaktusCartWidgetObj.product.save_font_size}px;
+                        font-weight: ${kaktusCartWidgetObj.product.save_font_weight};
+                        font-style: ${kaktusCartWidgetObj.product.save_font_style};
+                        line-height: ${kaktusCartWidgetObj.product.save_line_height}px;
+                    }
+                    .kaktusc-cart__offer-product-var {
+                        display: ${kaktusCartWidgetObj.product.variations_show?'block;':'none;'}
+                    }
+                    .kaktusc-cart__offer-variant {
+                        background: ${kaktusCartWidgetObj.product.variations_background};
+                        border-radius: ${kaktusCartWidgetObj.product.variations_border_radius}px;
+                        border-width: ${kaktusCartWidgetObj.product.variations_border_width}px;
+                        border-color: ${kaktusCartWidgetObj.product.variations_border_color};
+                        color: ${kaktusCartWidgetObj.product.variations_font_color};
+                    }
+                    .kaktusc-cart__offer-polygon {
+                        background: ${kaktusCartWidgetObj.product.variations_font_color};
+                    }
+                    .kaktusc-cart__offer-product {
+                        background: ${kaktusCartWidgetObj.offer_product.background_o};
+                        border-width: ${kaktusCartWidgetObj.offer_product.prod_border_width_o}px;
+                        border-color: ${kaktusCartWidgetObj.offer_product.prod_border_color_o};
+                        border-radius: ${kaktusCartWidgetObj.offer_product.prod_border_radius_o}px;
+                    }
+                    .kaktusc-cart__offer-product-img {
+                        background: ${kaktusCartWidgetObj.offer_product.background_img_o};
+                    }
+                    .kaktusc-cart__offer-product-qnt-wrap {
+
+                    }
+                    .kaktusc-cart__offer-product-title {
+                        ${kaktusCartWidgetObj.offer_product.prod_title_show_o?'':'display: none'};
+                        font-size: ${kaktusCartWidgetObj.offer_product.prod_title_font_size_o}px;
+                        color: ${kaktusCartWidgetObj.offer_product.prod_title_color_o};
+                        font-weight: ${kaktusCartWidgetObj.offer_product.prod_title_font_weight_o};
+                        font-style: ${kaktusCartWidgetObj.offer_product.prod_title_font_style_o};
+                        line-height: ${kaktusCartWidgetObj.offer_product.prod_title_line_height_o}px;
+                    }
+                    .cart-prod-qnt-o {
+                        background: ${kaktusCartWidgetObj.offer_product.qty_background_o};
+                        border-width: 1px;
+                        border-color: ${kaktusCartWidgetObj.offer_product.qty_btn_bg_o};
+                        border-radius: ${kaktusCartWidgetObj.offer_product.qty_border_radius_o}px;
+                    }
+                    .cart-prod-qnt-o:hover {
+                        border-color: ${kaktusCartWidgetObj.offer_product.qty_btn_bg_hover_o};
+                    }
+                    .cart-prod-qnt-o svg path {
+                        fill: ${kaktusCartWidgetObj.offer_product.qty_font_color_o};
+                    }
+                    .cart-prod-qnt-o:hover svg path {
+                        fill: ${kaktusCartWidgetObj.offer_product.qty_btn_color_hover_o};
+                    }
+
+                    .kaktusc-cart .kaktusc-cart__offer-product-price-section .kaktusc-cart__of-price-discounted {
+
+                        font-size: ${kaktusCartWidgetObj.offer_product.price_font_size_o}px;
+                        color: ${kaktusCartWidgetObj.offer_product.price_color_o};
+                        font-weight: ${kaktusCartWidgetObj.offer_product.price_font_weight_o};
+                        font-style: ${kaktusCartWidgetObj.offer_product.price_font_style_o};
+                        line-height: ${kaktusCartWidgetObj.offer_product.price_line_height_o}px;
+                    }
+                    .kaktusc-cart__of-price-real {
+                        ${kaktusCartWidgetObj.offer_product.compare_price_show?'':'display: none'};
+                        font-size: ${kaktusCartWidgetObj.offer_product.compare_price_font_size_o}px;
+                        color: ${kaktusCartWidgetObj.offer_product.compare_price_color_o};
+                        font-weight: ${kaktusCartWidgetObj.offer_product.compare_price_font_weight_o};
+                        font-style: ${kaktusCartWidgetObj.offer_product.compare_price_font_style_o};
+                        line-height: ${kaktusCartWidgetObj.offer_product.compare_price_line_height_o}px;
+                    }
+
+                    .kaktusc-cart__discount-code {
+                        ${kaktusCartWidgetObj.discount_code.discount_code_show?'':'display: none'};
+                        background: ${kaktusCartWidgetObj.discount_code.code_background};
+                        border-top-width: ${kaktusCartWidgetObj.discount_code.code_border_width}px;
+                        border-color: ${kaktusCartWidgetObj.discount_code.code_border_color};
+                    }
+                    .kaktusc-cart__discount-code-txt {
+                        font-size: ${kaktusCartWidgetObj.discount_code.code_text_font_size}px;
+                        color: ${kaktusCartWidgetObj.discount_code.code_text_color};
+                        font-weight: ${kaktusCartWidgetObj.discount_code.code_text_font_weight};
+                        font-style: ${kaktusCartWidgetObj.discount_code.code_text_font_style};
+                        line-height: ${kaktusCartWidgetObj.discount_code.code_text_line_height}px;
+                    }
+                    .kaktusc-cart__discount-code-in {
+                        background: ${kaktusCartWidgetObj.discount_code.code_background_input};
+                        color: ${kaktusCartWidgetObj.discount_code.code_in_color};
+                        border-width: ${kaktusCartWidgetObj.discount_code.code_border_in_width}px;
+                        border-color: ${kaktusCartWidgetObj.discount_code.code_border_in_color};
+                        border-radius: ${kaktusCartWidgetObj.discount_code.code_border_in_radius}px;
+                    }
+                    .kaktusc-cart__discount-code-btn {
+                        background: ${kaktusCartWidgetObj.discount_code.code_btn_bg};
+                        font-size: ${kaktusCartWidgetObj.discount_code.code_btn_font_size}px;
+                        color: ${kaktusCartWidgetObj.discount_code.code_btn_color};
+                        font-weight: ${kaktusCartWidgetObj.discount_code.code_btn_font_weight};
+                        font-style: ${kaktusCartWidgetObj.discount_code.code_btn_font_style};
+                        line-height: ${kaktusCartWidgetObj.discount_code.code_btn_line_height}px;
+                    }
+                    .kaktusc-cart__discount-code-btn:hover {
+                        background: ${kaktusCartWidgetObj.discount_code.code_btn_bg_h};
+                        color: ${kaktusCartWidgetObj.discount_code.code_btn_color_h};
+                    }
+                    .kaktusc-cart__rewards {
+                        ${kaktusCartWidgetObj.rewards.rewards_show?'':'display: none'};
+                        background: ${kaktusCartWidgetObj.rewards.rewards_background};
+                        border-top-width: ${kaktusCartWidgetObj.rewards.rewards_border_width}px;
+                        border-top-color: ${kaktusCartWidgetObj.rewards.rewards_border_color};
+                    }
+                    .kaktusc-cart__rewards-preunlock,
+                    .kaktusc-cart__rewards-postunlock {
+                        font-size: ${kaktusCartWidgetObj.rewards.rewards_text_font_size}px;
+                        color: ${kaktusCartWidgetObj.rewards.rewards_text_color};
+                        font-weight: ${kaktusCartWidgetObj.rewards.rewards_text_font_weight};
+                        font-style: ${kaktusCartWidgetObj.rewards.rewards_text_font_style};
+                        line-height: ${kaktusCartWidgetObj.rewards.rewards_text_line_height}px;
+                    }
+                    .kaktusc-cart__rewards-progress {
+                        background: ${kaktusCartWidgetObj.rewards.rewards_background_pro};
+                    }
+                    .kaktusc-cart__rewards-filled {
+                        background: ${kaktusCartWidgetObj.rewards.rewards_background_pro_f};
+                    }
+                    ${kaktusCartWidgetObj.custom_css}
+
+                </style>
+            `;head.insertAdjacentHTML('beforeend',style);}
+function buildIconCart(){const style=`
+                <style>
+                    .kaktusc-cart-icon {
+                        display: ${kaktusCartWidgetObj.main.cart_icon_show?'block':'none'};
+                        position: fixed;
+                        top: 50%;
+                        right: 22px;
+                        width: 60px;
+                        height: 60px;
+                        background-color: ${kaktusCartWidgetObj.main.cart_icon_bg?kaktusCartWidgetObj.main.cart_icon_bg:'#191919'};
+                        border-radius: 50%;
+                        cursor: pointer;
+                        transition: all 200ms linear;
+                        z-index: 10000;
+                    }
+                    .kaktusc-cart-icon:hover {
+                        transform: scale(1.04);
+                    }
+                    .kaktusc-cart-icon-wrap {
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                    }
+                    .kaktusc-cart-icon-wrap svg {
+                        height: 24px;
+                        width: 24px;
+                    }
+                    .kaktusc-cart-icon-wrap svg path,
+                    .kaktusc-cart-icon-wrap svg rect {
+                        fill: ${kaktusCartWidgetObj.main.cart_icon_color?kaktusCartWidgetObj.main.cart_icon_color:'#fff'};
+                    }
+
+                    .kaktusc-cart-icon.cart_right_top {
+                        top: 22px;
+                        right: 22px;
+                        left: auto;
+                        bottom: auto;
+                    }
+                    .kaktusc-cart-icon.cart_right_bottom {
+                        top: auto;
+                        right: 22px;
+                        left: auto;
+                        bottom: 22px;
+                    }
+                    .kaktusc-cart-icon.cart_right_center {
+                        top: 50%;
+                        margin-top: -25px;
+                        right: 22px;
+                        left: auto;
+                        bottom: auto;
+                    }
+                    .kaktusc-cart-icon.cart_left_center {
+                        top: 50%;
+                        margin-top: -25px;
+                        right: auto;
+                        left: 22px;
+                        bottom: auto;
+                    }
+                    .kaktusc-cart-icon.cart_left_bottom {
+                        top: auto;
+                        right: auto;
+                        left: 22px;
+                        bottom: 22px;
+                    }
+                    .kaktusc-cart-icon.cart_left_top {
+                        top: 22px;
+                        right: auto;
+                        left: 22px;
+                        bottom: auto;
+                    }
+                    .kaktusc-cart-icon-img {
+                        display: flex;
+                    }
+                    .kaktusc-cart-icon-number {
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        border-radius: 50%;
+                        background-color: ${kaktusCartWidgetObj.main.cart_icon_number_bg?kaktusCartWidgetObj.main.cart_icon_number_bg:'#F7F3F3'};
+                        top: -4px;
+                        right: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 14px;
+                        color: ${kaktusCartWidgetObj.main.cart_icon_number_c?kaktusCartWidgetObj.main.cart_icon_number_c:'#000'};
+                    }
+                </style>
+            `;const html=`
+                    <div id="kaktusc-cart-icon" class="kaktusc-cart-icon ${kaktusCartWidgetObj.design_type.cart_icon}">
+                        <div class="kaktusc-cart-icon-wrap">
+                            <span class="kaktusc-cart-icon-number"></span>
+                            <div class="kaktusc-cart-icon-img">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                    <g>
+                                    <g>
+                                        <path d="m341.5,417.6c-22.9,0-40.7,18.8-40.7,41.7s18.8,41.7 40.7,41.7 40.7-18.8 40.7-41.7-18.8-41.7-40.7-41.7zm0,62.5c-11.5,0-19.8-9.4-19.8-20.9s9.4-20.9 19.8-20.9 19.8,9.4 19.8,20.9-9.4,20.9-19.8,20.9z"/>
+                                        <path d="m119.4,417.6c-22.9,0-40.7,18.8-40.7,41.7s18.8,41.7 40.7,41.7c22.9,0 40.7-18.8 40.7-41.7s-18.8-41.7-40.7-41.7zm0,62.5c-11.5,0-19.8-9.4-19.8-20.9s9.4-20.9 19.8-20.9c11.5,0 19.8,9.4 19.8,20.9-2.84217e-14,11.6-9.3,20.9-19.8,20.9z"/>
+                                        <path d="m439.5,11l-16.2,63.6h-409.2l75.5,223.7c-25.3,3.7-44.2,25.1-44.2,52.6 0,30.2 22.9,54.2 52.1,54.2h283.6v-19.8h-283.6c-17.7,0-31.3-14.6-31.3-33.4 0-18.8 14.6-33.4 31.3-33.4h283.6 1l74-286.7h41.7v-20.8h-58.3zm-73,286.7h-255.4l-67.8-202.3h374.3l-51.1,202.3z"/>
+                                        <rect width="20.9" x="146.5" y="144.4" height="117.8"/>
+                                        <rect width="20.9" x="220.6" y="144.4" height="117.8"/>
+                                        <rect width="20.9" x="294.6" y="144.4" height="117.8"/>
+                                    </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>`;document.body.insertAdjacentHTML('beforeend',style);document.body.insertAdjacentHTML('beforeend',html);fetchCartJson().then((cartJson)=>{getProductObjects(cartJson).then((result)=>{setCompareAtPrice(result,cartJson);cartJsonObj=cartJson;changeQuantityTxt(cartJson)})})}
+function changeQuantityTxt(cartJson){cartIconEl=document.querySelector('.kaktusc-cart-icon-number');cartIconEl.innerHTML=cartJson.item_count;}
+function fillRewardsProgress(totalPrice,cart_product_items){if(!(kaktusCartWidgetObj.rewards&&kaktusCartWidgetObj.rewards.rewards_show))return;let rewardsTxt1=kaktusCartWidgetObj.translation.rewards_preunlock;let rewardsTxt2='';let progressWrap=cartToAnimate.querySelector('.kaktusc-cart__rewards');let progressEl=cartToAnimate.querySelector('.kaktusc-cart__rewards-filled');let progressBarEl=cartToAnimate.querySelector('.kaktusc-cart__rewards-progress');let progressPreTxt=cartToAnimate.querySelector('.kaktusc-cart__rewards-preunlock');let progressPostTxt=cartToAnimate.querySelector('.kaktusc-cart__rewards-postunlock');let checkAutomaticDis=cartJsonObj.cart_level_discount_applications.find((el,i)=>{return el["type"]=="automatic"});if(kaktusCartWidgetObj.rewards.rewards_cart_total_show){let minPriceTotal=+kaktusCartWidgetObj.rewards.rewards_cart_total*100;let difference=minPriceTotal-+totalPrice;if((difference>0)){if(kaktusCartWidgetObj.translation.rewards_preunlock.includes('{{amount}}')){rewardsTxt1=kaktusCartWidgetObj.translation.rewards_preunlock.split('{{amount}}')[0];rewardsTxt2=kaktusCartWidgetObj.translation.rewards_preunlock.split('{{amount}}')[1];progressPreTxt.innerHTML=`${rewardsTxt1} ${currencyFormat(difference)} ${rewardsTxt2}`;}else{progressPreTxt.innerHTML=`${rewardsTxt1}`;}
+progressEl.style.width=`${totalPrice/minPriceTotal*100}%`;progressPostTxt.style.display='none';progressPreTxt.style.display='block';progressBarEl.classList.remove('hide');if(!checkAutomaticDis){automaticDiscountApplied=false;}}else{progressPostTxt.innerHTML=kaktusCartWidgetObj.translation.rewards_postunlock;progressEl.style.width='100%';progressPostTxt.style.display='block';progressPreTxt.style.display='none';progressBarEl.classList.add('hide');if(checkAutomaticDis){automaticDiscountApplied=true;automaticCode=checkAutomaticDis.title;}}}else if(kaktusCartWidgetObj.rewards.rewards_item_count_show){let minCount=+kaktusCartWidgetObj.rewards.rewards_item_count;let difference=minCount-+cart_product_items;if((difference>0)){if(kaktusCartWidgetObj.translation.rewards_preunlock.includes('{{amount}}')){rewardsTxt1=kaktusCartWidgetObj.translation.rewards_preunlock.split('{{amount}}')[0];rewardsTxt2=kaktusCartWidgetObj.translation.rewards_preunlock.split('{{amount}}')[1];progressPreTxt.innerHTML=`${rewardsTxt1} ${difference} ${rewardsTxt2}`;}else{progressPreTxt.innerHTML=`${rewardsTxt1}`;}
+progressEl.style.width=`${+cart_product_items/minCount*100}%`;progressPostTxt.style.display='none';progressPreTxt.style.display='block';progressBarEl.classList.remove('hide');if(!checkAutomaticDis){automaticDiscountApplied=false;}}else{progressPostTxt.innerHTML=kaktusCartWidgetObj.translation.rewards_postunlock;progressEl.style.width='100%';progressPostTxt.style.display='block';progressPreTxt.style.display='none';progressBarEl.classList.add('hide');if(checkAutomaticDis){automaticDiscountApplied=true;automaticCode=checkAutomaticDis.title;}}}}
+function buildCart(){const appWrapper=getAppSelector('#kaktusc-root');if(!appWrapper)return;let timerTxt1=kaktusCartWidgetObj.translation.timer_msg;let timerTxt2='';if(kaktusCartWidgetObj.translation.timer_msg.includes('{{time}}')){timerTxt1=kaktusCartWidgetObj.translation.timer_msg.split('{{time}}')[0];timerTxt2=kaktusCartWidgetObj.translation.timer_msg.split('{{time}}')[1];}
+const cartHtml=`<div class="kaktusc-cart">
+                                <div class="kaktusc-cart__wrap">
+                                    <div class="kaktusc-cart__body">
+                                        <div class="kaktusc-cart__top">
+                                            <h2>${kaktusCartWidgetObj.translation.title}</h2>
+                                            <span class="kaktusc-cart__close">
+                                                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect x="7.54169" y="7.23608" width="1.25448" height="19.4444" rx="0.62724" transform="rotate(-45 7.54169 7.23608)" fill="#191919"/>
+                                                    <rect x="7.98535" y="20.9854" width="1.25448" height="19.4444" rx="0.62724" transform="rotate(-135 7.98535 20.9854)" fill="#191919"/>
+                                                </svg>
+                                            </span>
+                                        </div>
+
+                                        <div class="kaktusc-cart__timer-wrap">
+                                            <div class="kaktusc-cart__timer-top">
+                                                <span class="kaktusc-cart__timer-msg">
+                                                    ${timerTxt1}
+                                                </span>
+                                                <span class="kaktusc-cart__timer">
+                                                </span>
+                                                <span class="kaktusc-cart__timer-msg-other">
+                                                    ${timerTxt2}
+                                                </span>
+                                            </div>
+                                            <div class="kaktusc-cart__timer-bottom">
+                                            </div>
+                                        </div>
+
+                                        <div class="kaktusc-cart__main kaktusc-wallpaper">
+                                            <div class="kaktusc-cart__products">
+
+                                            </div>
+                                            <div class="kaktusc-cart__offer-products-wrap">
+
+                                            </div>
+
+                                            <div class="kaktusc-cart__rewards">
+                                                <div class="kaktusc-cart__rewards-preunlock">
+                                                </div>
+                                                <div class="kaktusc-cart__rewards-postunlock hide">
+                                                </div>
+                                                <div class="kaktusc-cart__rewards-progress">
+                                                    <span class="kaktusc-cart__rewards-filled"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="kaktusc-cart__discount-code">
+                                                <div class="kaktusc-cart__discount-code-wrap">
+                                                    <span class="kaktusc-cart__discount-code-txt">${kaktusCartWidgetObj.translation.discount_code}</span>
+                                                    <div class="kaktusc-cart__discount-code-in-wrap">
+                                                        <input class="kaktusc-cart__discount-code-in" type="text">
+                                                        <span class="kaktusc-cart__discount-code-notif"></span>
+                                                    </div>
+                                                    <button class="kaktusc-cart__discount-code-btn">${kaktusCartWidgetObj.translation.discount_apply_btn}</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="kaktusc-cart__summary">
+                                            <div class="kaktusc-cart__discounts">
+                                                <div class="kaktusc-cart__discounts-left">
+                                                    <h4 style="display: flex; align-items: center;">${kaktusCartWidgetObj.translation.discounts_btn}</h4>
+                                                </div>
+                                                <div class="kaktusc-cart__discounts-right">
+                                                    <span class="kaktusc-cart__discounts-price"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="kaktusc-cart__total">
+                                                <div class="kaktusc-cart__total-left">
+                                                    <h4>${kaktusCartWidgetObj.translation.total_btn}</h4>
+                                                </div>
+                                                <div class="kaktusc-cart__total-right">
+                                                    <span class="kaktusc-cart__total-price"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="kaktusc-cart__checkout-wrap">
+                                                <button class="kaktusc-cart__checkout">${kaktusCartWidgetObj.translation.checkout_btn}</button>
+                                                <button class="kaktusc-cart__continue">${kaktusCartWidgetObj.translation.reject_btn}</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>`;appWrapper.insertAdjacentHTML('beforeend',cartHtml);cartBuilded=true;}
+function fillCartProducts(productsArr){const orderDataSt=JSON.parse(localStorage.getItem('kaktusDataOrder'));productsWrapper.innerHTML='';productsArr.forEach((product,i)=>{fillCartProduct(product,orderDataSt,i);})}
+function fillCartProduct(product,orderData,line){let finalPrice=product.final_line_price;let newPrice=product.final_line_price;if(orderData&&orderData.length&&product.properties&&product.properties["offer"]){const orderDataProduct=orderData.find((el)=>el.propertyId===product.properties["offer"]);if(orderDataProduct&&+orderDataProduct.discountValue){if(orderDataProduct.discountType==="%"){newPrice=(+product.final_line_price-(+product.final_price*+orderDataProduct.qty*+orderDataProduct.discountValue/100)).toFixed(2);}else{newPrice=(+product.final_line_price-+orderDataProduct.discountValue*100*+orderDataProduct.qty).toFixed(2);}}}
+finalPrice=+finalPrice===+newPrice?+finalPrice:+newPrice;const hideClass=(!product.compare_at_price||+(+product.compare_at_price*product.quantity*100).toFixed(0)===finalPrice)?'hide':'';const productHtml=`
+                        <div class="kaktusc-cart__product" data-id="${product.id}" data-line="${line+1}">
+                            <div class="kaktusc-cart__product-img">
+                                <img src="${product.image}" alt="Product">
+                            </div>
+
+                            <div class="kaktusc-cart__product-content">
+                                <h4 class="kaktusc-cart__product-title kaktusc-prod--title">
+                                    ${product.product_title}
+                                </h4>
+                                <span class="kaktusc-cart__product-variant">
+                                    ${product.variant_title?product.variant_title:' '}
+                                </span>
+                                <div class="kaktusc-cart__product-qnt-wrap">
+                                    <span class="kaktusc-cart__product-qnt--minus cart-prod-qnt">
+                                        <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="cart-prod-qnt-s" d="M14.0625 0H0.9375C0.68886 0 0.450403 0.105357 0.274588 0.292893C0.0987722 0.48043 0 0.734784 0 1C0 1.26522 0.0987722 1.51957 0.274588 1.70711C0.450403 1.89464 0.68886 2 0.9375 2H14.0625C14.3111 2 14.5496 1.89464 14.7254 1.70711C14.9012 1.51957 15 1.26522 15 1C15 0.734784 14.9012 0.48043 14.7254 0.292893C14.5496 0.105357 14.3111 0 14.0625 0Z" fill="#999999"/>
+                                        </svg>
+                                    </span>
+                                    <span class="kaktusc-cart__product-qnt" data-qnt="${product.quantity}">${product.quantity}</span>
+                                    <span class="kaktusc-cart__product-qnt--plus cart-prod-qnt plus">
+                                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="cart-prod-qnt-s" d="M14.0625 6.5625H8.4375V0.9375C8.4375 0.68886 8.33873 0.450403 8.16291 0.274588C7.9871 0.0987722 7.74864 0 7.5 0C7.25136 0 7.0129 0.0987722 6.83709 0.274588C6.66127 0.450403 6.5625 0.68886 6.5625 0.9375V6.5625H0.9375C0.68886 6.5625 0.450403 6.66127 0.274588 6.83709C0.0987722 7.0129 0 7.25136 0 7.5C0 7.74864 0.0987722 7.9871 0.274588 8.16291C0.450403 8.33873 0.68886 8.4375 0.9375 8.4375H6.5625V14.0625C6.5625 14.3111 6.66127 14.5496 6.83709 14.7254C7.0129 14.9012 7.25136 15 7.5 15C7.74864 15 7.9871 14.9012 8.16291 14.7254C8.33873 14.5496 8.4375 14.3111 8.4375 14.0625V8.4375H14.0625C14.3111 8.4375 14.5496 8.33873 14.7254 8.16291C14.9012 7.9871 15 7.74864 15 7.5C15 7.25136 14.9012 7.0129 14.7254 6.83709C14.5496 6.66127 14.3111 6.5625 14.0625 6.5625Z" fill="#999999"/>
+                                        </svg>
+                                    </span>
+                                    <div class="kaktusc-cart__product-err hide"></div>
+                                </div>
+                            </div>
+
+                            <div class="kaktusc-cart__product-price-section">
+                                <div class="kaktusc-cart__product-delete">
+                                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 4.99999H3.16667M3.16667 4.99999H16.5M3.16667 4.99999V16.6667C3.16667 17.1087 3.34226 17.5326 3.65482 17.8452C3.96738 18.1577 4.39131 18.3333 4.83333 18.3333H13.1667C13.6087 18.3333 14.0326 18.1577 14.3452 17.8452C14.6577 17.5326 14.8333 17.1087 14.8333 16.6667V4.99999H3.16667ZM5.66667 4.99999V3.33332C5.66667 2.8913 5.84226 2.46737 6.15482 2.15481C6.46738 1.84225 6.89131 1.66666 7.33333 1.66666H10.6667C11.1087 1.66666 11.5326 1.84225 11.8452 2.15481C12.1577 2.46737 12.3333 2.8913 12.3333 3.33332V4.99999M7.33333 9.16666V14.1667M10.6667 9.16666V14.1667" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="kaktusc-cart__product-price-wrap">
+                                    <span class="kaktusc-cart__product-price-real ${hideClass}">${currencyFormat((+product.compare_at_price*product.quantity*100).toFixed(0))}</span>&nbsp;
+                                    <span class="kaktusc-cart__product-price-discounted">${currencyFormat(+finalPrice)}</span>
+                                </div>
+                            </div>
+                        </div>`;productsWrapper.insertAdjacentHTML('beforeend',productHtml);}
+function changeOfferPrice(productEl,product){const orderDataSt=JSON.parse(localStorage.getItem('kaktusDataOrder'));let finalPrice=product.final_line_price;let newPrice=product.final_line_price;if(orderDataSt&&orderDataSt.length&&product.properties&&product.properties["offer"]&&!automaticDiscountApplied&&!manualDisountApplied){const orderDataProduct=orderDataSt.find((el)=>el.propertyId===product.properties["offer"]);if(orderDataProduct&&+orderDataProduct.discountValue){if(orderDataProduct.discountType==="%"){newPrice=(+product.final_line_price-(+product.final_price*+orderDataProduct.qty*+orderDataProduct.discountValue/100)).toFixed(2);}else{newPrice=(+product.final_line_price-+orderDataProduct.discountValue*100*+orderDataProduct.qty).toFixed(2);}}}
+finalPrice=+finalPrice===+newPrice?+finalPrice:+newPrice;productEl.querySelector('.kaktusc-cart__product-price-discounted').innerHTML=currencyFormat(+finalPrice);if(product.compare_at_price){if(+(+product.compare_at_price*product.quantity*100).toFixed(0)===finalPrice){productEl.querySelector('.kaktusc-cart__product-price-real').classList.add('hide');}else{productEl.querySelector('.kaktusc-cart__product-price-real').innerHTML=currencyFormat((+product.compare_at_price*product.quantity*100).toFixed(0));productEl.querySelector('.kaktusc-cart__product-price-real').classList.remove('hide');}}else{productEl.querySelector('.kaktusc-cart__product-price-real').classList.add('hide');}}
+function getVariantObj(productEl){let offerProduct;Object.values(currentDataOffer.products).forEach((el,i)=>{el.variants.forEach((prod)=>{if(prod.productId==productEl.dataset.id){offerProduct=prod;}});});return offerProduct}
+function changeOfferPriceInOffer(productEl,offerProduct){if(!offerProduct)return;const discountObj=getProductDiscountObject(productEl.dataset.id);const discountValue=discountObj.discount?Math.round(+discountObj.discount*100)/100:undefined;let qnt=productEl.dataset.qnt;let realPrice=+offerProduct.variantPrice*100;let discountedPrice=realPrice;if(discountValue){if((discountObj.discount_type==='%')){discountedPrice=(discountedPrice-discountedPrice*discountValue/100).toFixed(2);}else{discountedPrice=(discountedPrice-(discountValue*100)).toFixed(2);}}
+productEl.querySelector('.kaktusc-cart__of-price-discounted').innerHTML=currencyFormat(+discountedPrice*+qnt);if(+discountedPrice!=+realPrice){productEl.querySelector('.kaktusc-cart__of-price-real').innerHTML=currencyFormat(+realPrice*+qnt);productEl.querySelector('.kaktusc-cart__of-price-real').classList.remove('hide');}}
+function getProductDiscountObject(productID){let discountArray=currentDataOffer.discount[currentOffer.id];let discountIndex=0;currentOffer.products.forEach((el,i)=>{el.forEach((elem)=>{currentDataOffer.products[`${elem}`].variants.forEach((variant)=>{if(variant.productId==productID){discountIndex=i;}});})});return discountArray[discountIndex];}
+function checkDraftOrder(cartJson){const orderDataSt=JSON.parse(localStorage.getItem('kaktusDataOrder'));let draftOrder=false;cartJson.items.forEach((product)=>{if(orderDataSt&&orderDataSt.length&&product.properties&&product.properties["offer"]){const orderDataProduct=orderDataSt.find((el)=>el.propertyId===product.properties["offer"]);if(orderDataProduct&&+orderDataProduct.discountValue){draftOrder=true;}}});return draftOrder}
+function changeTotalPriceManualCode(cartJson,manualDisountCodeArg){const summaryBlock=cartToAnimate.querySelector('.kaktusc-cart__summary');const totalPriceEl=cartToAnimate.querySelector('.kaktusc-cart__total-price');let notificBlock=cartToAnimate.querySelector('.kaktusc-cart__discount-code-notif');summaryBlock.classList.add('spinner');if(manualDisountCodeArg){localStorage.setItem('kaktuscDiscountManual',JSON.stringify(manualDisountCodeArg));manualDiscountCode=manualDisountCodeArg;notificBlock.style.display='none';}else{manualDiscountCode=localStorage.getItem('kaktuscDiscountManual')?JSON.parse(localStorage.getItem('kaktuscDiscountManual')):'';notificBlock.style.display='block';}
+fetch(`/checkout/?discount=${manualDiscountCode.code}`).then((result)=>{if(result.url&&result.url.includes('/cart')){const changedTotal=changeTotalPrice(cartJson);fillRewardsProgress(cartJson.original_total_price,cartJson.item_count);changeTotalDiscounts(cartJson,changedTotal);summaryBlock.classList.remove('spinner');}else{manualDisountApplied=true;localStorage.setItem('kaktuscDiscountManualApplied',true);let estimatedPrice=cartJson.total_price;if(manualDiscountCode.free_shipping){totalPriceEl.innerHTML=currencyFormat(estimatedPrice>0?estimatedPrice:0);changeTotalDiscounts(cartJson,cartJson.total_price,estimatedPrice);}else{if(manualDiscountCode.value_type=="fixed_amount"){estimatedPrice=estimatedPrice-+(Math.abs(+manualDiscountCode.value*100)).toFixed(0);}else{estimatedPrice=Math.round(estimatedPrice-estimatedPrice*+(Math.abs(+manualDiscountCode.value)/100).toFixed(4));}
+totalPriceEl.innerHTML=currencyFormat(estimatedPrice>0?estimatedPrice:0);changeTotalDiscounts(cartJson,cartJson.total_price,estimatedPrice>0?estimatedPrice:0);}}
+summaryBlock.classList.remove('spinner');}).catch((err)=>{console.error('checkout page err',err);summaryBlock.classList.remove('spinner');})}
+function handleDiscountCode(discountCodeObj,cartJsonObj){if(!discountCodeObj||discountCodeObj.exception)return false;let result={value:discountCodeObj.value,value_type:discountCodeObj.value_type,free_shipping:false,code:discountCodeObj.title}
+if(discountCodeObj.starts_at){let currentTime=Date.now();if(Date.parse(discountCodeObj.starts_at)<=currentTime){if(discountCodeObj.ends_at&&(Date.parse(discountCodeObj.ends_at)<currentTime)){return false;}}else{return false;}}
+if(discountCodeObj.entitled_collection_ids&&discountCodeObj.entitled_collection_ids.length){return false;}
+if(discountCodeObj.target_type=="shipping_line"){result.free_shipping=true;result.value=0;result.value_type='fixed_amount';return result;}
+if(discountCodeObj.usage_limit==0){return false;}
+if(discountCodeObj.prerequisite_subtotal_range&&discountCodeObj.prerequisite_subtotal_range.greater_than_or_equal_to){const minimumTospend=+(+discountCodeObj.prerequisite_subtotal_range.greater_than_or_equal_to*100).toFixed(0);if(minimumTospend>cartJsonObj.items_subtotal_price){return false;}
+if((discountCodeObj.entitled_product_ids&&discountCodeObj.entitled_product_ids.length)||(discountCodeObj.entitled_variant_ids&&discountCodeObj.entitled_variant_ids.length)){let totalProductsPrice=0;cartJsonObj.items.forEach((item)=>{if(discountCodeObj.entitled_product_ids.includes(item.product_id)){totalProductsPrice+=item.final_line_price;}
+if(discountCodeObj.entitled_variant_ids.includes(item.variant_id)){totalProductsPrice+=item.final_line_price;}});if(minimumTospend>totalProductsPrice){return false;}}}
+if(discountCodeObj.prerequisite_quantity_range&&discountCodeObj.prerequisite_quantity_range.greater_than_or_equal_to){const totalProductsQnt=cartJsonObj.item_count;const qntToBuy=discountCodeObj.prerequisite_quantity_range.greater_than_or_equal_to;if(totalProductsQnt<qntToBuy){return false;}
+if((discountCodeObj.entitled_product_ids&&discountCodeObj.entitled_product_ids.length)||(discountCodeObj.entitled_variant_ids&&discountCodeObj.entitled_variant_ids.length)){let qntProducts=0;cartJsonObj.items.forEach((item)=>{if(discountCodeObj.entitled_product_ids.includes(item.product_id)){qntProducts+=item.quantity;}
+if(discountCodeObj.entitled_variant_ids.includes(item.variant_id)){qntProducts+=item.quantity;}});if(qntProducts<qntToBuy){return false;}}}
+if((discountCodeObj.prerequisite_product_ids&&discountCodeObj.prerequisite_product_ids.length)||(discountCodeObj.prerequisite_variant_ids&&discountCodeObj.prerequisite_variant_ids.length)){let isProductInCart=false;let allQuantity=0;let expended=0;let allEntitledQnt=0;cartJsonObj.items.forEach((item)=>{if(discountCodeObj.prerequisite_product_ids.includes(item.product_id)){allQuantity+=item.quantity;expended+=item.final_line_price;isProductInCart=true;}
+if(discountCodeObj.prerequisite_variant_ids.includes(item.variant_id)){allQuantity+=item.quantity;expended+=item.final_line_price;isProductInCart=true;}
+if(discountCodeObj.entitled_product_ids.includes(item.product_id)){allEntitledQnt+=item.quantity;}
+if(discountCodeObj.entitled_variant_ids.includes(item.variant_id)){allEntitledQnt+=item.quantity;}});let prerequisiteQnt=discountCodeObj.prerequisite_to_entitlement_quantity_ratio.prerequisite_quantity;let entitledQnt=discountCodeObj.prerequisite_to_entitlement_quantity_ratio.entitled_quantity;if(prerequisiteQnt>0){if(prerequisiteQnt<=allQuantity){if(entitledQnt<=allEntitledQnt){let qntEntitledProductsToDsicout=Math.floor((allQuantity/prerequisiteQnt)*entitledQnt);if(discountCodeObj.allocation_limit){qntEntitledProductsToDsicout=qntEntitledProductsToDsicout>discountCodeObj.allocation_limit?discountCodeObj.allocation_limit:qntEntitledProductsToDsicout;}
+buyXtoGetY(cartJsonObj,qntEntitledProductsToDsicout);}else{return false;}}else{return false;}}
+if(discountCodeObj.prerequisite_to_entitlement_purchase.prerequisite_amount){let amount=+(+discountCodeObj.prerequisite_to_entitlement_purchase.prerequisite_amount*100).toFixed(0);let qntEntitledProductsToDsicout=Math.floor((expended/amount)*entitledQnt);if(discountCodeObj.allocation_limit){qntEntitledProductsToDsicout=qntEntitledProductsToDsicout>discountCodeObj.allocation_limit?discountCodeObj.allocation_limit:qntEntitledProductsToDsicout;}
+if(entitledQnt<=allEntitledQnt){if(+amount<=expended){buyXtoGetY(cartJsonObj,qntEntitledProductsToDsicout);}else{return false;}}else{return false;}}
+if(!isProductInCart){return false;}}else if((discountCodeObj.entitled_product_ids&&discountCodeObj.entitled_product_ids.length)||(discountCodeObj.entitled_variant_ids&&discountCodeObj.entitled_variant_ids.length)){let isProductInCart=false;let qnt=0;let entitleProductsValue=0;cartJsonObj.items.forEach((item)=>{if(discountCodeObj.entitled_product_ids.includes(item.product_id)){isProductInCart=true;qnt+=item.quantity;entitleProductsValue+=item.final_line_price;}
+if(discountCodeObj.entitled_variant_ids.includes(item.variant_id)){isProductInCart=true;qnt+=item.quantity;entitleProductsValue+=item.final_line_price;}});if(!isProductInCart){return false;}else if(discountCodeObj.allocation_method=='each'&&discountCodeObj.value_type=='fixed_amount'){result.value=(Math.abs(+result.value)*qnt).toFixed(2);}else if(discountCodeObj.value_type=='percentage'){result.value=((+((Math.abs(+discountCodeObj.value)/100)*entitleProductsValue).toFixed(0))/100).toFixed(2);result.value_type="fixed_amount";}}
+function buyXtoGetY(cartJsonObj,qntEntitledProductsToDsicout){cartJsonObj.items.sort((a,b)=>a.original_price-b.original_price);let discountAmount=0;cartJsonObj.items.forEach((item)=>{if(discountCodeObj.entitled_product_ids.includes(item.product_id)||discountCodeObj.entitled_variant_ids.includes(item.variant_id)){if(qntEntitledProductsToDsicout>item.quantity){discountAmount+=item.final_line_price;qntEntitledProductsToDsicout-=item.quantity;}else if(qntEntitledProductsToDsicout){discountAmount+=qntEntitledProductsToDsicout*item.final_price;qntEntitledProductsToDsicout=0;}}});if(discountCodeObj.value_type=="percentage"&&discountAmount){result.value=((+((Math.abs(+discountCodeObj.value)/100)*discountAmount).toFixed(0))/100).toFixed(2);result.value_type="fixed_amount";}}
+return result}
+function initCartEvents(){const cartProducts=getAppSelector('.kaktusc-cart__products');const cartOfferProducts=getAppSelector('.kaktusc-cart__main');const discountCodeBtn=getAppSelector('.kaktusc-cart__discount-code-btn');const summaryBlock=getAppSelector('.kaktusc-cart__summary');discountCodeBtn.addEventListener('click',function(e){cartToAnimate.classList.add('spinner');let discountCodeInput=cartToAnimate.querySelector('.kaktusc-cart__discount-code-in').value;let notificBlock=cartToAnimate.querySelector('.kaktusc-cart__discount-code-notif');getDiscountCode(discountCodeInput).then((discountCodeObj)=>{globalDiscountCodeObj=discountCodeObj;localStorage.setItem('kaktuscDiscountCodeObj',JSON.stringify(discountCodeObj));let handledDiscountCode=handleDiscountCode(discountCodeObj,cartJsonObj);if(handledDiscountCode){cartToAnimate.classList.remove('spinner');notificBlock.style.display='none';manualDisountApplied=true;localStorage.setItem('kaktuscDiscountManualApplied',true);if(!checkDraftOrder(cartJsonObj)){changeTotalPriceManualCode(cartJsonObj,handledDiscountCode);}}else{manualDisountApplied=false;localStorage.setItem('kaktuscDiscountManualApplied','');notificBlock.innerHTML=kaktusCartWidgetObj.translation.discount_not_exist;notificBlock.style.display='block';cartToAnimate.classList.remove('spinner');}}).catch((err)=>{notificBlock.innerHTML=kaktusCartWidgetObj.translation.discount_not_exist;notificBlock.style.display='block';cartToAnimate.classList.remove('spinner');console.error('err',err);});});summaryBlock.addEventListener('click',function(e){if(e.target.closest('.kaktusc-cart__dis-del')){summaryBlock.classList.add('spinner');fetchCartJson().then((cartJson)=>{getProductObjects(cartJson).then((result)=>{setCompareAtPrice(result,cartJson);cartJsonObj=cartJson;localStorage.removeItem('kaktuscDiscountManualApplied');localStorage.removeItem('kaktuscDiscountManual');manualDiscountCode='';manualDisountApplied=false;const changedTotal=changeTotalPrice(cartJson);fillRewardsProgress(cartJson.original_total_price,cartJson.item_count)
+changeTotalDiscounts(cartJson,changedTotal);summaryBlock.classList.remove('spinner');}).catch((err)=>{summaryBlock.classList.remove('spinner');console.error('err',err);})}).catch((err)=>{summaryBlock.classList.remove('spinner');console.error('err',err);})}})
+cartProducts.addEventListener('click',function(e){if(e.target.closest('.cart-prod-qnt')){const thisProduct=e.target.closest('.kaktusc-cart__product');const thisQuantityElem=thisProduct.querySelector('.kaktusc-cart__product-qnt');const productError=thisProduct.querySelector('.kaktusc-cart__product-err');let thisQuantity=+thisQuantityElem.dataset.qnt;if(e.target.closest('.cart-prod-qnt').classList.contains('plus')){thisQuantity+=1;}else{thisQuantity-=thisQuantity>1?1:0;}
+changeQuantity(thisProduct.dataset.id,thisQuantity,thisProduct.dataset.line).then((cartJson)=>{getProductObjects(cartJson).then((result)=>{setCompareAtPrice(result,cartJson);cartJsonObj=cartJson;cartIconEl.innerHTML=cartJson.item_count;fillCartProducts(cartJson.items);productError.classList.add('hide');automaticDiscountApplied=!!cartJson.cart_level_discount_applications.find((el,i)=>{return el["type"]=="automatic"});draftOrderWillApplied=checkDraftOrder(cartJson);let handledDiscountCode=handleDiscountCode(globalDiscountCodeObj,cartJsonObj);if(handledDiscountCode){manualDisountApplied=true;localStorage.setItem('kaktuscDiscountManualApplied',true);}else{manualDisountApplied=false;localStorage.setItem('kaktuscDiscountManualApplied','');}
+if(!draftOrderWillApplied&&manualDisountApplied&&!automaticDiscountApplied){changeTotalPriceManualCode(cartJson,handledDiscountCode);}else{const changedTotal=changeTotalPrice(cartJson);fillRewardsProgress(cartJson.original_total_price,cartJson.item_count)
+changeTotalDiscounts(cartJson,changedTotal);}
+changeQuantityTxt(cartJson)}).catch((err)=>{summaryBlock.classList.remove('spinner');console.error('err',err);})}).catch((err)=>{productError.innerHTML=err.description;productError.classList.remove('hide');})}
+if(e.target.closest('.kaktusc-cart__product-delete')){if(deletingProduct)return;const thisProduct=e.target.closest('.kaktusc-cart__product');const productError=thisProduct.querySelector('.kaktusc-cart__product-err');thisProduct.classList.add('spinner');deletingProduct=true;changeQuantity(thisProduct.dataset.id,0,thisProduct.dataset.line).then((cartJson)=>{getProductObjects(cartJson).then((result)=>{setCompareAtPrice(result,cartJson);cartJsonObj=cartJson;cartIconEl.innerHTML=cartJson.item_count;fillCartProducts(cartJson.items);productError.classList.add('hide');automaticDiscountApplied=!!cartJson.cart_level_discount_applications.find((el,i)=>{return el["type"]=="automatic"});draftOrderWillApplied=checkDraftOrder(cartJson);let handledDiscountCode=handleDiscountCode(globalDiscountCodeObj,cartJsonObj);if(handledDiscountCode){manualDisountApplied=true;localStorage.setItem('kaktuscDiscountManualApplied',true);}else{manualDisountApplied=false;localStorage.setItem('kaktuscDiscountManualApplied','');}
+if(!draftOrderWillApplied&&manualDisountApplied&&!automaticDiscountApplied){changeTotalPriceManualCode(cartJson,handledDiscountCode);}else{const changedTotal=changeTotalPrice(cartJson);changeTotalDiscounts(cartJson,changedTotal);}
+showEmptyCartNotif(cartJson);changeQuantityTxt(cartJson);fillRewardsProgress(cartJson.original_total_price,cartJson.item_count);deletingProduct=false;}).catch((err)=>{summaryBlock.classList.remove('spinner');console.error('err',err);})}).catch((err)=>{productError.innerHTML=err;deletingProduct=false;productError.classList.remove('hide');thisProduct.classList.remove('spinner');})}});cartOfferProducts.addEventListener('click',function(e){if(e.target.closest('.kaktusc-cart__offer-product-add')){const thisProduct=e.target.closest('.kaktusc-cart__offer-product');const addedProductCustomID=makeId(5);cartToAnimate.classList.add('spinner');addProductToCart(thisProduct.dataset.id,thisProduct.dataset.qnt,{offer:addedProductCustomID}).then(res=>{let discountObj=getProductDiscountObject(thisProduct.dataset.id);let productQnt=1;if(currentOffer.allow_set_quantities&&currentOffer.max_quantity&&+thisProduct.dataset.qnt<=+currentOffer.max_quantity){productQnt=thisProduct.dataset.qnt;}
+createOrderData(thisProduct.dataset.id,addedProductCustomID,discountObj.discount_type,discountObj.discount,productQnt);fetchCartJson().then((cartJson)=>{getProductObjects(cartJson).then((result)=>{setCompareAtPrice(result,cartJson);cartJsonObj=cartJson;cartIconEl.innerHTML=cartJson.item_count;fillCartProducts(cartJson.items);statisticArr.push(currentOffer.id);let product=cartJson.items.find((item)=>{return thisProduct.dataset.id==item.id;});createPurchaseData(mainOfferId,thisProduct.dataset.id,product.properties.offer,+product.original_price/100,currentOffer);sendStatistic(currentOffer.id,true);thisProduct.remove();if(!(cartToAnimate.querySelector('.kaktusc-cart__offer-product'))){cartToAnimate.querySelector('.kaktusc-cart__offer-products-wrap').innerHTML='';}
+cartToAnimate.classList.remove('spinner');automaticDiscountApplied=!!cartJson.cart_level_discount_applications.find((el,i)=>{return el["type"]=="automatic"});draftOrderWillApplied=checkDraftOrder(cartJson);let handledDiscountCode=handleDiscountCode(globalDiscountCodeObj,cartJsonObj);if(handledDiscountCode){manualDisountApplied=true;localStorage.setItem('kaktuscDiscountManualApplied',true);}else{manualDisountApplied=false;localStorage.setItem('kaktuscDiscountManualApplied','');}
+if(!draftOrderWillApplied&&manualDisountApplied&&!automaticDiscountApplied){changeTotalPriceManualCode(cartJson,handledDiscountCode);}else{const changedTotal=changeTotalPrice(cartJson);fillRewardsProgress(cartJson.original_total_price,cartJson.item_count)
+changeTotalDiscounts(cartJson,changedTotal);}
+if(currentOffer.child&&currentOffer.child.accepted){fillOfferProducts(currentDataOffer,currentOffer.child.accepted);}}).catch((error)=>{console.error('cart error',error);cartToAnimate.classList.remove('spinner');});}).catch((error)=>{console.error('cart error',error);cartToAnimate.classList.remove('spinner');});}).catch((err)=>{cartToAnimate.classList.remove('spinner');console.error('err',err);})}
+if(e.target.closest('.cart-prod-qnt-o')){const thisProduct=e.target.closest('.kaktusc-cart__offer-product');const thisQuantityElem=thisProduct.querySelector('.kaktusc-cart__offer-product-qnt');let thisQuantity=+thisProduct.dataset.qnt;if(e.target.closest('.cart-prod-qnt-o').classList.contains('plus')){if(currentOffer.allow_set_quantities&&currentOffer.max_quantity&&+thisProduct.dataset.qnt<+currentOffer.max_quantity){thisQuantity+=1;}}else{thisQuantity-=thisQuantity>1?1:0;}
+thisProduct.dataset.qnt=thisQuantity;thisQuantityElem.innerHTML=thisQuantity;const variantObj=getVariantObj(thisProduct);changeOfferPriceInOffer(thisProduct,variantObj);}});const checkoutBtn=cartToAnimate.querySelector('.kaktusc-cart__checkout');const kartWrap=getAppSelector(".kaktusc-cart__wrap");checkoutBtn.addEventListener('click',()=>{kartWrap.classList.add('spinner');createOrder();})}
+async function doesDiscountCodeExist(discountCode){const result=await fetch(`/admin/discount_codes/lookup.json?code=${discountCode}`);return result.status===200;}
+function createOrderData(variantId,offer,discountType,discountValue,qty){const localOrderData=localStorage.getItem('kaktusDataOrder');orderData=localOrderData?JSON.parse(localOrderData):orderData;let productData={variantId:variantId,propertyId:offer,discountType:discountType,discountValue:discountValue,qty:qty}
+orderData.push(productData);localStorage.setItem('kaktusDataOrder',JSON.stringify(orderData));}
+function createOrder(){const line_items=[];fetchCartJson().then(function(dataCart){const orderData=JSON.parse(localStorage.getItem('kaktusDataOrder'));cartIconEl.innerHTML=dataCart.item_count;dataCart.items.forEach(item=>{if(orderData){if(!!item.properties&&!!item.properties.offer){const lineItemProperty=orderData.find(prod=>prod.propertyId===item.properties.offer);if(lineItemProperty){if(+lineItemProperty.discountValue){line_items.push(item);}}}}});let chosenFreeGifts=window.localStorage.getItem('goodappsf-free-gifts');chosenFreeGifts=chosenFreeGifts?JSON.parse(chosenFreeGifts):[];if(chosenFreeGifts.length){line_items.push('free-gifts');}
+const cartWrap=getAppSelector(".kaktusc-cart__wrap");if(line_items.length){createOrderFetch(dataCart.items,orderData).then(result=>{location.href=result.checkout;cartWrap.classList.remove('spinner');},error=>{if(manualDisountApplied&&!automaticDiscountApplied){location.href=`/checkout/?discount=${manualDiscountCode.code}`;}else{location.href='/checkout';}
+cartWrap.classList.remove('spinner');})}else{if(manualDisountApplied&&!automaticDiscountApplied){location.href=`/checkout/?discount=${manualDiscountCode.code}`;}else{location.href='/checkout';}
+cartWrap.classList.remove('spinner');}})}
+async function createOrderFetch(dataCart,orderData){const options={method:'POST',headers:{'Content-Type':'application/json',"Accept":"application/json"},body:JSON.stringify(createOrderRequest(dataCart,orderData))};let url=kaktuscApiUrl+`api/front/draft-order`;const resp=await fetch(url,options);if(!resp.ok){throw new Error(`HTTP error, status = ${resp.status}`);}
+return await resp.json();}
+function createOrderRequest(dataCart,orderData){const domain=kaktuscShop;const line_items=[];let discount=null;let properties=null;dataCart.forEach(item=>{let qty=item.quantity;if(orderData){if(item.properties&&item.properties.offer){const lineItemProperty=orderData.find(prod=>prod.propertyId===item.properties.offer);if(lineItemProperty){discount=+lineItemProperty.discountValue?{value_type:lineItemProperty.discountType,value:+lineItemProperty.discountValue}:null;item.properties.offer=lineItemProperty.propertyId;properties={offer:item.properties.offer};qty=+lineItemProperty.qty;}}else{discount=null;properties=item.properties;}}
+line_items.push({title:item.title,product_id:item.product_id,variant_id:item.variant_id,price:kaktuscCurrencyCode!==currentCurrencyCode?getStorePriceByRate(item.price/1000)*1000:item.price,quantity:qty,discount:discount,properties:properties})
+if(+item.quantity>+qty){let result=+item.quantity-+qty;item.properties.offer=null;line_items.push({title:item.title,product_id:item.product_id,variant_id:item.variant_id,price:kaktuscCurrencyCode!==currentCurrencyCode?getStorePriceByRate(item.price/1000)*1000:item.price,quantity:result,discount:null,properties:{offer:item.properties.offer}})}});let chosenFreeGifts=window.localStorage.getItem('goodappsf-free-gifts');chosenFreeGifts=chosenFreeGifts?JSON.parse(chosenFreeGifts):[];if(chosenFreeGifts.length){chosenFreeGifts.forEach((item)=>{line_items.push({title:`${item.title_p} - ${item.title_v}`,product_id:item.product_id,variant_id:item.variant_id,price:goodFreeCurrencyCode!==currentCurrencyCode?getStorePriceByRate(item.price/1000)*1000:item.price,quantity:item.quantity,discount:item.discount,properties:item.properties})})}
+return{domain:domain,line_items:line_items}}
+function buildTimer(minutes,seconds,display){display.innerHTML="";minutes=parseInt(minutes);seconds=parseInt(seconds);seconds=seconds<10?"0"+seconds:seconds;minutes=minutes<10?"0"+minutes:minutes;display.innerText=minutes+":"+seconds;}
+function startTimer(flag,minutes,seconds,display){let countDown;if(flag)
+countDown=setInterval(function(){minutes=parseInt(minutes)
+seconds=parseInt(seconds)
+if(+seconds===0){if(+minutes===0){clearInterval(countDown);cartToAnimate.classList.add('spinner');createOrder();statisticArr.length=0;}else{minutes--;seconds=59;}}
+seconds=seconds<10?"0"+seconds:seconds;minutes=minutes<10?"0"+minutes:minutes;display.innerText=minutes+":"+seconds;seconds--;},1000);else
+clearInterval(countDown);}
+function sendStatistic(offerId,funnelAction=false){if(statisticArr.includes(offerId)){const offerIdsArr=statisticArr.filter(element=>element===offerId);let funnelViews;if(funnelAction){funnelViews=offerIdsArr.length>1?0:1;}else{funnelViews=offerIdsArr.length>=1?0:1;}
+createStatisticFetch(mainOfferId,offerId,funnelAction,funnelViews);}else{createStatisticFetch(mainOfferId,offerId,funnelAction,1);}}
+async function getDiscountCode(discountCode){const options={method:'GET',headers:{'Content-Type':'application/json',"Accept":"application/json"}};let shopDomain=typeof kaktuscShop!=='undefined'?kaktuscShop:location.hostname;let platform='shopify';if(window.Shopify){platform='shopify';}
+if(window.Webflow){platform='webflow';}
+let url=kaktuscApiUrl+`api/front/get-discount?domain=${shopDomain}&discount_code=${discountCode}&platform=${platform}`;let response=await fetch(url,options);return response.json();}}
+CartDrawerInit();const WishListInit=function(){if(!wishlistWidgetActivate)return;const noImage=kaktuscbaseUrl+'assets/images/no-image.jpg';let iframe=null;let widgetRootId=null;let wishlistData=[];let wishlistMainOfferId=null;let wishlistOfferId=null;let wishlistCurrentOffer=null;const wishlistBtnWidgetType={icon_text:'icon_text',text:'text',icon:'icon'}
+const wishlistWidgetTypes={modal:'1',embedded:'2'}
+const wishlistWidget=typeof kaktusWishlistWidget!=='undefined'?kaktusWishlistWidget.data:null;const userData=getLoggedUser();if(userData.id){const offerParams={variantsId:'0',customer_id:userData.id}
+offerFetch(offerParams).then(dataOffer=>{if(!dataOffer.offers)return;wishlistMainOfferId=dataOffer.main_offer_id;wishlistOfferId=dataOffer.offers[Object.keys(dataOffer.offers)[0]].id;wishlistCurrentOffer=dataOffer.offers[Object.keys(dataOffer.offers)[0]];const offerProducts=dataOffer.products;for(let key in offerProducts){if(offerProducts.hasOwnProperty(key)){createProductData(offerProducts[key]);}}
+updateProducts();updateAddButtonStatus();})}
+function createProductData(product){const variantsData=product.variants.map(variant=>{return{productId:variant.productId,variantPrice:variant.variantPrice,variantTitle:variant.title,image:variant.image}});const productData={productId:product.productId,productTitle:product.title,description:product.description,description_html:product.description_html,image:product.image,variants:variantsData}
+createWishlistData(productData);}
+function updateProducts(){if(!widgetRootId)return;const popupType=iframe?"modal":"inline";const product_data=getProducts();const productDiv=getAppSelector_W('.kaktus-w-product__wrapp',widgetRootId);productDiv.innerHTML='';product_data.forEach(product=>{fillProduct(product,widgetRootId,popupType);});fillProductItemStyle(widgetRootId);}
+function updateAddButtonStatus(){const localWishlistData=localStorage.getItem('kaktusWishlistData');const localProducts=localWishlistData?JSON.parse(localWishlistData):[];const addBtns=document.querySelectorAll('.kaktus-w-add');if(localProducts.length&&addBtns){addBtns.forEach(btn=>{const btnProductId=btn.getAttribute('data-id');const isActive=localProducts.find(item=>+item.productId===+btnProductId);const btnText=btn.querySelector('.kaktus-w-wishlist-button__text');let defaultText='';let completedText='';if(btnText){defaultText=btnText.getAttribute('data-text');completedText=btnText.getAttribute('data-text-completed');}
+if(isActive){btn.classList.add("kaktus-w-completed");if(btnText){btnText.innerText=completedText;}}else{btn.classList.remove("kaktus-w-completed");if(btnText){btnText.innerText=defaultText;}}});}}
+buildWishListOpener(wishlistWidget);function buildWishListOpener(wishlistWidget){if(wishlistWidget.header_btn.show){buildHeaderOpener(wishlistWidget.header_btn);}
+if(wishlistWidget.float_btn.show){buildFloatOpener(wishlistWidget.float_btn);}}
+function buildHeaderOpener(design){let defaultHeaderSelector=['.header__icons'];let settingHeaderSelector=wishlistHeaderSelector.length?decodeHTML(wishlistHeaderSelector).split(','):[];const headerSelector=getDOMSelector(defaultHeaderSelector,settingHeaderSelector);if(!headerSelector)return;let rootId=setContainerId();const element=buildWidgetBtn(design,rootId);element.style.margin='0 5px';headerSelector.append(element);wishListOpenerEvent(element);}
+function buildFloatOpener(design){let rootId=setContainerId();const element=buildWidgetBtn(design,rootId);document.body.append(element);element.style.position='fixed';element.style.zIndex='99999999999';element.style.margin='20px';switch(design.position){case"top_left":element.style.bottom='auto';element.style.right='auto';element.style.top='0';element.style.left='0';break;case"top_right":element.style.bottom='auto';element.style.right='0';element.style.top='0';element.style.left='auto';break;case"bottom_left":element.style.bottom='0';element.style.right='auto';element.style.top='auto';element.style.left='0';break;case"bottom_right":element.style.bottom='0';element.style.right='0';element.style.top='auto';element.style.left='auto';break;}
+setTextOrientation(element,design.position,design.text_orientation);wishListOpenerEvent(element);}
+function setTextOrientation(rootNode,position,text_orientation){let origin_value='initial';let transform_value='rotate(0deg)';switch(text_orientation){case"normal":origin_value='initial';transform_value='rotate(0deg)';break;case"vertical_rl":switch(position){case"top_left":origin_value="bottom left";transform_value='translate(0,-100%) rotate(90deg)';break;case"top_right":origin_value="top left";transform_value='translate(100%, 0) rotate(90deg)';break;case"bottom_left":origin_value="bottom right";transform_value='translate(-100%, 0) rotate(90deg)';break;case"bottom_right":origin_value="top right";transform_value='translate(0,100%) rotate(90deg)';break;}
+break;case"vertical_lr":switch(position){case"top_left":origin_value="top right";transform_value='translate(-100%, 0) rotate(-90deg)';break;case"top_right":origin_value="bottom right";transform_value='translate(0, -100%) rotate(-90deg)';break;case"bottom_left":origin_value="top left";transform_value='translate(0, 100%) rotate(-90deg)';break;case"bottom_right":origin_value="bottom left";transform_value='translate(100%, 0) rotate(-90deg)';break;}
+break;case"upside_down":origin_value='initial';transform_value='rotate(180deg)';break;}
+rootNode.style.transformOrigin=`${origin_value}`;rootNode.style.transform=`${transform_value}`;}
+function wishListOpenerEvent(btn){let rootId=setContainerId();btn.addEventListener("click",(e)=>{e.preventDefault();if(wishlistWidgetType===wishlistWidgetTypes.embedded&&wishlistPageHandle){const domain=location.origin;location.href=`${domain}/pages/${wishlistPageHandle}`}else{buildWishlistPopUp(rootId);}});}
+function buildWidgetBtn(design,rootId){const style=addWishlistBtnStyle(design,rootId);const customCss=addWishlistBtnCustomCss(design,rootId);const iconHtml=`
+                    <svg class="kaktus-w-wishlist-button__icon" viewBox="0 0 20 19.84" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M16.22,5.59a4.13,4.13,0,0,0-3.43-1.78A3.7,3.7,0,0,0,10,5,3.71,3.71,0,0,0,7.21,3.81,4.13,4.13,0,0,0,3.78,5.59,4.22,4.22,0,0,0,3.6,9.77a10.67,10.67,0,0,0,2.09,3.09,23.44,23.44,0,0,0,3.23,2.82,1.84,1.84,0,0,0,2.16,0,23.36,23.36,0,0,0,3.23-2.82A10.67,10.67,0,0,0,16.4,9.77,4.22,4.22,0,0,0,16.22,5.59Zm-.66,3.83a10,10,0,0,1-1.92,2.82,22.72,22.72,0,0,1-3.1,2.7.9.9,0,0,1-1.08,0,22.8,22.8,0,0,1-3.1-2.7A9.75,9.75,0,0,1,4.44,9.42a3.38,3.38,0,0,1,.1-3.33A3.21,3.21,0,0,1,7.21,4.73a2.8,2.8,0,0,1,2.24,1,.81.81,0,0,0,1.12,0,2.8,2.8,0,0,1,2.22-1,3.21,3.21,0,0,1,2.67,1.36A3.38,3.38,0,0,1,15.56,9.42Z"/>
+                    </svg>
+                `;const textHtml=`
+                    <span class="kaktus-w-wishlist-button__text" data-text="${design.text}" data-text-completed="${design.text_completed}">${design.text}</span>
+                `;const html=`
+                    <div class="kaktus-w-wishlist-button__wrap">
+                        ${design.type!==wishlistBtnWidgetType.text?iconHtml:''}
+
+                        ${design.type!==wishlistBtnWidgetType.icon?textHtml:''}
+                    </div>
+
+                    ${style}
+                    ${customCss}
+                `;const element=document.createElement("div");element.id=rootId;element.classList.add("kaktus-wishlist-button");element.innerHTML=html;return element;}
+function addWishlistBtnStyle(design,rootId){return`
+                    <style>
+                        #${rootId} .kaktus-w-wishlist-button {
+                            display: flex;
+                            justify-content: center;
+                        }
+
+                        #${rootId} .kaktus-w-wishlist-button__wrap {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                            transition: all .3s ease-in-out;
+                            background: ${design.background};
+                            color: ${design.color};
+                            border-radius: ${design.border_radius}px;
+                            padding: ${design.padding_t_b}px ${design.padding_l_r}px;
+                            font-size: ${design.font_size}px;
+                            font-weight: ${design.font_weight};
+                            font-style: ${design.font_style};
+                            line-height: ${design.line_height}px;
+                        }
+
+                        #${rootId} .kaktus-w-wishlist-button__wrap:hover {
+                            background: ${design.background_hover};
+                            color: ${design.color_hover};
+                        }
+
+                        #${rootId}.kaktus-w-completed .kaktus-w-wishlist-button__wrap {
+                            background: ${design.background_completed||design.background};
+                            color: ${design.color_completed||design.color};
+                        }
+
+                        #${rootId} .kaktus-w-wishlist-button__icon {
+                            width: 25px;
+                        }
+
+                        #${rootId} .kaktus-w-wishlist-button__icon + .kaktus-w-wishlist-button__text {
+                            margin-left: 10px;
+                        }
+
+                        #${rootId} .kaktus-w-hide {
+                            display: none;
+                        }
+
+                        #${rootId}.kaktus-w-preload {
+                            position: relative;
+                            color: transparent;
+                        }
+
+                        #${rootId}.kaktus-w-preload .kaktus-w-wishlist-button__wrap {
+                            color: transparent;
+                            transition: color 0s ease-in-out;
+                        }
+
+                        #${rootId}.kaktus-w-preload::before {
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            left: 0;
+                            top: 0;
+                            background-color: rgba(243, 245, 247, .5);
+                            background-image: url("https://cd.kaktusapp.com/images/ajax-loader.gif");
+                            background-repeat: no-repeat;
+                            background-size: 20px 20px;
+                            background-position: center;
+                            z-index: 4;
+                        }
+                    </style>
+                `}
+function addWishlistBtnCustomCss(design,rootId){const customCss=design.custom_css;let result='';if(customCss){const styles=customCss.replace(/.kaktus-w-/g,`#${rootId} .kaktus-w-`);result=`<style>${styles}</style>`;}
+return result;}
+if(location.href.includes('/pages/')){fetchPage(location.href).then(dataPage=>{const pageId=dataPage.page.id;if(+pageId===+wishlistPageId&&wishlistWidgetType===wishlistWidgetTypes.embedded){buildWishlistInline();}});}
+if(location.href.includes('/products/')){let url=location.href.split('?')[0].split('/');let productsIndex=url.indexOf('products');url=url[productsIndex+1];fetchProduct(url).then(dataPage=>{buildProductPageBtn(dataPage.product,wishlistWidget.add_wishlist_btn);}).catch(error=>console.error(error));}
+function buildProductPageBtn(product,design){let defaultProductPageSelector=['.product-form'];let settingProductPageSelector=wishlistProductPageSelector.length?decodeHTML(wishlistProductPageSelector).split(','):[];const productPageSelector=getDOMSelector(defaultProductPageSelector,settingProductPageSelector);if(!productPageSelector)return;const currentProductId=product.id;const rootId=setContainerId();const element=buildWidgetBtn(design,rootId);element.style.margin='5px 0';element.classList.add("kaktus-w-add");element.setAttribute('data-id',currentProductId);const localWishlistData=localStorage.getItem('kaktusWishlistData');const localProducts=localWishlistData?JSON.parse(localWishlistData):[];if(localProducts.length){const isActive=localProducts.find(item=>item.productId===currentProductId);const btnText=element.querySelector('.kaktus-w-wishlist-button__text');let defaultText='';let completedText='';if(btnText){defaultText=btnText.getAttribute('data-text');completedText=btnText.getAttribute('data-text-completed');}
+if(isActive){element.classList.add("kaktus-w-completed");if(btnText){btnText.innerText=completedText;}}else{element.classList.remove("kaktus-w-completed");if(btnText){btnText.innerText=defaultText;}}}
+productPageSelector.append(element);addToWishlistEvent(element,product);}
+function addToWishlistEvent(btn,product){const getVariantImage=(imageId)=>{let imgSrc='';const variantImage=product.images.find(img=>img.id===imageId);if(variantImage){imgSrc=variantImage.src;}
+return imgSrc;}
+const variantsData=product.variants.map(variant=>{return{productId:variant.id,variantPrice:variant.price,variantTitle:variant.title,image:getVariantImage(variant.image_id)}})
+const productData={productId:product.id,productTitle:product.title,description:decodeHTML(product.body_html),description_html:product.body_html,image:product.image?product.image.src:noImage,variants:variantsData}
+btn.addEventListener("click",(e)=>{e.preventDefault();const btnText=btn.querySelector('.kaktus-w-wishlist-button__text');let defaultText='';let completedText='';if(btnText){defaultText=btnText.getAttribute('data-text');completedText=btnText.getAttribute('data-text-completed');}
+btn.classList.add('kaktus-w-preload');if(btn.classList.contains('kaktus-w-completed')){btn.classList.remove('kaktus-w-completed');if(btnText){btnText.innerText=defaultText;}
+updateWishlistData(product)}else{btn.classList.add('kaktus-w-completed');if(btnText){btnText.innerText=completedText;}
+createWishlistData(productData);}
+createWishlistOffer(btn);})}
+function getLoggedUser(){const logged_user={id:null,name:null,email:null};if(typeof(kaktusWishlistAppData)!=='undefined'){const{customerEmail,customerName,customerId}=kaktusWishlistAppData;logged_user.id=customerId;logged_user.email=customerEmail;logged_user.name=customerName;}else{logged_user.id=null;if(typeof ShopifyAnalytics!=='undefined'&&ShopifyAnalytics.meta.page.customerId){logged_user.id=ShopifyAnalytics.meta.page.customerId;}
+if(typeof Shopify!=='undefined'&&Shopify.checkout&&Shopify.checkout.customer_id){logged_user.id=Shopify.checkout.customer_id;}}
+return logged_user}
+function createWishlistData(product){const localWishlistData=localStorage.getItem('kaktusWishlistData');wishlistData=localWishlistData?JSON.parse(localWishlistData):wishlistData;if(wishlistData.length){const checkProductId=wishlistData.find(item=>item.productId===product.productId);if(!checkProductId){wishlistData.push(product);}}else{wishlistData.push(product);}
+localStorage.setItem('kaktusWishlistData',JSON.stringify(wishlistData));}
+function updateWishlistData(product){const localWishlistData=localStorage.getItem('kaktusWishlistData');const productsData=localWishlistData?JSON.parse(localWishlistData):[];const updatedProductsData=productsData.filter(item=>+item.productId!==+product.id);localStorage.setItem('kaktusWishlistData',JSON.stringify(updatedProductsData));}
+function buildWishlistPopUp(rootId){if(!wishlistWidget)return;widgetRootId=rootId;removeAppContainer(rootId);disabledPageScroll();buildIframe(rootId);document.getElementById("kaktus-wishlist-widget").onload=function(){iframe=document.getElementById('kaktus-wishlist-widget');buildWishlist(rootId,'modal');};}
+function buildWishlistInline(){if(!wishlistWidget)return;let rootId=setContainerId();widgetRootId=rootId;let defaultPageSelector=['.kaktusc-container'];let settingPageSelector=wishlistProductPageSelector.length?decodeHTML(wishlistProductPageSelector).split(','):[];const nodeElement=getDOMSelector(defaultPageSelector,settingPageSelector);if(!nodeElement)return;const isSylesheet=document.querySelector('link#KaktusWishlistCss');if(!isSylesheet){styleLoader();}
+function styleLoader(){const headID=document.getElementsByTagName('head')[0];const link=document.createElement('link');link.type='text/css';link.id='KaktusWishlistCss'
+link.rel='stylesheet';headID.appendChild(link);link.href=kaktuscbaseUrl+`css/honey-upsell-cross-sell.css?v=${kaktuscVersion}`;};buildInlineContainer();function buildInlineContainer(){const element=document.createElement("div");element.setAttribute("id",rootId);element.style.width='100%';element.style.margin='20px 0';element.style.fontFamily='inherit';element.style.display='none';nodeElement.after(element);}
+buildWishlist(rootId,"inline")}
+function buildWishlist(rootId,popupType){const closeBtnHtml=`
+                    <div class="kaktus-w-popup__close kaktus-w-close">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" width="20" height="20" class="svg-inline--fa fa-times fa-kaktusc-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
+                            <path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path>
+                        </svg>
+                    </div>
+                `;const loginSectionHtml=`
+                    <div class="kaktus-w-popup__login kaktus-w-bg-login">
+                        <div class="kaktus-w-popup__login--title kaktus-w-login-title"></div>
+
+                        <div class="kaktus-w-popup__login--btn">
+                            <a href="#" class="kaktus-w-login-btn"></a>
+                            <a href="#" class="kaktus-w-signup-btn"></a>
+                        </div>
+                    </div>
+                `;const html=`
+                    <div class="kaktus-w-popup__wrap">
+                        <div class="kaktus-w-popup__body kaktus-w-bd kaktus-w-width-full">
+                            ${popupType==="inline"?'':closeBtnHtml}
+                            ${userData.id?'':loginSectionHtml}
+
+                            <div class="kaktus-w-popup__main">
+                                <div class="kaktus-w-popup__main--wrapper kaktus-w-wallpaper"></div>
+
+                                <div class="kaktus-w-popup__products">
+                                    <div class="kaktus-w-popup__heading">
+                                        <h2 class="kaktus-w-popup__title"></h2>
+                                        <p class="kaktus-w-popup__description"></p>
+                                    </div>
+
+                                    <section class="kaktus-w-product__wrapp"></section>
+                                </div>
+                            </div>
+                        </div>
+
+                        <style type="text/css" id="kaktus-w-custom-css"></style>
+                    </div>
+                `;const element=document.createElement("div");if(popupType==="inline"){element.classList.add("kaktus-w-inline");}else{element.classList.add("kaktus-w-popup","kaktus-w-hide");}
+element.innerHTML=html;const rootDiv=popupType==="inline"?document.getElementById(rootId):iframe.contentWindow.document.getElementById(rootId);rootDiv.append(element);const product_data=getProducts();product_data.forEach(product=>{fillProduct(product,rootId,popupType);});fillWidgetStyle(rootId);widgetEvents({element,rootId,popupType});if(popupType==="inline"){setTimeout(()=>{rootDiv.style.display='block';},500);}}
+function widgetEvents(params){const{element,rootId,popupType}=params;const domain=location.origin;const closeBtn=element.querySelector('.kaktus-w-popup__close');const loginBtn=element.querySelector('.kaktus-w-login-btn');const signupBtn=element.querySelector('.kaktus-w-signup-btn');if(closeBtn){closeBtn.addEventListener("click",function(e){e.preventDefault();removeAppContainer(rootId);});}
+if(loginBtn){loginBtn.addEventListener("click",function(e){e.preventDefault();if(popupType==="inline"){location.href=`${domain}/account/login`;}else{window.parent.location.href=`${domain}/account/login`;}});}
+if(signupBtn){signupBtn.addEventListener("click",function(e){e.preventDefault();if(popupType==="inline"){location.href=`${domain}/account/register`;}else{window.parent.location.href=`${domain}/account/register`;}});}}
+function getProducts(){const localWishlistData=localStorage.getItem('kaktusWishlistData');const productsData=localWishlistData?JSON.parse(localWishlistData):[];return productsData;}
+function fillProduct(product,rootId,popupType){const productTitle=product.productTitle;const productDescription=removeHtmlTagsFromStr(product.description);const productImg=product.image||noImage;const variants=product.variants;let productPrice=getPriceByRate(variants[0].variantPrice)*100;let variantsHtml='';let minQty=1;if(variants.length>1){variantsHtml=`<select class="kaktus-w-variations">`;variants.forEach(variant=>{let variantPrice=getPriceByRate(variant.variantPrice)*100;variantsHtml+=`
+                            <option
+                                value="${variant['productId']}"
+                                data-price="${variantPrice}"
+                                data-store-price="${variant.variantPrice}"
+                                data-title="${variant['variantTitle']}"
+                                data-image="${variant.image}"
+                            >
+                                ${variant['variantTitle']} ${' - '+currencyFormat(variantPrice)}
+                            </option>
+                        `;})
+variantsHtml+='</select>';}else{const variantTitle=variants[0]['variantTitle'];if(variantTitle.toLowerCase()==="default title"){variantsHtml="";}else{let variantPrice=getPriceByRate(variants[0].variantPrice)*100;variantsHtml=`<span class="kaktus-w-variations">${variantTitle} ${' - '+currencyFormat(variantPrice)}</span>`}}
+const html=`
+                    <div class="kaktus-w-product__content">
+                        <div class="kaktus-w-product__img">
+                            <img src="${productImg}" alt="Product">
+                        </div>
+
+                        <div class="kaktus-w-prod-det">
+                            <h2 class="kaktus-w-product__title">${productTitle}</h2>
+                            <div class="kaktus-w-product__desc">
+                                <span class="kaktus-w-desc-short">${productDescription}</span>
+                                <span class="kaktus-w-desc-full kaktus-w-hide">${productDescription}</span>
+                            </div>
+
+                            <div class="kaktus-w-product__info--variations kaktus-w-variations-wrap">
+                                ${variantsHtml}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kaktus-w-product__info kaktus-w-product-bg">
+                        <div class="kaktus-w-product__info--top">
+                            <div class="kaktus-w-product__price">
+                                <span class="kaktus-w-price--main kaktus-w-price" data-product-price="${productPrice}">${currencyFormat(productPrice)}</span>
+                            </div>
+
+                            <div class="kaktus-w-product__quantity kaktus-w-qty">
+                                <div class="kaktus-w-product__quantity--input">
+                                    <input class="kaktus-w-qty-input" type="number" value="1" min="${minQty}">
+                                </div>
+                                <div class="kaktus-w-product__quantity--actions">
+                                    <div class="kaktus-w-product__quantity--plus kaktus-w-qty-btn kaktus-w-qty-btn-t">+</div>
+                                    <div class="kaktus-w-product__quantity--minus kaktus-w-qty-btn kaktus-w-qty-btn-b">-</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="kaktus-w-product__actions">
+                            <a href="#" class="kaktus-w-product__actions--btn kaktus-w-cart-btn" data-productId="${variants[0].productId}" data-storePrice="${variants[0].variantPrice}">
+                                <svg class="kaktus-w-product-cart" xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20">
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <path fill="inherit" d="M7.126 10h-.754c-.126 0-.227-.052-.252-.138l-1.887-4.62c-.05-.12.076-.242.252-.242h1.082a.35.35 0 0 1 .276.138l1.535 4.62c.05.12-.076.242-.252.242zm9.036 1.487l2.767-6.474c.279-.651-.299-1.322-1.115-1.322H3.702L2.906.553A.74.74 0 0 0 2.209 0H.24A.229.229 0 0 0 0 .237v.987c0 .138.1.237.239.237h1.234c.12 0 .199.078.239.177l3.204 12.81a.74.74 0 0 0 .697.552h10.45c.14 0 .239-.099.239-.237v-.967c0-.138-.1-.237-.24-.237H6.37c-.1 0-.199-.079-.238-.177l-.299-1.224h9.196c.517 0 .955-.276 1.134-.671z" />
+                                            </g>
+                                            <g>
+                                                <path fill="inherit" d="M7.913 20c.875 0 1.584-.672 1.584-1.5S8.787 17 7.913 17c-.874 0-1.583.672-1.583 1.5S7.039 20 7.913 20z" />
+                                            </g>
+                                            <g>
+                                                <path fill="inherit" d="M13.193 20c.875 0 1.584-.672 1.584-1.5s-.71-1.5-1.584-1.5c-.874 0-1.583.672-1.583 1.5s.709 1.5 1.583 1.5z" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                                <span class="kaktus-w-cart-btn-text"></span>
+                            </a>
+                        </div>
+
+                        <div class="kaktus-w-product__actions">
+                            <a href="#" class="kaktus-w-product__actions--btn kaktus-w-remove-btn">
+                                <svg class="kaktus-w-product-cart" width="22px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <path fill="currentColor" d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path>
+                                </svg>
+
+                                <span class="kaktus-w-remove-btn-text"></span>
+                            </a>
+                        </div>
+                    </div>
+                `;const element=document.createElement("div");element.classList.add("kaktus-w-product__item","kaktus-w-product-border");element.setAttribute("data-product-id",product.productId);element.innerHTML=html;if(popupType==="inline"){previewProductEvents(element,product,rootId);}
+const rootDiv=getAppSelector_W('.kaktus-w-product__wrapp',rootId);rootDiv.append(element);productEvents(element);}
+function productEvents(element){const qtyPlusBtn=element.querySelector('.kaktus-w-product__quantity--plus');const qtyMinusBtn=element.querySelector('.kaktus-w-product__quantity--minus');const qtyInput=element.querySelector('.kaktus-w-qty-input');const variationSelect=element.querySelector('select.kaktus-w-variations');const addToCartBtn=element.querySelector('.kaktus-w-cart-btn');const removeBtn=element.querySelector('.kaktus-w-remove-btn');const rootNode=element.closest('.kaktus-w-popup__products');qtyPlusBtn.addEventListener("click",function(e){e.preventDefault();changeQtyValue(qtyInput,'add');});qtyMinusBtn.addEventListener("click",function(e){e.preventDefault();changeQtyValue(qtyInput,'sub');});qtyInput.addEventListener("change",function(e){e.preventDefault();changeQtyValue(this,'change');});if(variationSelect){variationSelect.addEventListener("change",function(e){e.preventDefault();let variantPrice=this.selectedOptions[0].getAttribute('data-price');const variantStorePrice=this.selectedOptions[0].getAttribute('data-store-price');const activeImg=this.selectedOptions[0].getAttribute('data-image');const element=this.closest('.kaktus-w-product__item');element.querySelector('.kaktus-w-cart-btn').setAttribute('data-productId',this.value);element.querySelector('.kaktus-w-cart-btn').setAttribute('data-storePrice',variantStorePrice);changeVariantImage(element,activeImg);changeVariantPrice(element,variantPrice);});}
+addToCartBtn.addEventListener("click",function(e){e.preventDefault();const propertyId=makeId(5);const qty=qtyInput.value;const variantId=this.getAttribute('data-productId');const storePrice=this.getAttribute('data-storeprice');this.querySelector(".kaktus-w-cart-btn-text").classList.add("kaktus-w-hide");this.querySelector(".kaktus-w-product-cart").style.display="none";this.classList.add('kaktus-w-preload');addProductToCart(variantId,qty,{offer:propertyId}).then(()=>{if(wishlistMainOfferId&&wishlistOfferId){createStatisticFetch(wishlistMainOfferId,wishlistOfferId,1,1);createPurchaseData(wishlistMainOfferId,variantId,propertyId,storePrice,wishlistCurrentOffer);}
+this.querySelector(".kaktus-w-cart-btn-text").classList.remove("kaktus-w-hide");this.querySelector(".kaktus-w-product-cart").style.display="flex";this.classList.remove('kaktus-w-preload');});});removeBtn.addEventListener("click",function(e){e.preventDefault();const currentId=element.getAttribute("data-product-id");const localWishlistData=localStorage.getItem('kaktusWishlistData');const productsData=localWishlistData?JSON.parse(localWishlistData):[];const updatedProductsData=productsData.filter(item=>+item.productId!==+currentId);const addBtns=document.querySelectorAll('.kaktus-w-add');if(addBtns){addBtns.forEach(btn=>{const btnProductId=btn.getAttribute('data-id');if(+currentId===+btnProductId){btn.classList.remove("kaktus-w-completed");const btnText=btn.querySelector('.kaktus-w-wishlist-button__text');if(btnText){const defaultText=btnText.getAttribute('data-text');btnText.innerText=defaultText;}}});}
+rootNode.classList.add('kaktus-w-preload');localStorage.setItem('kaktusWishlistData',JSON.stringify(updatedProductsData));element.remove();createWishlistOffer(rootNode);})}
+function changeQtyValue(qty,type,maxVal){let currentQty=+qty.value;let minValue=+qty.getAttribute('min');let nextQty;switch(type){case'add':{if(maxVal){maxVal=+maxVal;nextQty=currentQty<maxVal?currentQty+1:maxVal;}else{nextQty=currentQty+1;}
+break;}
+case'sub':{currentQty===minValue?nextQty=minValue:nextQty=currentQty-1;break;}
+case'change':{if(maxVal){maxVal=+maxVal;nextQty=currentQty<maxVal?currentQty:maxVal;}else{nextQty=currentQty;}
+if(nextQty<=0){nextQty=1;}}}
+qty.value=nextQty;}
+function changeVariantPrice(element,price){const mainPriceContainer=element.querySelector(".kaktus-w-price");mainPriceContainer.innerText=currencyFormat(price)}
+function changeVariantImage(element,activeImage){if(!activeImage)return;const image=element.querySelector('.kaktus-w-product__img img');image.setAttribute('src',activeImage);}
+function fillWidgetStyle(rootId){fillWidget(wishlistWidget,rootId);fillWidgetSettings(wishlistWidget,rootId);}
+const dataJsonTopSection={"close-btn-bd-radius":{data:"top",value:"close_border_radius",element:"kaktus-w-close",cssOption:"border-radius",cssType:"size"},};const dataJsonMainSection={"w-bg-main":{data:"main",value:"background_main",element:"kaktus-w-popup__main",cssOption:"background"},"w-bg-heading":{data:"main",value:"background_heading",element:"kaktus-w-popup__heading",cssOption:"background"},"w-title-font-size":{data:"main",value:"title_font_size",element:"kaktus-w-popup__title",cssOption:"font-size",cssType:"size"},"w-title-color":{data:"main",value:"title_color",element:"kaktus-w-popup__title",cssOption:"color"},"w-title-font-weight":{data:"main",value:"title_font_weight",element:"kaktus-w-popup__title",cssOption:"font-weight"},"w-title-font-style":{data:"main",value:"title_font_style",element:"kaktus-w-popup__title",cssOption:"font-style"},"w-title-line-height":{data:"main",value:"title_line_height",element:"kaktus-w-popup__title",cssOption:"line-height",cssType:"size"},"w-description-font-size":{data:"main",value:"description_font_size",element:"kaktus-w-popup__description",cssOption:"font-size",cssType:"size"},"w-description-color":{data:"main",value:"description_color",element:"kaktus-w-popup__description",cssOption:"color"},"w-description-font-weight":{data:"main",value:"description_font_weight",element:"kaktus-w-popup__description",cssOption:"font-weight"},"w-description-font-style":{data:"main",value:"description_font_style",element:"kaktus-w-popup__description",cssOption:"font-style"},"w-description-line-height":{data:"main",value:"description_line_height",element:"kaktus-w-popup__description",cssOption:"line-height",cssType:"size"},"w-border-width":{data:"main",value:"border_width",element:"kaktus-w-bd",cssOption:"border-width",cssType:"size"},"w-border-color":{data:"main",value:"border_color",element:"kaktus-w-bd",cssOption:"border-color"},"w-border-radius":{data:"main",value:"border_radius",element:"kaktus-w-bd",cssOption:"border-radius",cssType:"size"}};const dataJsonProductStyle={"w-prod-bg-img":{data:"product",value:"background_img",element:"kaktus-w-product__item",cssOption:"background"},"w-prod-bg":{data:"product",value:"background",element:"kaktus-w-product-bg",cssOption:"background"},"w-cart-btn-bd-radius":{data:"product",value:"cart_btn_border_radius",element:"kaktus-w-cart-btn",cssOption:"border-radius",cssType:"size"},"w-cart-btn-font-size":{data:"product",value:"cart_btn_font_size",element:"kaktus-w-cart-btn",cssOption:"font-size",cssType:"size"},"w-cart-btn-font-weight":{data:"product",value:"cart_btn_font_weight",element:"kaktus-w-cart-btn",cssOption:"font-weight"},"w-cart-btn-font-style":{data:"product",value:"cart_btn_font_style",element:"kaktus-w-cart-btn",cssOption:"font-style"},"w-cart-btn-line-height":{data:"product",value:"cart_btn_line_height",element:"kaktus-w-cart-btn",cssOption:"line-height",cssType:"size"},"w-cart-btn-padding-top":{data:"product",value:"cart_btn_padding_t_b",element:"kaktus-w-cart-btn",cssOption:"padding-top",cssType:"size"},"w-cart-btn-padding-bottom":{data:"product",value:"cart_btn_padding_t_b",element:"kaktus-w-cart-btn",cssOption:"padding-bottom",cssType:"size"},"w-cart-btn-padding-left":{data:"product",value:"cart_btn_padding_l_r",element:"kaktus-w-cart-btn",cssOption:"padding-left",cssType:"size"},"w-cart-btn-padding-right":{data:"product",value:"cart_btn_padding_l_r",element:"kaktus-w-cart-btn",cssOption:"padding-right",cssType:"size"},"w-remove-btn-bd-radius":{data:"product",value:"remove_btn_border_radius",element:"kaktus-w-remove-btn",cssOption:"border-radius",cssType:"size"},"w-remove-btn-font-size":{data:"product",value:"remove_btn_font_size",element:"kaktus-w-remove-btn",cssOption:"font-size",cssType:"size"},"w-remove-btn-font-weight":{data:"product",value:"remove_btn_font_weight",element:"kaktus-w-remove-btn",cssOption:"font-weight"},"w-remove-btn-font-style":{data:"product",value:"remove_btn_font_style",element:"kaktus-w-remove-btn",cssOption:"font-style"},"w-remove-btn-line-height":{data:"product",value:"remove_btn_line_height",element:"kaktus-w-remove-btn",cssOption:"line-height",cssType:"size"},"w-remove-btn-padding-top":{data:"product",value:"remove_btn_padding_t_b",element:"kaktus-w-remove-btn",cssOption:"padding-top",cssType:"size"},"w-remove-btn-padding-bottom":{data:"product",value:"remove_btn_padding_t_b",element:"kaktus-w-remove-btn",cssOption:"padding-bottom",cssType:"size"},"w-remove-btn-padding-left":{data:"product",value:"remove_btn_padding_l_r",element:"kaktus-w-remove-btn",cssOption:"padding-left",cssType:"size"},"w-remove-btn-padding-right":{data:"product",value:"remove_btn_padding_l_r",element:"kaktus-w-remove-btn",cssOption:"padding-right",cssType:"size"},"w-cart-border-width":{data:"product",value:"prod_border_width",element:"kaktus-w-product-border",cssOption:"border-width",cssType:"size"},"w-cart-border-color":{data:"product",value:"prod_border_color",element:"kaktus-w-product-border",cssOption:"border-color"},"w-cart-border-radius":{data:"product",value:"prod_border_radius",element:"kaktus-w-product-border",cssOption:"border-radius",cssType:"size"},"w-prod-title-color":{data:"product",value:"prod_title_color",element:"kaktus-w-product__title",cssOption:"color"},"w-prod-title-font-size":{data:"product",value:"prod_title_font_size",element:"kaktus-w-product__title",cssOption:"font-size",cssType:"size"},"w-prod-title-font-weight":{data:"product",value:"prod_title_font_weight",element:"kaktus-w-product__title",cssOption:"font-weight"},"w-prod-title-font-style":{data:"product",value:"prod_title_font_style",element:"kaktus-w-product__title",cssOption:"font-style"},"w-prod-title-line-height":{data:"product",value:"prod_title_line_height",element:"kaktus-w-product__title",cssOption:"line-height",cssType:"size"},"w-prod-desc-color":{data:"product",value:"prod_desc_color",element:"kaktus-w-product__desc",cssOption:"color"},"w-prod-desc-font-size":{data:"product",value:"prod_desc_font_size",element:"kaktus-w-product__desc",cssOption:"font-size",cssType:"size"},"w-prod-desc-font-weight":{data:"product",value:"prod_desc_font_weight",element:"kaktus-w-product__desc",cssOption:"font-weight"},"w-prod-desc-font-style":{data:"product",value:"prod_desc_font_style",element:"kaktus-w-product__desc",cssOption:"font-style"},"w-prod-desc-line-height":{data:"product",value:"prod_desc_line_height",element:"kaktus-w-product__desc",cssOption:"line-height",cssType:"size"},"w-qty-background":{data:"product",value:"qty_background",element:"kaktus-w-qty-input",cssOption:"background"},"w-qty-border":{data:"product",value:"qty_btn_bg",element:"kaktus-w-qty-input",cssOption:"border-color"},"w-qty-color":{data:"product",value:"qty_font_color",element:"kaktus-w-qty-input",cssOption:"color"},"w-qty-border-radius-top":{data:"product",value:"qty_border_radius",element:"kaktus-w-qty-input",cssOption:"border-top-left-radius",cssType:"size"},"w-qty-border-radius-bottom":{data:"product",value:"qty_border_radius",element:"kaktus-w-qty-input",cssOption:"border-bottom-left-radius",cssType:"size"},"w-qty-border-radius-btn-top":{data:"product",value:"qty_border_radius",element:"kaktus-w-qty-btn-t",cssOption:"border-top-right-radius",cssType:"size"},"w-qty-border-radius-btn-bottom":{data:"product",value:"qty_border_radius",element:"kaktus-w-qty-btn-b",cssOption:"border-bottom-right-radius",cssType:"size"},"w-price-color":{data:"product",value:"price_color",element:"kaktus-w-price",cssOption:"color"},"w-price-font-size":{data:"product",value:"price_font_size",element:"kaktus-w-price",cssOption:"font-size",cssType:"size"},"w-price-font-weight":{data:"product",value:"price_font_weight",element:"kaktus-w-price",cssOption:"font-weight"},"w-price-font-style":{data:"product",value:"price_font_style",element:"kaktus-w-price",cssOption:"font-style"},"w-price-line-height":{data:"product",value:"price_line_height",element:"kaktus-w-price",cssOption:"line-height",cssType:"size"},"w-compare-price-color":{data:"product",value:"compare_price_color",element:"kaktus-w-compare-price",cssOption:"color"},"w-compare-price-font-size":{data:"product",value:"compare_price_font_size",element:"kaktus-w-compare-price",cssOption:"font-size",cssType:"size"},"w-compare-price-font-weight":{data:"product",value:"compare_price_font_weight",element:"kaktus-w-compare-price",cssOption:"font-weight"},"w-compare-price-font-style":{data:"product",value:"compare_price_font_style",element:"kaktus-w-compare-price",cssOption:"font-style"},"w-compare-price-line-height":{data:"product",value:"compare_price_line_height",element:"kaktus-w-compare-price",cssOption:"line-height",cssType:"size"},"w-save-background-color":{data:"product",value:"save_bg",element:"kaktus-w-save-label",cssOption:"background"},"w-save-border-radius":{data:"product",value:"save_border_radius",element:"kaktus-w-save-label",cssOption:"border-radius",cssType:"size"},"w-save-color":{data:"product",value:"save_color",element:"kaktus-w-save-label",cssOption:"color"},"w-save-font-size":{data:"product",value:"save_font_size",element:"kaktus-w-save-label",cssOption:"font-size",cssType:"size"},"w-save-font-weight":{data:"product",value:"save_font_weight",element:"kaktus-w-save-label",cssOption:"font-weight"},"w-save-font-style":{data:"product",value:"save_font_style",element:"kaktus-w-save-label",cssOption:"font-style"},"w-save-line-height":{data:"product",value:"save_line_height",element:"kaktus-w-save-label",cssOption:"line-height",cssType:"size"},"w-save-padding":{data:"product",value:"save_padding",element:"kaktus-w-save-label",cssOption:"padding",cssType:"size"},"w-variations-bg":{data:"product",value:"variations_background",element:"kaktus-w-variations",cssOption:"background-color"},"w-variations-color":{data:"product",value:"variations_font_color",element:"kaktus-w-variations",cssOption:"color"},"w-variations-border-widrh":{data:"product",value:"variations_border_width",element:"kaktus-w-variations",cssOption:"border-width",cssType:"size"},"w-variations-border-color":{data:"product",value:"variations_border_color",element:"kaktus-w-variations",cssOption:"border-color",},"w-variations-border-radius":{data:"product",value:"variations_border_radius",element:"kaktus-w-variations",cssOption:"border-radius",cssType:"size"}};const dataJsonLoginStyle={"w-login-bg":{data:"login",value:"background",element:"kaktus-w-bg-login",cssOption:"background"},"w-login-title-color":{data:"login",value:"title_color",element:"kaktus-w-login-title",cssOption:"color"},"w-login-title-font-size":{data:"login",value:"title_font_size",element:"kaktus-w-login-title",cssOption:"font-size",cssType:"size"},"w-login-title-font-weight":{data:"login",value:"title_font_weight",element:"kaktus-w-login-title",cssOption:"font-weight"},"w-login-title-font-style":{data:"login",value:"title_font_style",element:"kaktus-w-login-title",cssOption:"font-style"},"w-login-title-line-height":{data:"login",value:"title_line_height",element:"kaktus-w-login-title",cssOption:"line-height",cssType:"size"},"w-login-btn-bd-radius":{data:"login",value:"login_btn_border_radius",element:"kaktus-w-login-btn",cssOption:"border-radius",cssType:"size"},"w-login-btn-font-size":{data:"login",value:"login_btn_font_size",element:"kaktus-w-login-btn",cssOption:"font-size",cssType:"size"},"w-login-btn-font-weight":{data:"login",value:"login_btn_font_weight",element:"kaktus-w-login-btn",cssOption:"font-weight"},"w-login-btn-font-style":{data:"login",value:"login_btn_font_style",element:"kaktus-w-login-btn",cssOption:"font-style"},"w-login-btn-line-height":{data:"login",value:"login_btn_line_height",element:"kaktus-w-login-btn",cssOption:"line-height",cssType:"size"},"w-login-btn-padding-top":{data:"login",value:"login_btn_padding_t_b",element:"kaktus-w-login-btn",cssOption:"padding-top",cssType:"size"},"w-login-btn-padding-bottom":{data:"login",value:"login_btn_padding_t_b",element:"kaktus-w-login-btn",cssOption:"padding-bottom",cssType:"size"},"w-login-btn-padding-left":{data:"login",value:"login_btn_padding_l_r",element:"kaktus-w-login-btn",cssOption:"padding-left",cssType:"size"},"w-login-btn-padding-right":{data:"login",value:"login_btn_padding_l_r",element:"kaktus-w-login-btn",cssOption:"padding-right",cssType:"size"},"w-signup-btn-bd-radius":{data:"login",value:"signup_btn_border_radius",element:"kaktus-w-signup-btn",cssOption:"border-radius",cssType:"size"},"w-signup-btn-font-size":{data:"login",value:"signup_btn_font_size",element:"kaktus-w-signup-btn",cssOption:"font-size",cssType:"size"},"w-signup-btn-font-weight":{data:"login",value:"signup_btn_font_weight",element:"kaktus-w-signup-btn",cssOption:"font-weight"},"w-signup-btn-font-style":{data:"login",value:"signup_btn_font_style",element:"kaktus-w-signup-btn",cssOption:"font-style"},"w-signup-btn-line-height":{data:"login",value:"signup_btn_line_height",element:"kaktus-w-signup-btn",cssOption:"line-height",cssType:"size"},"w-signup-btn-padding-top":{data:"login",value:"signup_btn_padding_t_b",element:"kaktus-w-signup-btn",cssOption:"padding-top",cssType:"size"},"w-signup-btn-padding-bottom":{data:"login",value:"signup_btn_padding_t_b",element:"kaktus-w-signup-btn",cssOption:"padding-bottom",cssType:"size"},"w-signup-btn-padding-left":{data:"login",value:"signup_btn_padding_l_r",element:"kaktus-w-signup-btn",cssOption:"padding-left",cssType:"size"},"w-signup-btn-padding-right":{data:"login",value:"signup_btn_padding_l_r",element:"kaktus-w-signup-btn",cssOption:"padding-right",cssType:"size"}}
+const dataJsonBtnStyle={"w-close-bg-color":{data:"top",value:"close_bg_color",secondValue:"close_bg_color_hover",element:"kaktus-w-close",cssOption:"background"},"w-close-color":{data:"top",value:"close_color",secondValue:"close_color_hover",element:"kaktus-w-close",cssOption:"color"},"w-cart-btn-bg":{data:"product",value:"cart_btn_bg",secondValue:"cart_btn_bg_hover",element:"kaktus-w-cart-btn",cssOption:"background"},"w-cart-btn-color":{data:"product",value:"cart_btn_font_color",secondValue:"cart_btn_font_color_hover",element:"kaktus-w-cart-btn",cssOption:"color"},"w-cart-btn-color-icon":{data:"product",value:"cart_btn_font_color",secondValue:"cart_btn_font_color_hover",element:"kaktus-w-cart-btn",cssOption:"fill"},"w-qty-btn-bg":{data:"product",value:"qty_btn_bg",secondValue:"qty_btn_bg_hover",element:"kaktus-w-qty-btn",cssOption:"background"},"w-qty-btn-color":{data:"product",value:"qty_btn_color",secondValue:"qty_btn_color_hover",element:"kaktus-w-qty-btn",cssOption:"color"},"w-remove-btn-bg":{data:"product",value:"remove_btn_bg",secondValue:"remove_btn_bg_hover",element:"kaktus-w-remove-btn",cssOption:"background"},"w-remove-btn-color":{data:"product",value:"remove_btn_font_color",secondValue:"remove_btn_font_color_hover",element:"kaktus-w-remove-btn",cssOption:"color"},"w-remove-btn-color-icon":{data:"product",value:"remove_btn_font_color",secondValue:"remove_btn_font_color_hover",element:"kaktus-w-remove-btn",cssOption:"fill"},"w-login-bg-color":{data:"login",value:"login_bg_color",secondValue:"login_bg_color_hover",element:"kaktus-w-login-btn",cssOption:"background"},"w-login-color":{data:"login",value:"login_color",secondValue:"login_color_hover",element:"kaktus-w-login-btn",cssOption:"color"},"w-signup-bg-color":{data:"login",value:"signup_bg_color",secondValue:"signup_bg_color_hover",element:"kaktus-w-signup-btn",cssOption:"background"},"w-signup-color":{data:"login",value:"signup_color",secondValue:"signup_color_hover",element:"kaktus-w-signup-btn",cssOption:"color"}};const dataShowHide={"w-title":{data:"main",value:"title_show",element:"kaktus-w-popup__title"},"w-description":{data:"main",value:"description_show",element:"kaktus-w-popup__description"},"w-prod-title":{data:"product",value:"prod_title_show",element:"kaktus-w-product__title"},"w-prod-desc":{data:"product",value:"prod_desc_show",element:"kaktus-w-product__desc"},"w-price":{data:"product",value:"price_show",element:"kaktus-w-price"},"w-compare-price":{data:"product",value:"compare_price_show",element:"kaktus-w-compare-price"},"w-save":{data:"product",value:"save_show",element:"kaktus-w-save-label"},"w-qty":{data:"product",value:"qty_show",element:"kaktus-w-qty"},"w-variations":{data:"product",value:"variations_show",element:"kaktus-w-variations-wrap"},"w-login-show":{data:"login",value:"login_show",element:"kaktus-w-bg-login"}};const dataTranslation={"w-title":{data:"translation",value:"title",element:"kaktus-w-popup__title"},"w-description":{data:"translation",value:"description",element:"kaktus-w-popup__description"},"w-cart-btn-text":{data:"translation",value:"add_to_cart_btn",element:"kaktus-w-cart-btn-text"},"w-remove-btn-text":{data:"translation",value:"remove_btn",element:"kaktus-w-remove-btn-text"},"w-save-text":{data:"translation",value:"save_text",element:"kaktus-w-save"},"w-login-text":{data:"translation",value:"login_text",element:"kaktus-w-login-title"},"w-login-btn-text":{data:"translation",value:"login_btn_text",element:"kaktus-w-login-btn"},"w-signup-btn-text":{data:"translation",value:"signup_btn_text",element:"kaktus-w-signup-btn"}};function fillWidget(widgetJson,rootId){getObjJsonKeys(rootId,widgetJson,dataJsonTopSection);getObjJsonKeys(rootId,widgetJson,dataJsonMainSection);getObjJsonKeys(rootId,widgetJson,dataJsonLoginStyle);getObjJsonKeys(rootId,widgetJson,dataJsonProductStyle);getObjJsonKeys(rootId,widgetJson,dataJsonBtnStyle,"btn");getObjJsonKeys(rootId,widgetJson,dataShowHide,"show");getObjJsonKeys(rootId,widgetJson,dataTranslation,"translation");setProductDescription(rootId,widgetJson);const wallpaper=widgetJson.main.wallpaper;const wallpaperDiv=getAppSelector_W('.kaktus-w-wallpaper',rootId);let wallpaperVal;if(wallpaper==='wallpaper_0'){wallpaperVal='transparent';}else{const coverWallpaper=['wallpaper_20','wallpaper_21','wallpaper_22','wallpaper_23','wallpaper_24','wallpaper_25','wallpaper_26'];if(coverWallpaper.includes(wallpaper)){wallpaperDiv.classList.add('cover');}else{wallpaperDiv.classList.remove('cover');}
+wallpaperVal=`url("${kaktuscbaseUrl}assets/images/widgets/wallpapers/${wallpaper}.png")`;}
+wallpaperDiv.style.background=wallpaperVal;const custom_css=widgetJson.custom_css;const customCssDiv=getAppSelector_W('#kaktus-w-custom-css',rootId);if(custom_css){customCssDiv.innerText=custom_css.replace(/.kaktus-w-/g,`#${rootId} .kaktus-w-`);}else{customCssDiv.innerText='';}
+const prodDesc=getAppSelectorAll_W('.kaktus-w-desc-short',rootId);prodDesc.forEach((element)=>{let str=element.innerText.trim();if(str.length>100){let trimmedStr=str.substring(0,100)+"...";element.innerText=trimmedStr;}});}
+function fillWidgetSettings(widgetJson,rootId){const kaktusbPopup=getAppSelector_W('.kaktus-w-popup',rootId);const kaktusbWrap=getAppSelector_W('.kaktus-w-popup__wrap',rootId);const kaktusbBody=getAppSelector_W('.kaktus-w-popup__body',rootId);const productWrapp=getAppSelector_W('.kaktus-w-product__wrapp',rootId);const position=widgetJson.design_type.position,animation=widgetJson.design_type.animation,layout=widgetJson.design_type.layout,layout_col=widgetJson.design_type.layout_col?widgetJson.design_type.layout_col:'kaktus-w-grid-item-2',widgetWidth=widgetJson.design_type.widget_width;if(kaktusbPopup){kaktusbPopup.classList.remove('kaktus-w-popup__position--full','kaktus-w-popup__position--right_bottom','kaktus-w-popup__position--left_bottom','kaktus-w-popup__position--bottom','kaktus-w-popup__position--top','kaktus-w-popup__position--center');kaktusbPopup.classList.add(`kaktus-w-popup__position--${position}`);kaktusbPopup.classList.remove("kaktus-w-hide");kaktusbWrap.setAttribute('class','kaktus-w-popup__wrap');kaktusbWrap.classList.add(`animate__animated`,`${animation}`);}
+productWrapp.classList.remove('kaktus-w-product--grid','kaktus-w-product--list','kaktus-w-product--metro','kaktus-w-grid-item-2','kaktus-w-grid-item-3','kaktus-w-grid-item-4');const productItem=getAppSelectorAll_W('.kaktus-w-product__item',rootId);productItem.forEach((element)=>element.classList.remove('kaktus-w-product__item--grid','kaktus-w-product__item--list','kaktus-w-product__item--metro'));if(layout){productWrapp.classList.add(`kaktus-w-product--${layout}`,`kaktus-w-${layout_col}`);productItem.forEach((element)=>element.classList.add(`kaktus-w-product__item--${layout}`));}else{productWrapp.classList.add('kaktus-w-product--grid','kaktus-w-grid-item-2');productItem.forEach((element)=>element.classList.add(`kaktus-w-product__item--grid`));}}
+function fillProductItemStyle(rootId){const dataProductShowHide={"w-prod-title":{data:"product",value:"prod_title_show",element:"kaktus-w-product__title"},"w-prod-desc":{data:"product",value:"prod_desc_show",element:"kaktus-w-product__desc"},"w-price":{data:"product",value:"price_show",element:"kaktus-w-price"},"w-compare-price":{data:"product",value:"compare_price_show",element:"kaktus-w-compare-price"},"w-save":{data:"product",value:"save_show",element:"kaktus-w-save-label"},"w-qty":{data:"product",value:"qty_show",element:"kaktus-w-qty"},"w-variations":{data:"product",value:"variations_show",element:"kaktus-w-variations-wrap"}};const dataProductTranslation={"w-cart-btn-text":{data:"translation",value:"add_to_cart_btn",element:"kaktus-w-cart-btn-text"},"w-remove-btn-text":{data:"translation",value:"remove_btn",element:"kaktus-w-remove-btn-text"}};const dataProductJsonBtnStyle={"w-cart-btn-bg":{data:"product",value:"cart_btn_bg",secondValue:"cart_btn_bg_hover",element:"kaktus-w-cart-btn",cssOption:"background"},"w-cart-btn-color":{data:"product",value:"cart_btn_font_color",secondValue:"cart_btn_font_color_hover",element:"kaktus-w-cart-btn",cssOption:"color"},"w-cart-btn-color-icon":{data:"product",value:"cart_btn_font_color",secondValue:"cart_btn_font_color_hover",element:"kaktus-w-cart-btn",cssOption:"fill"},"w-qty-btn-bg":{data:"product",value:"qty_btn_bg",secondValue:"qty_btn_bg_hover",element:"kaktus-w-qty-btn",cssOption:"background"},"w-qty-btn-color":{data:"product",value:"qty_btn_color",secondValue:"qty_btn_color_hover",element:"kaktus-w-qty-btn",cssOption:"color"},"w-remove-btn-bg":{data:"product",value:"remove_btn_bg",secondValue:"remove_btn_bg_hover",element:"kaktus-w-remove-btn",cssOption:"background"},"w-remove-btn-color":{data:"product",value:"remove_btn_font_color",secondValue:"remove_btn_font_color_hover",element:"kaktus-w-remove-btn",cssOption:"color"},"w-remove-btn-color-icon":{data:"product",value:"remove_btn_font_color",secondValue:"remove_btn_font_color_hover",element:"kaktus-w-remove-btn",cssOption:"fill"}};getObjJsonKeys(rootId,wishlistWidget,dataJsonProductStyle);getObjJsonKeys(rootId,wishlistWidget,dataProductJsonBtnStyle,"btn");getObjJsonKeys(rootId,wishlistWidget,dataProductShowHide,"show");getObjJsonKeys(rootId,wishlistWidget,dataProductTranslation,"translation");setProductDescription(rootId,wishlistWidget);const prodDesc=getAppSelectorAll_W('.kaktus-w-desc-short',rootId);prodDesc.forEach((element)=>{let str=element.innerText.trim();if(str.length>100){let trimmedStr=str.substring(0,100)+"...";element.innerText=trimmedStr;}});const productWrapp=getAppSelector_W('.kaktus-w-product__wrapp',rootId);const layout=wishlistWidget.design_type.layout,layout_col=wishlistWidget.design_type.layout_col?wishlistWidget.design_type.layout_col:'kaktus-w-grid-item-2';productWrapp.classList.remove('kaktus-w-product--grid','kaktus-w-product--list','kaktus-w-product--metro','kaktus-w-grid-item-2','kaktus-w-grid-item-3','kaktus-w-grid-item-4');const productItem=getAppSelectorAll_W('.kaktus-w-product__item',rootId);productItem.forEach((element)=>element.classList.remove('kaktus-w-product__item--grid','kaktus-w-product__item--list','kaktus-w-product__item--metro'));if(layout){productWrapp.classList.add(`kaktus-w-product--${layout}`,`kaktus-w-${layout_col}`);productItem.forEach((element)=>element.classList.add(`kaktus-w-product__item--${layout}`));}else{productWrapp.classList.add('kaktus-w-product--grid','kaktus-w-grid-item-2');productItem.forEach((element)=>element.classList.add(`kaktus-w-product__item--grid`));}}
+function getObjJsonKeys(rootId,widgetJson,obj,type){for(let key in obj){if(type==="translation"){setTranslation(rootId,widgetJson,obj[key].data,obj[key].value,obj[key].element);}else if(type==="show"){setShowHide(rootId,widgetJson,obj[key].data,obj[key].value,obj[key].element);}else if(type==="btn"){setJsonDataBtn(rootId,widgetJson,obj[key].data,obj[key].value,obj[key].secondValue,obj[key].element,obj[key].cssOption);}else{setJsonData(rootId,widgetJson,obj[key].data,obj[key].value,obj[key].element,obj[key].cssOption,obj[key].cssType);}}}
+function setJsonData(rootId,widgetJson,obj,value,element,styleOpt,type){if(widgetJson[obj]==null)return;const option=widgetJson[obj][value];let inputOption=option;if(option==null)return;if(type==="size"){inputOption=inputOption+'px';}
+const elements=getAppSelectorAll_W('.'+element,rootId);elements.forEach((element)=>{element.style[styleOpt]=inputOption;})}
+function setJsonDataBtn(rootId,widgetJson,obj,value,value_2,element,styleOpt){if(widgetJson[obj]==null)return;const option=widgetJson[obj][value];const option_2=widgetJson[obj][value_2];let btn;if(option==null)return;let inputOption=option;btn=inputOption;let inputOption_2=option_2;const elements=getAppSelectorAll_W('.'+element,rootId);elements.forEach((element)=>{element.style[styleOpt]=inputOption;element.addEventListener("mouseover",function(){this.style[styleOpt]=inputOption_2;},false);element.addEventListener("mouseout",function(){this.style[styleOpt]=btn;},false);})}
+function setShowHide(rootId,widgetJson,obj,value,element){if(widgetJson[obj]==null)return;const option=widgetJson[obj][value];if(option==null)return;const elements=getAppSelectorAll_W('.'+element,rootId);elements.forEach((element)=>{if(option){element.classList.remove('kaktus-w-hide');}else{element.classList.add('kaktus-w-hide');}})}
+function setTranslation(rootId,widgetJson,obj,value,element){if(widgetJson[obj]==null)return;const option=widgetJson[obj][value];if(option==null)return;const elements=getAppSelectorAll_W('.'+element,rootId);elements.forEach((element)=>{element.innerText=option})}
+function setProductDescription(rootId,widgetJson){const option=widgetJson['product']['prod_desc_show_full'];if(option==null)return;const shortDescription=getAppSelectorAll_W('.kaktusc-desc-short',rootId);const fullDescription=getAppSelectorAll_W('.kaktusc-desc-full',rootId);shortDescription.forEach((element)=>{if(option){element.classList.add('kaktusc-hide');}else{element.classList.remove('kaktusc-hide');}})
+fullDescription.forEach((element)=>{if(option){element.classList.remove('kaktusc-hide');}else{element.classList.add('kaktusc-hide');}})}
+class ProductPreview{constructor(product,activeProduct,rootId){this.rootId=rootId;this.template=this.setTemplate(product,activeProduct);this.body=document.querySelector("body");this.closeButton=this.template.querySelector('.kaktus-w-product-det__close');this.qtyMinusBtn=this.template.querySelector('.kaktus-w-product-det__qty--minus');this.qtyPlusBtn=this.template.querySelector('.kaktus-w-product-det__qty--plus');this.qtyInput=this.template.querySelector('.kaktus-w-product-det__qty--input');this.variationSelect=this.template.querySelector('.kaktus-w-product-det__variations-select');this.sliderPrevBtn=this.template.querySelector('.kaktus-w-product-det__prev');this.sliderNextBtn=this.template.querySelector('.kaktus-w-product-det__next');this.addToCartBtn=this.template.querySelector('.kaktus-w-cart-btn');this.activeProduct=activeProduct;this.init();}
+getActiveProductData(activeProduct){const showQty=activeProduct.querySelector('.kaktus-w-qty')?activeProduct.querySelector('.kaktus-w-qty').classList.contains('kaktus-w-hide'):true;const qtyVal=activeProduct.querySelector('.kaktus-w-qty-input')?activeProduct.querySelector('.kaktus-w-qty-input').value:null;const activeVariant=activeProduct.querySelector('.kaktus-w-variations')?activeProduct.querySelector('.kaktus-w-variations').value:null;const showButtons=activeProduct.querySelector('.kaktus-w-cart-btn')?true:false;const showAddToCartBtn=showButtons?activeProduct.querySelector('.kaktus-w-cart-btn').classList.contains('kaktus-w-hide'):null;const addToCartBtnText=showButtons?activeProduct.querySelector('.kaktus-w-cart-btn-text').innerText:null;let data={show_qty:!showQty,qty_val:qtyVal,active_variant:activeVariant,show_buttons:showButtons,is_product_added:showAddToCartBtn,add_to_cart_text:addToCartBtnText,}
+return data;}
+setTemplate(product,activeProduct){let activeProductData=this.getActiveProductData(activeProduct);let productImg=noImage;if(product.image!=undefined){productImg=`<img src="${product.image}" alt="${product.productTitle}">`;}
+let productPrice='';let imagesArr=[];let variantsHtml='';if(product.variants.length>1){variantsHtml=`<select class="kaktus-w-product-det__variations-select">`;product.variants.forEach(variant=>{let variantPrice=getPriceByRate(+variant.variantPrice*100);let selectedOption='';if(parseInt(activeProductData.active_variant)===parseInt(variant.productId)){selectedOption='selected';productPrice=variantPrice;}
+variantsHtml+=`
+                                <option
+                                    ${selectedOption}
+                                    value="${variant.productId}"
+                                    data-price="${variantPrice}"
+                                >
+                                    ${variant.variantTitle} - ${currencyFormat(variantPrice)}
+                                </option>
+                            `;if(imagesArr.length){if(variant.image){let isAdded=imagesArr.find(item=>item.img===variant.image);if(isAdded){isAdded.ids.push(variant['productId'])}else{imagesArr.push({img:variant.image,ids:[variant['productId']]})}}}else{if(variant.image){imagesArr.push({img:variant.image,ids:[variant['productId']]})}}});variantsHtml+='</select>';}else{variantsHtml='';productPrice=getPriceByRate(+product.variants[0].variantPrice*100);}
+let qtyHtml='';if(activeProductData.show_qty){qtyHtml=`
+                        <div class="kaktus-w-product-det__qty">
+                            <div class="kaktus-w-product-det__qty--minus">-</div>
+                            <input class="kaktus-w-product-det__qty--input" type="number" value="${activeProductData.qty_val}" min="1">
+                            <div class="kaktus-w-product-det__qty--plus">+</div>
+                        </div>
+                    `;}
+productPrice=currencyFormat(productPrice);if(imagesArr.length){if(imagesArr.length>1){let sliderImages='';imagesArr.forEach((item,i)=>{let active=item.ids.includes(parseInt(activeProductData.active_variant))?'kaktus-w-slide-active':'';sliderImages+=`<div class="kaktus-w-product-det__slider-item kaktus-w-fade ${active}" data-image-id="${item.ids.join(',')}"><img src="${item.img}" alt="${product.productTitle}"></div>`;});productImg=`
+                            <div class="kaktus-w-product-det__slider">
+                                <button class="kaktus-w-product-det__prev"><svg width="14px" height="14px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M229.9 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L94.569 282H436c6.627 0 12-5.373 12-12v-28c0-6.627-5.373-12-12-12H94.569l155.13-155.13c4.686-4.686 4.686-12.284 0-16.971L229.9 38.101c-4.686-4.686-12.284-4.686-16.971 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971L212.929 473.9c4.686 4.686 12.284 4.686 16.971-.001z"></path></svg></button>
+                                 ${sliderImages}
+                                <button class="kaktus-w-product-det__next"><svg fill="currentColor" width="14px" height="14px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M218.101 38.101L198.302 57.9c-4.686 4.686-4.686 12.284 0 16.971L353.432 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h341.432l-155.13 155.13c-4.686 4.686-4.686 12.284 0 16.971l19.799 19.799c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L235.071 38.101c-4.686-4.687-12.284-4.687-16.97 0z"></path></svg></button>
+                            </div>
+                        `;}else{productImg=`<img src="${imagesArr[0].img}" alt="${product.productTitle}">`;}}
+let buttonsHtml='';if(activeProductData.show_buttons){buttonsHtml=`
+                        <div class="kaktus-w-product-det__btn">
+                            <a href="#" class="kaktus-w-cart-btn">
+                                <svg class="kaktus-w-product-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="20"
+                                    viewBox="0 0 19 20">
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <path fill="inherit"
+                                                    d="M7.126 10h-.754c-.126 0-.227-.052-.252-.138l-1.887-4.62c-.05-.12.076-.242.252-.242h1.082a.35.35 0 0 1 .276.138l1.535 4.62c.05.12-.076.242-.252.242zm9.036 1.487l2.767-6.474c.279-.651-.299-1.322-1.115-1.322H3.702L2.906.553A.74.74 0 0 0 2.209 0H.24A.229.229 0 0 0 0 .237v.987c0 .138.1.237.239.237h1.234c.12 0 .199.078.239.177l3.204 12.81a.74.74 0 0 0 .697.552h10.45c.14 0 .239-.099.239-.237v-.967c0-.138-.1-.237-.24-.237H6.37c-.1 0-.199-.079-.238-.177l-.299-1.224h9.196c.517 0 .955-.276 1.134-.671z" />
+                                            </g>
+                                            <g>
+                                                <path fill="inherit"
+                                                    d="M7.913 20c.875 0 1.584-.672 1.584-1.5S8.787 17 7.913 17c-.874 0-1.583.672-1.583 1.5S7.039 20 7.913 20z" />
+                                            </g>
+                                            <g>
+                                                <path fill="inherit"
+                                                    d="M13.193 20c.875 0 1.584-.672 1.584-1.5s-.71-1.5-1.584-1.5c-.874 0-1.583.672-1.583 1.5s.709 1.5 1.583 1.5z" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                                <span class="kaktus-w-cart-btn-text">${activeProductData.add_to_cart_text}</span>
+                            </a>
+                        </div>
+                    `;}
+const description=product.body_html?`<div class="kaktus-w-product-det__description">${product.description_html}</div>`:`<p class="kaktus-w-product-det__description">${product.description}</p>`;const html=`
+                        <div class="kaktus-w-product-det__modal">
+                            <div class="kaktus-w-product-det__wrap">
+                                <div class="kaktus-w-product-det__body">
+                                    <div class="kaktus-w-product-det__close">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" width="20" height="20"
+                                            class="svg-inline--fa fa-times fa-hucs-11" role="img" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 352 512">
+                                            <path fill="currentColor"
+                                                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+                                            </path>
+                                        </svg>
+                                    </div>
+
+                                    <div class="kaktus-w-product-det__images">
+                                        ${productImg}
+                                    </div>
+                                    <div class="kaktus-w-product-det__content">
+                                        <h2 class="kaktus-w-product-det__title">${product.productTitle}</h2>
+
+                                        <div class="kaktus-w-product-det__price">
+                                            <span class="kaktus-w-product-det__price-main">${productPrice}</span>
+                                        </div>
+
+                                        ${description}
+
+                                        <div class="kaktus-w-product-det__variations">
+                                            ${variantsHtml}
+                                        </div>
+
+                                        <div class="kaktus-w-product-det__bottom">
+                                            ${qtyHtml}
+                                            ${buttonsHtml}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;const element=document.createElement("div");element.setAttribute("id",this.rootId);element.innerHTML=html;return element;}
+init(){this.closeButton.addEventListener('click',this.hide.bind(this));if(this.qtyInput){const activeProductInput=this.activeProduct.querySelector('.kaktus-w-qty-input');this.qtyPlusBtn.addEventListener('click',e=>{e.preventDefault();changeQtyValue(this.qtyInput,'add');changeQtyValue(activeProductInput,'add');});this.qtyMinusBtn.addEventListener('click',e=>{e.preventDefault();changeQtyValue(this.qtyInput,'sub');changeQtyValue(activeProductInput,'sub');});this.qtyInput.addEventListener('change',e=>{e.preventDefault();changeQtyValue(this.qtyInput,'change');changeQtyValue(activeProductInput,'change');});}
+if(this.variationSelect){let _this=this;this.variationSelect.addEventListener("change",function(e){e.preventDefault();const activeOption=this.selectedOptions[0];const element=this.closest('.kaktus-w-product-det__body');if(_this.addToCartBtn){_this.addToCartBtn.setAttribute('data-productId',this.value);}
+_this.changeVariant(element,activeOption);const activeProductVariationSelect=_this.activeProduct.querySelector('.kaktus-w-variations');activeProductVariationSelect.value=this.value;if("createEvent"in document){let evt=document.createEvent("HTMLEvents");evt.initEvent("change",false,true);activeProductVariationSelect.dispatchEvent(evt);}
+else{activeProductVariationSelect.fireEvent("onchange");}});}
+if(this.sliderPrevBtn&&this.sliderNextBtn){this.sliderPrevBtn.addEventListener('click',this.changeSlider.bind(this,'prev'));this.sliderNextBtn.addEventListener('click',this.changeSlider.bind(this,'next'));}
+if(this.addToCartBtn){this.addToCartBtn.addEventListener('click',e=>{e.preventDefault();this.addProduct();});}}
+show(){this.body.append(this.template);}
+hide(){this.template.remove();}
+changeActiveImg(elements,activeElement){elements.forEach(element=>element.classList.remove('kaktus-w-slide-active'));activeElement.classList.add('kaktus-w-slide-active');}
+changeVariant(element,activeOption){const mainPriceContainer=element.querySelector(".kaktus-w-product-det__price-main");const price=activeOption.getAttribute('data-price');const variantId=activeOption.value;mainPriceContainer.innerText=currencyFormat(price)
+let sliderItems=element.querySelectorAll('.kaktus-w-product-det__slider-item');if(sliderItems){sliderItems.forEach(item=>{const imageIds=item.getAttribute('data-image-id').split(',');if(imageIds.includes(variantId)){this.changeActiveImg(sliderItems,item);}})}}
+changeSlider(type){let sliderItems=document.querySelectorAll('.kaktus-w-product-det__slider-item');let activeSlide;let activeSlideNumber;sliderItems.forEach((item,i)=>{if(item.classList.contains('kaktus-w-slide-active')){activeSlide=item;activeSlideNumber=i;}});activeSlide.classList.remove('kaktus-w-slide-active');let newActiveSlide=activeSlide;for(let i=0;i<sliderItems.length;i++){switch(type){case'next':{newActiveSlide=activeSlideNumber+1;if(newActiveSlide>=sliderItems.length){newActiveSlide=0;}
+break}
+case'prev':{newActiveSlide=activeSlideNumber-1;if(newActiveSlide<0){newActiveSlide=sliderItems.length-1;}
+break}}
+if(newActiveSlide===i){sliderItems[i].classList.add('kaktus-w-slide-active');}}}
+addProduct(){this.addToCartBtn.classList.add('kaktus-w-preload');const activeProductAddBtn=this.activeProduct.querySelector('.kaktus-w-cart-btn');activeProductAddBtn.click();setTimeout(()=>{this.addToCartBtn.classList.remove('kaktus-w-preload');},1000);}}
+function previewProductEvents(element,product,rootId){const previewOpenerImg=element.querySelector('.kaktus-w-product__img');const previewOpenerTitle=element.querySelector('.kaktus-w-product__title');previewOpenerTitle.addEventListener("click",function(e){e.preventDefault();let detailModal=new ProductPreview(product,element,rootId);detailModal.show();});previewOpenerImg.addEventListener("click",function(e){e.preventDefault();let detailModal=new ProductPreview(product,element,rootId);detailModal.show();});}
+function createWishlistOffer(btn){if(userData.id){createOfferFetch(userData).then(resp=>{console.log('resp',resp);btn.classList.remove('kaktus-w-preload');});}else{setTimeout(()=>{btn.classList.remove('kaktus-w-preload');},2000)}}
+function setOfferRequestBody(user){const localWishlistData=localStorage.getItem('kaktusWishlistData');const productData=localWishlistData?JSON.parse(localWishlistData):[];const offerName=user.name?user.name:`${user.id}`;const offerProducts=productData.map(item=>{const variantsArr=item.variants.map(variant=>{return{productId:variant.productId,variantPrice:variant.variantPrice,image:variant.image||noImage,variantTitle:variant.variantTitle,inventory_quantity:0,inventory_policy:"deny",inventory_management:"",}})
+return{productId:item.productId,productTitle:item.productTitle,description:item.description,description_html:item.description_html,image:item.image,variants:variantsArr}});return{domain:kaktuscShop,customer:user.id,main_offer:{name:offerName,offer_type:'3',trigger_event:'2',trigger_type:'4',select_products:[],select_collections:[],cart_min:'',cart_max:'',status:'1',page_select:'',show_after_add_to_cart_button:'',range_start_date:'',range_end_date:'',logged_users:true,allow_url:false,url_parameter:'',popup_type:'1',},offers:[{title:'My Wishlist',allow_set_description:false,description:'',template_id:1,allow_select_more_products:false,allow_set_quantities:false,auto_close_popup:false,allow_timer:false,display_on_device:'1',max_quantity:'',auto_close_quantity:'',timer_minutes:'',timer_seconds:'',timer_text:'',decline_click_reject:0,decline_click_close:0,accepted_click_checkout:0,accepted_click_add_to_cart:0,close_btn_event:1,reject_btn_event:1,replace_btn_event:0,productsType:0,decline:[],accepted:[],ab_test:'',products:[{products:offerProducts,min_quantity:"",discount:"",status:"%",productQty:0,}],checkout_btn_event:1,specific_url:'',reject_specific_url:'',max_products_number:'',disable_checkout_btn:0,go_to_checkout_action:0,bundle_min_qty:'0',not_in_cart:0,popup_type:'1',float_type:'1',float_btn_text:'',float_position:'top_left',inline_position:'1',reload_page:0}]}}
+async function createOfferFetch(user){const options={method:'POST',headers:{'Content-Type':'application/json',"Accept":"application/json"},body:JSON.stringify(setOfferRequestBody(user))};let url=kaktuscApiUrl+`api/front/wishlist-offer/create`;const resp=await fetch(url,options);if(!resp.ok){throw new Error(`HTTP error, status = ${resp.status}`);}
+return await resp.json();}
+function getDOMSelector(defaultNodeElements,settingsNodeElements){const commonNodeArr=settingsNodeElements.concat(defaultNodeElements);const uniqueNodeArr=[...new Set(commonNodeArr)];if(uniqueNodeArr.length){for(let i=0;i<uniqueNodeArr.length;i++){const itemTrim=uniqueNodeArr[i].trim();if(isValidSelector(itemTrim)){const currentNode=document.querySelector(itemTrim);if(currentNode!=null){return currentNode;}}}}else{return null;}}
+function isValidSelector(selector){try{document.querySelector(selector);return true;}catch{return false;}}
+function setContainerId(){return`kaktus-wishlist-app-${makeId(5)}`;}
+function getAppSelector_W(element,rootId){let rootNode=document.querySelector(`#${rootId}`);if(iframe){rootNode=iframe.contentWindow.document.querySelector(`#${rootId}`);}
+return rootNode.querySelector(element);}
+function getAppSelectorAll_W(element,rootId){let rootNode=document.querySelector(`#${rootId}`);if(iframe){rootNode=iframe.contentWindow.document.querySelector(`#${rootId}`);}
+return rootNode.querySelectorAll(element);}
+function disabledPageScroll(){document.querySelector('body').style.overflow='hidden';document.querySelector('html').style.overflow='hidden';}
+function removeAppContainer(rootId){const appWidget=document.querySelector(`#${rootId}`);iframe=null;if(appWidget){appWidget.remove();}
+document.querySelector('body').style.overflow='';document.querySelector('html').style.overflow='';}}
+WishListInit();};kaktuscApp();}
