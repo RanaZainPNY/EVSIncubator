@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/fontawesome 6.2.1/css/all.min.css">
+    <title>My Tasks</title>
+</head>
+
+<body>
+    <div class="container my-2">
+        <header>
+            <div class="card" id="createTask">
+                <div class="card-header text-center bg-success text-white text-bolder fs-1 fw-bolder">
+                    Task Manager
+                    <button type="button" class="btn btn-primary btn-md"><i
+                            class="fa-sharp fa-solid fa-plus fa-beat-fade"></i>
+                        Add Task
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="row">
+            <div class="col">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr class="table-primary">
+                                <!-- <th scope="col-1">Icons</th> -->
+                                <!-- <th scope="col-2">Icons</th> -->
+                                <th scope="col-2">Assignments Title</th>
+                                <th scope="col-2">Progress</th>
+                                <th scope="col-2">Completion Date</th>
+                                <th scope="col-2">Detail</th>
+                                <th scope="col-3">Catagory</th>
+                                <th scope="col">Edit/ Delete</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tblbody">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Create Modal 1 -->
+    <div class="modal fade" id="createModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">Add New Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <input type="hidden" id="txthdnId" value="">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
+                        <input id="txtName" type="text" class="form-control" placeholder="Enter Title" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-dollar-sign"></i></span>
+                        <input id="txtProgress" type="number" min="0" step="1" class="form-control"
+                            placeholder="Enter Progress" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-dollar-sign"></i></span>
+                        <input id="txtCDate" type="date" min="0" step="1" class="form-control"
+                            placeholder="Enter Completion Date" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa fa-address-book"></i></span>
+                        <select id="ddlCategories" class="form-select">
+                            <option value="0">- Select Category -</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <textarea id="txtDescription" cols="100" rows="5" placeholder="Description..."></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="createSaveBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- View Modal 2 -->
+    <div class="modal fade" id="viewModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">View Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">ID</span>
+                        <input id="viewId" type="text" class="form-control" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Title</span>
+                        <input id="viewName" type="text" class="form-control" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Progress</span>
+                        <input id="viewProgress" type="number" min="0" step="1" class="form-control" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Completion date</span>
+                        <input id="viewCDate" type="text" min="0" step="1" class="form-control" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Category</span>
+                        <input id="viewCategories" class="form-control">
+                        <!-- <option value="0">- Select Category -</option> -->
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span>Detail</span>
+                        <textarea id="viewDescription" cols="100" rows="5"></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="viewSaveBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Modal 3  -->
+    <div class="modal fade" id="editModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">Edit Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="edithdnid" value="">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Name</span>
+                        <input id="editName" type="text" class="form-control" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Progress</span>
+                        <input id="editProgress" type="number" min="0" step="1" class="form-control"
+                            placeholder="Enter Progress" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Completion Date</span>
+                        <input id="editCDate" class="form-control" placeholder="Enter Completion Date" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Category</span>
+                        <select id="editCategory" class="form-select">
+                            <option value="0">- Select Category -</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <textarea id="editDescription" cols="100" rows="5"></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="editBtnSave">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="lib/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Task JS folder/Task.js"></script>
+    <script>
+        const handler = new DataHandler();
+        const createModel = new bootstrap.Modal(document.getElementById("createModal"));
+        const viewModel = new bootstrap.Modal(document.getElementById("viewModal"));
+        const editModel = new bootstrap.Modal(document.getElementById("editModal"));
+
+
+        addEventListener("load", function () {
+            LoadTasks();
+            eltCategory = handler.Categories;
+            LoadCategories(eltCategory);
+        });
+        document.getElementById("createTask").addEventListener("click", function () {
+            const eltId= document.getElementById("txthdnId");
+            const eltName = document.getElementById("txtName");
+            const eltProgress = document.getElementById("txtProgress");
+            const eltCdate = document.getElementById("txtCDate");
+            const eltCategory = document.getElementById("ddlCategories");
+            const eltDescription = document.getElementById("txtDescription");
+            eltName.value = eltProgress.value = eltCdate.value = eltDescription.value = "";
+            eltCategory.value = 0;
+
+            createModel.show();
+
+        });
+        document.getElementById("createSaveBtn").addEventListener("click", function () {
+            const eltId= document.getElementById("txthdnId");
+            const eltName = document.getElementById("txtName");
+            const eltProgress = document.getElementById("txtProgress");
+            const eltCdate = document.getElementById("txtCDate");
+            const eltCategory = document.getElementById("ddlCategories");
+            const eltDescription = document.getElementById("txtDescription");
+
+            handler.AddTasks(
+                eltName.value,
+                eltProgress.value,
+                eltCdate.value,
+                eltCategory.value,
+                eltDescription.value
+            );
+
+            LoadTasks();
+            createModel.hide();
+
+        });
+        function LoadTasks() {
+            document.getElementById("tblbody").innerHTML = "";
+            let tasks = handler.Tasks;
+            tasks.forEach(element => {
+                let temp = `<tr>
+                        <td class="col-2 "><a href="#"class="link-view text-decoration-none text-dark" data-ts-view="${element.Id},${element.Title},${element.Progress},${element.Completedon},${element.Category.Name},${element.Detail},${element.Duedate}">${element.Title}</a></td>
+                        <td class="col-2">${element.Progress}%</td>
+                        <td class="col-2">${element.Completedon}</td>
+                        <td class="col-2">${element.Detail}</td>
+                        <td class="col-2">${element.Category.Name}</td>
+                        <td class="col">
+                           <button class="btn btn-warning btn-sm icn-edit" > <i  class="fa-regular fa-pen-to-square"data-vs-tid="${element.Id}"></i></button>
+                            &nbsp;&nbsp;
+                            <button class="btn btn-primary btn-sm icn-trash"> <i class="fa fa-trash-can" data-vs-tid="${element.Id}"></i></button>
+                        </td>
+                    </tr>`;
+                document.getElementById("tblbody").innerHTML += temp;
+               
+            });
+            LoadCategories(document.getElementById("ddlCategories"));
+            document.querySelectorAll(".link-view").forEach((icon) => {
+                icon.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    viewModel.show();
+                    const tis = icon.getAttribute("data-ts-view");
+                    const values = tis.split(",");
+                    const vid = values[0];
+                    const vname = values[1];
+                    const vprogress = values[2];
+                    const vcdate = values[3];
+                    const vCategory = values[4];
+                    const vdescription = values[5];
+
+                    let eltId = document.getElementById("viewId");
+                    let eltName = document.getElementById("viewName");
+                    let eltProgress = document.getElementById("viewProgress");
+                    let eltCdate = document.getElementById("viewCDate");
+                    let eltCategory = document.getElementById("viewCategories");
+                    let eltDescription = document.getElementById("viewDescription");
+                    eltId.value = vid;
+                    eltName.value = vname;
+                    eltProgress.value = vprogress;
+                    eltCdate.value = vcdate;
+                    eltCategory.value = vCategory;
+                    eltDescription.value = vdescription;
+                    console.log(tis);
+
+
+                });
+            });
+
+            LoadCategories(document.getElementById("editCategory"));
+
+            document.querySelectorAll(".icn-edit").forEach((icon) => {
+                icon.addEventListener("click", function (e) {
+                    // console.log("helo")
+
+                    const tis = e.target.getAttribute("data-vs-tid")
+                    const found = handler.FindTask(tis);
+                    if (found) {
+                        document.getElementById("edithdnid").value = found.Id;
+                        document.getElementById("editName").value = found.Title;
+                        document.getElementById("editProgress").value = found.Progress;
+                        document.getElementById("editCDate").value = found.Completedon;
+                        document.getElementById("editCategory").value = found.Category.Id;
+                        document.getElementById("editDescription").value = found.Detail;
+
+                        editModel.show();
+                    }
+                    // console.log(found.Id);
+                    // console.log(found.Title);
+                    // console.log(found.Progress);
+                    // console.log(found.Completedon);
+                    // console.log(found.Category.Id);
+                    // console.log(found.Detail);
+
+
+                });
+            });
+
+            document.querySelectorAll(".icn-trash").forEach((icon) => {
+                icon.addEventListener("click", function () {
+                    // const tis = icon.target.getAttribute("")
+                    // console.log("welocme")
+
+                });
+            });
+        };
+
+        document.getElementById("editBtnSave").addEventListener("click", function () {
+            let eid = document.getElementById("edithdnid").value;
+            let title = document.getElementById("editName").value;
+            let progress = document.getElementById("editProgress").value;
+            let date = document.getElementById("editCDate").value;
+            let description = document.getElementById("editDescription").value;
+            let category = document.getElementById("editCategory").value;
+          
+            console.log(eid);
+            console.log(title);
+            console.log(progress);
+            console.log(date);
+            console.log(category);
+            console.log(description);
+            console.log("after change");
+
+            handler.EditTask(eid, { title, progress, date, description, category: handler._Categories[--category] });
+            // console.log("after changing");
+
+            // // alert("welcome");
+            editModel.hide();
+            LoadTasks();
+        });
+
+
+        // Load Categories
+        function LoadCategories(eltCategory) {
+            let categories = handler.Categories;
+
+            eltCategory.innerHTML = `<option value='0'>- Select Category -</option>`;
+            categories.forEach(Category => {
+                let temp = `
+                <option value="${Category.Id}">${Category.Name}</option>`;
+                eltCategory.innerHTML += temp;
+
+            });
+
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

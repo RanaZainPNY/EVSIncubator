@@ -2,15 +2,34 @@
 *{
     padding: 0px;
     margin: 0px;
-    box-sizing: border-box;
-    font-family: 'Poppins'; 
+    box-sizing: border-box;     
+}
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+:root {
+    --bgBrown: #8D691D; 
+    --bgf7: #f7f7f7;
 }
 
+.bgBrown{
+    background-color: var(--bgBrown);
+}
 
+.border_brown{
+    background-color: var(--bgBrown);
+}
+.bgf7{
+    background-color: var(--bgf7);
+}
+.color-brown{
+    color: var(--bgBrown);
+}
 
 /* Heading Top CSS */
 .heading-top{
-    background-color: #8D691D;
+    background-color: var(--bgBrown);
     color: white;
     font-size: 14px;
 }
@@ -25,4 +44,39 @@
 }
 
 
+/* Footer CSS */
 
+ul.footer-list li{
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+ul.footer-list{
+    padding-left: 0px;
+}
+
+.input-group-text.mc{
+    padding: 0px;
+    align-items: stretch;
+    color: white;
+}
+.input-group-text.mc>button{
+    display: block;
+    background-color: var(--bgBrown); 
+    color: white;
+    padding: 5px 10px ;
+    border: none;   
+}
+
+.footer{
+    color:grey; 
+    font-size:13px;
+}
+
+.footer-border{
+    padding-bottom: 10px;
+    border-bottom: 2px solid grey;
+    margin-bottom: 15px;
+}
+
+/* Navbar Styling */

@@ -1,0 +1,7 @@
+Psuedo element,
+Psuedo Classes,
+Animation Flickering, 
+Properties Building,
+Null Data type,
+Bootstrap Carousel multiple Images With Sliding Effects,
+Carousel With multiple images for multiple screen sizes,
