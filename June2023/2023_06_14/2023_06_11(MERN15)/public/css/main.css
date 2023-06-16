@@ -1,0 +1,81 @@
+
+html{
+    font-size: 16px;
+    font-family: sans-serif, arial;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0px;
+    padding: 5px;
+}
+
+a {
+    color: red;
+}
+
+a:hover{
+    background-color: red;
+    color: white;
+}
+
+a:visited{
+    text-decoration:none;
+}
+
+.test{
+    background-color: aqua;
+    padding: 5px;
+}
+
+/* .test::after{
+    background-color: yellow;
+} */
+
+
+input {
+    padding: 5px;
+    width: 400px;
+}
+
+input[readonly] {
+    background-color: red;
+    padding: 5px;
+    width: 400px;
+}
+
+input[title*="evs"] {
+    background-color:dodgerblue;
+    padding: 5px;
+    width: 400px;
+}
+
+
+
+
+
+
+
+.panel-primary,.panel-default {
+    margin:15px 0px;
+    padding:0px 0px 0px 0px;
+}
+
+.panel-primary>header,.panel-default>header{
+    font-weight: bold;
+    padding: 5px;
+}
+
+
+
+.panel-primary{
+    border:solid 1px dodgerblue;
+}
+
+.panel-primary>header{
+    background-color: dodgerblue;
+    color: white;
+}
+
+
+
+

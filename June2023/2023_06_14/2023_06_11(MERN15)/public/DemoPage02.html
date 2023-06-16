@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/bootstrap-5.0.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/fontawesome-6.2.1/css/all.min.css" />
+    <title>JavaScript Demos</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row my-5">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Images with Preview</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <img src="images/garments/p1.jpg" alt="thumnail" class="img-thumbnail w-100"
+                                        data-target="imgMain" />
+                                </div>
+                                <div class="mb-3">
+                                    <img src="images/garments/p2.jpg" alt="thumnail" class="img-thumbnail w-100"
+                                        data-target="imgMain" />
+                                </div>
+                                <div class="mb-3">
+                                    <img src="images/garments/p3a.jpg" alt="thumnail" class="img-thumbnail w-100"
+                                        data-target="imgMain" />
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <img id="imgMain" src="images/garments/p1.jpg" alt="main image" class="w-100"
+                                    data-target="imgMain" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Images with Preview</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <img id="imgBanner" src="images/banners/banner01.jpg" alt="banner"  class="w-100" />
+                        </div>
+                        <div class="row">
+                            <div class="col-3" >
+                                <img src="images/banners/banner01.jpg" class="img-thumbnail" data-target="imgBanner" alt=""/>
+                            </div>
+                            <div class="col-3" >
+                                <img src="images/banners/banner02.png" class="img-thumbnail" data-target="imgBanner" alt=""/>
+                            </div>
+                            <div class="col-3" >
+                                <img src="images/banners/banner03.jpg" class="img-thumbnail" data-target="imgBanner" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/bootstrap-5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/evs469.js"></script>
+    <script>
+
+
+      
+
+
+
+
+
+        // let arrayOfThumbnails = document.querySelectorAll(".img-thumbnail");
+        // arrayOfThumbnails.forEach(function (thumbnail) {
+        //     thumbnail.addEventListener("mouseenter", function () {
+        //         let a = this.getAttribute("src");
+        //         document.getElementById("imgMain").setAttribute("src", a);
+        //     });
+        // });
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

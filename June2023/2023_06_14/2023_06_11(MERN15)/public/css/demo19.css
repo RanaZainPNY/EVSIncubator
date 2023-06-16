@@ -1,0 +1,105 @@
+html{
+    font-family: sans-serif,verdana;
+    font-size: 16px;
+    color: rgb(13, 13, 13);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.boundary{
+    padding: 0px 25px;
+}
+
+
+
+.panel-primary,.panel-default {
+    margin:15px 0px;
+    padding:0px 0px 0px 0px;
+}
+
+
+
+.panel-primary>header,.panel-default>header{
+    font-weight: bold;
+    padding:15px;
+}
+
+.panel-primary>main,.panel-default>main{
+    padding:15px;
+}
+
+.panel-primary{
+    border:solid 1px dodgerblue;
+}
+
+.panel-primary>header{
+    background-color: dodgerblue;
+    color: white;
+}
+
+.fld-control{
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    border: solid 2px #909090;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.fld-label{
+    color: #909090;
+    font-size: 1rem;
+}
+
+.fld-control:hover{
+    border: solid 2px dodgerblue;
+}
+
+.label-wraper{
+    padding-bottom: 3px;
+}
+
+.control-wraper{
+    padding-bottom: 10px;
+    
+}
+
+fieldset{
+    margin: 7px;
+    padding: 15px;
+    border: solid 2px dodgerblue;
+    border-radius: 5px;
+}
+
+legend{
+    padding:4px 15px;
+    background-color: dodgerblue;
+    color: white;
+}
+
+button{
+    padding: 10px;
+    min-width: 120px;
+    font-weight: bold;
+}
+
+.btn-primary{
+    background-color: dodgerblue;
+    color: white;
+    border: solid 2px dodgerblue;
+    border-radius: 5px;
+}
+
+.btn-default{
+    background-color: white;
+    color: dodgerblue;
+    border: solid 2px dodgerblue;
+    border-radius: 5px;
+}
+
+
+
+
