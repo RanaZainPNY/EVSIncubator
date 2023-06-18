@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ClassLibrary.City">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAIAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>City.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Province" />
+      <Property Name="Country" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ClassLibrary.CityArea">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CityArea.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="City" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ClassLibrary.Country">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrary.Province">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Province.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Country" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PakClassified.Country">
+    <Position X="0.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PakClassified.City">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAIAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>City.cs</FileName>
+      <NewMemberFileName>Province.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Province" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PakClassified.Province">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Province.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Country" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PakClassified.CityArea">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CityArea.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="City" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

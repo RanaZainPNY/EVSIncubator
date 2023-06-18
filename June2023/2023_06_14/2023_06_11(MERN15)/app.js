@@ -2,7 +2,7 @@ const path=require("path");
 const fs=require("fs");
 
 const  categoryRouter =require("./routes/categories.routes");
-const  advertisementRouter =require("./routes/advertisements.routes");
+const  addRouter =require("./routes/raza.routes");
 const express=require("express");
 
 //express object and port to listen
@@ -24,7 +24,7 @@ app.use(express.json());
 
 //set routing files
 app.use("/api/v1/categories",categoryRouter);
-app.use("/api/v1/advertisements",advertisementRouter);
+app.use("/api/v1/advertisements",adRouter);
 
 
 app.listen(port,()=>{

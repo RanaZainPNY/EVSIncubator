@@ -3,7 +3,7 @@ const { Category, DataHandler } = require("../mymodules/evs15.pakclassified");
 //object of DataHandler our own node module
 const handler = new DataHandler();
 
-const GetCategories = (req, res) => {
+const GetCategories = (req, res) => {    
     return res.status(200).send(handler.Categories);
 }
 

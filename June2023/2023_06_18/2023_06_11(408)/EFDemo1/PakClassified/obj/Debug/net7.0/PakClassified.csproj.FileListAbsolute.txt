@@ -1,0 +1,14 @@
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\bin\Debug\net7.0\PakClassified.deps.json
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\bin\Debug\net7.0\PakClassified.runtimeconfig.json
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\bin\Debug\net7.0\PakClassified.dll
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\bin\Debug\net7.0\PakClassified.pdb
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\obj\Debug\net7.0\PakClassified.csproj.AssemblyReference.cache
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\obj\Debug\net7.0\PakClassified.GeneratedMSBuildEditorConfig.editorconfig
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\obj\Debug\net7.0\PakClassified.AssemblyInfoInputs.cache
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\obj\Debug\net7.0\PakClassified.AssemblyInfo.cs
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\obj\Debug\net7.0\PakClassified.csproj.CoreCompileInputs.cache
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\obj\Debug\net7.0\PakClassified.dll
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\obj\Debug\net7.0\refint\PakClassified.dll
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\obj\Debug\net7.0\PakClassified.pdb
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\obj\Debug\net7.0\PakClassified.genruntimeconfig.cache
+D:\Classes\01Dotnet\Dotnet408\02_EF_RestAPI\2023_06_11(408)\EFDemo1\PakClassified\obj\Debug\net7.0\ref\PakClassified.dll

@@ -1,0 +1,14 @@
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\bin\Debug\net7.0\ClassLibrary.deps.json
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\bin\Debug\net7.0\ClassLibrary.runtimeconfig.json
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\bin\Debug\net7.0\ClassLibrary.dll
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\bin\Debug\net7.0\ClassLibrary.pdb
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\obj\Debug\net7.0\ClassLibrary.csproj.AssemblyReference.cache
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\obj\Debug\net7.0\ClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\obj\Debug\net7.0\ClassLibrary.AssemblyInfoInputs.cache
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\obj\Debug\net7.0\ClassLibrary.AssemblyInfo.cs
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\obj\Debug\net7.0\ClassLibrary.csproj.CoreCompileInputs.cache
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\obj\Debug\net7.0\ClassLibrary.dll
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\obj\Debug\net7.0\refint\ClassLibrary.dll
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\obj\Debug\net7.0\ClassLibrary.pdb
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\obj\Debug\net7.0\ClassLibrary.genruntimeconfig.cache
+D:\EVS\June2023\2023_06_18\EntityFrameworkPractice\UsamaBhai\ClassLibrary\obj\Debug\net7.0\ref\ClassLibrary.dll

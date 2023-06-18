@@ -1,0 +1,146 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\EVS\\June2023\\2023_06_18\\2023_06_11(408)\\EFDemo1\\EFDemo.ConsoleUI\\EFDemo.ConsoleUI.csproj": {}
+  },
+  "projects": {
+    "D:\\EVS\\June2023\\2023_06_18\\2023_06_11(408)\\EFDemo1\\EFDemo.ConsoleUI\\EFDemo.ConsoleUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\EVS\\June2023\\2023_06_18\\2023_06_11(408)\\EFDemo1\\EFDemo.ConsoleUI\\EFDemo.ConsoleUI.csproj",
+        "projectName": "EFDemo.ConsoleUI",
+        "projectPath": "D:\\EVS\\June2023\\2023_06_18\\2023_06_11(408)\\EFDemo1\\EFDemo.ConsoleUI\\EFDemo.ConsoleUI.csproj",
+        "packagesPath": "C:\\Users\\zain\\.nuget\\packages\\",
+        "outputPath": "D:\\EVS\\June2023\\2023_06_18\\2023_06_11(408)\\EFDemo1\\EFDemo.ConsoleUI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\EVS\\June2023\\2023_06_18\\2023_06_11(408)\\EFDemo1\\PakClassified\\PakClassified.csproj": {
+                "projectPath": "D:\\EVS\\June2023\\2023_06_18\\2023_06_11(408)\\EFDemo1\\PakClassified\\PakClassified.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400-preview.23225.8\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\EVS\\June2023\\2023_06_18\\2023_06_11(408)\\EFDemo1\\PakClassified\\PakClassified.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\EVS\\June2023\\2023_06_18\\2023_06_11(408)\\EFDemo1\\PakClassified\\PakClassified.csproj",
+        "projectName": "PakClassified",
+        "projectPath": "D:\\EVS\\June2023\\2023_06_18\\2023_06_11(408)\\EFDemo1\\PakClassified\\PakClassified.csproj",
+        "packagesPath": "C:\\Users\\zain\\.nuget\\packages\\",
+        "outputPath": "D:\\EVS\\June2023\\2023_06_18\\2023_06_11(408)\\EFDemo1\\PakClassified\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400-preview.23225.8\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
