@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <style>
+        #banner-img {
+            width: 100%;
+        }
+
+        .dflex,
+        #banner {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .container {
+            width: 90%;
+            /* border: 2px solid green; */
+        }
+
+        body {
+            /* border: 3px solid red; */
+        }
+
+        .justify {
+            text-align: justify;
+        }
+
+        #top-section, #bottom-section {
+            margin-top: 30px;
+            border: 2px solid red;
+        }
+
+
+        /* // responsive design section */
+        @media screen and (max-width: 500px) {
+            #banner {
+                display: none;
+            }
+
+            #section1 {
+                flex-direction: column;
+            }
+
+            .heading {
+                text-align: center;
+            }
+
+            #top-section{
+                margin-top: 0px;
+            }
+        }
+    </style>
+
+<section>
+    <!-- banner section -->
+    <div id="banner">
+            <div class="container">
+                <img src="c02.jpg" alt="banner" style="width: 100%;">
+            </div>
+        </div>
+
+        <!-- First Section -->
+        <div id="top-section" class="dflex" style="flex-direction:column;">
+            <div class="dflex">
+                <div class="container">
+                    <h1 class="heading">Heading One</h1>
+                </div>
+            </div>
+
+
+            <div class="dflex">
+                <div class="container">
+                    <div id="section1" class="dflex">
+                        <div style="flex-basis:100px; flex-grow: 1;">
+                            <img src="c02.jpg" alt="" style="width: 100%;">
+                        </div>
+                        <div style="flex-basis:120px; flex-grow: 4;">
+                            <small>
+                                <p class="justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A quae hic
+                                    odio dolorem
+                                    consectetur accusamus reprehenderit veritatis. Numquam veniam accusamus inventore
+                                    fuga nesciunt velit quod beatae, nulla in, corporis illo quibusdam! Vel, animi ad?
+                                </p>
+                            </small>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Second Section -->
+        <div id="bottom-section" class="dflex" style="flex-direction:column;">
+            <div class="dflex">
+                <div class="container">
+                    <h1 class="heading">Heading Two </h1>
+                </div>
+            </div>
+
+
+            <div class="dflex">
+                <div class="container">
+                    <div id="section1" class="dflex">
+                        <div style="flex-basis:100px; flex-grow: 1;">
+                            <img src="c02.jpg" alt="" style="width: 100%;">
+                        </div>
+                        <div style="flex-basis:120px; flex-grow: 4;">
+                            <small>
+                                <p class="justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A quae hic
+                                    odio dolorem
+                                    consectetur accusamus reprehenderit veritatis. Numquam veniam accusamus inventore
+                                    fuga nesciunt velit quod beatae, nulla in, corporis illo quibusdam! Vel, animi ad?
+                                </p>
+                            </small>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>        
+
+
+
+    </section>
+
+
+
+</body>
+
+</html>
