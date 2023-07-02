@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class MyArray {
+            constructor() {
+                this.data = [1, 2, 3, 4, 5]
+            }
+
+            map(callback) {
+                for (let index = 0; index < this.data.length; index++) {
+                    const element = this.data[index];
+                    // console.log(element);
+                    callback(element, index);
+                }            
+            }
+        }
+
+        let arr = new MyArray();
+        arr.map((elem, index) => console.log(String(index) + '=>', elem));
+    </script>
+</body>
+
+</html>

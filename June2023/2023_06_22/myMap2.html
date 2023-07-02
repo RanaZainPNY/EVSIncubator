@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class MyArray {
+
+            constructor(inputArr) {
+                this.data = inputArr;
+            }
+
+            map(callback) {
+                let output = []
+                // console.log(this.data);        
+                for (let index = 0; index < this.data.length; index++) {
+                    const element = this.data[index];
+                    // console.log(element);                    
+                    let temp = callback(element,);
+                    output.push(temp);
+                }
+            }
+        }
+
+
+        let arr = new MyArray([1, 2, 3, 4]);
+        let output = arr.map((input) => console.log(input));
+    </script>
+
+</body>
+
+</html>
